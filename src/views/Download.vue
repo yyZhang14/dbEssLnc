@@ -51,8 +51,8 @@
       <div class="download-content" style="height:40%">
         <div >
           <img src="../assets/img/github.png" class="icon" />
-          <a href=" https://github.com/yyZhang14/dbEssLnc" target="_blank">
-           https://github.com/yyZhang14/dbEssLnc
+          <a href=" https://github.com/yyZhang14/dbEssLnc/tree/master" target="_blank">
+           https://github.com/yyZhang14/dbEssLnc/tree/master
           </a>
         </div>
 
