@@ -45,7 +45,6 @@
             :data = "lncrna"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
             height="400"
-            empty-text="cannot find"
             border
             stripe
             style="width: 100%"
@@ -124,7 +123,6 @@
               :data="references"
               :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
               height="400"
-              empty-text="cannot find"
               border
               stripe
               style="width: 100%"
@@ -159,28 +157,39 @@ export default{
       urlNCBI:"https://www.ncbi.nlm.nih.gov/gene/",
       references:[],
       lncrna:[], 
+      count:2
       // fullscreenLoading: false
     }
   },
   mounted () {
+      var _this =this;
       ElLoading.service({
         fullscreen:true,
         text:"Loading...",
         background:"rgba(0,0,0,0.7)"
       });
       axios.post("api/property/lncrna").then(respond =>{
-      this.lncrna = respond.data; 
-    });
-    axios.post("api/property/references").then(respond =>{
-    this.references = respond.data;
-    });
+      _this.lncrna = respond.data;
+      _this.count-- ;
+      _this.LoadingClose();
 
-    let loadingInstance = ElLoading.service({});
-    this.$nextTick(() => {
+      });
+      axios.post("api/property/references").then(respond =>{
+      _this.references = respond.data;
+      _this.count--;
+      _this.LoadingClose();
+      });
+  },
+  methods: {
+    LoadingClose (){
+      if(this.count === 0){
+        let loadingInstance = ElLoading.service({});
+        this.$nextTick(() => {
        // 以服务的方式调用的 Loading 需要异步关闭
-      loadingInstance.close();
-    });
-    
+          loadingInstance.close();
+        });
+      }
+    }
   }
 }
 </script>

@@ -323,7 +323,7 @@ export default {
   watch: {
     //监听选择框的选项，根据选项进行输入建议的列表输出
     searchOpt(val){
-      console.log("searchOpt 函数调用成功！")
+      //console.log("searchOpt 函数调用成功！")
       var searchOpt = val;
       var _this = this;
 

@@ -11,10 +11,10 @@ var fs = require("fs");
 
 
 //blast的一些路径
-const BLASTDB = '' 
-const tempPath_query = '/Users/zyy/Desktop/code/ES-test/blast/temp' 
-const tempPath_result='/Users/zyy/Desktop/code/ES-test/blast/temp'   
-const db_path = '/Users/zyy/Desktop/code/ES-test/blast/lncrna/lncrna.fasta' 
+const BLASTDB = ""
+const tempPath_query = "/Users/zyy/Desktop/code/ES-test/blast/temp/"
+const tempPath_result= "/Users/zyy/Desktop/code/ES-test/blast/temp/" 
+const db_path = "/Users/zyy/Desktop/code/ES-test/blast/lncrna/lncrna.fasta"
 const {MYSQL_CONFIG} = require('../db.js');
 // var blast = require("../blast.js")
 //创建连接
@@ -218,14 +218,14 @@ router.post("/fuzzyNONCODE",(req,res)=> {
 router.post("/blast",(req,res)=>{
 
   if(
-      typeof req.body.user_seq == "undefined"||
-      typeof req.body.user_wordSize == "undefined"||
-      typeof req.body.user_eValue == "undefined"
+      typeof req.body.user_seq == "undefined"
+      ||typeof req.body.user_eValue == "undefined"
+      ||typeof req.body.user_wordSize == "undefined"
       ){
         res.status(400);
         res.send({
           error:true,
-          message:"post参数缺失（user_seq,user_wordSize,user_eValue"
+          message:"post参数缺失（user_seq,user_eValue)"
         })
       }
       else{
@@ -254,23 +254,22 @@ router.post("/blast",(req,res)=>{
 
         var path_query = tempPath_query + inputFile + '.fasta';
         var path_result = tempPath_result + outputFile + '.txt';
-        
+
         fs.writeFileSync(path_query, user_seq); 
         fs.writeFileSync(path_result,"");   
         // 调用命令行测试
-        var cmd = BLASTDB+'blastn -query '+path_query+
-                    ' -out '+path_result+
-                    ' -db '+db_path+
-                    ' -outfmt "6 qseqid sseqid pident length evalue bitscore"'+
-                    ' -evalue '+user_eValue+
-                    ' -word_size '+user_wordSize+' -num_threads 1';
-        // res.send(cmd)
 
+        var cmd = BLASTDB+' blastn -query '+path_query+
+                  ' -out '+path_result+
+                  ' -db '+db_path+
+                  ' -outfmt "6 qseqid sseqid pident length evalue bitscore "'+
+                  ' -evalue '+user_eValue+
+                  ' -word_size '+user_wordSize;
+        // console.log(cmd)
         exec(cmd, function(error, stdout, stderr) {
           // 读取测试结果
-          let data = fs.readFileSync(path_result, "utf8").split('\n'); //\t分割也可以
-          // console.log(error);
-          console.log(data);
+          let data = fs.readFileSync(path_result, "utf8").split('\n'); 
+          console.log(data)
 
           // 发送给前端
             res.send({
@@ -281,9 +280,10 @@ router.post("/blast",(req,res)=>{
                   data:data
               },
           });
+          // console.log(user_wordSize)
           fs.close;
-          // fs.unlinkSync(path_query);
-          // fs.unlinkSync(path_result);
+          fs.unlinkSync(path_query);
+          fs.unlinkSync(path_result);
           return;
       });
 
