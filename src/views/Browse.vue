@@ -10,39 +10,43 @@
     <el-container style="height: expression(document.body.clientHeight-130px); border: 1px solid #eee">
       <!-- 侧边导航栏 -->
       <el-aside 
-        width="200px"
+        width="300px"
         style="background-color: rgb(238, 241, 246); text-align:left;">
-        <el-menu :default-openeds="['1', '2']">
+        <el-menu :default-openeds="['1']">
            <el-submenu index="1">
             <template v-slot:title>
               <i class="el-icon-s-grid"></i><b>Browse</b>
             </template>
 
-            <el-menu-item index="1-1">
-              <a href="#lncrna">essential lncRNA</a>
+            <el-menu-item index="1-1" >
+              <!-- <a href="#vital">essential lncRNA</a> -->
+              <a href="javascript:void(0)" @click="goAnchor('#vital')">essential lncRNA</a>
             </el-menu-item>
+
+            <el-menu-item index="1-2" >
+              <!-- <a href="#tumor">tumor suppressor genes</a> -->
+              <a href="javascript:void(0)" @click="goAnchor('#tumor')">tumor suppressor genes</a>
+            </el-menu-item>
+
+            <el-menu-item index="1-3">
+              <!-- <a href="#cancer">essential lncRNA in cancer cell</a> -->
+              <a href="javascript:void(0)" @click="goAnchor('#cancer')">essential lncRNA in cancer cell</a>
+            </el-menu-item>
+
           </el-submenu>
 
-           <el-submenu index="2">
-            <template v-slot:title>
-              <i class="el-icon-document"></i><b>Renferences</b>
-            </template>
-
-            <el-menu-item index="2-1">
-              <a href="#reference">references</a>
-            </el-menu-item>
-          </el-submenu>
         </el-menu>
 
       </el-aside>
       <!-- 显示表格 -->
       <el-container >
         <el-main class="browseBody">
-          <!-- 显示essential lncRNA -->
+          <!-- show vital -->
           <div>
-            <h3><a name="lncrna"></a>Essential lncRNA</h3>
+            <!-- <a name="vital"></a> -->
+            <h3 id="vital">essential lncRNA</h3>
             <el-table
-            :data = "lncrna"
+            :data = "vital"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
             height="400"
             border
@@ -50,20 +54,46 @@
             style="width: 100%"
             strip highlight-current-row
             >
-            <el-table-column type="expand">
+            <el-table-column
+              label="Name"
+              prop="Name"
+              width="150">
+            </el-table-column>
+            <el-table-column prop="NCBI_gene_Id" label="NCBI_gene_Id" width="150">
+              <template #default="scope">
+              <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
+                {{scope.row.NCBI_gene_Id}}
+              </a>
+              </template>
+            </el-table-column>
+
+            <el-table-column
+              label="Organism"
+              prop="Organism"
+              width="100">
+            </el-table-column>
+            <el-table-column
+              label="Reason"
+              prop="Reason">
+            </el-table-column>
+
+            <el-table-column prop="PubMedID" label="PubMedID" width="100">
+                <template #default="scope">
+                  <a :href="url+scope.row.PMID" target="_black">
+                    {{scope.row.PMID}}
+                  </a>
+                </template>
+            </el-table-column>
+
+                        <!-- 扩展部分 -->
+            <el-table-column type="expand" label="Details" width="100">
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
-                  <el-form-item label="ID:">
-                    <span>{{ props.row.ID }}</span>
+                  <el-form-item label="NONCODEId:">
+                    <span>{{ props.row.NONCODEId}}</span>
                   </el-form-item>
-                  <el-form-item label="Name:" width="150">
-                   <span>{{ props.row.Name }}</span>
-                  </el-form-item>
-                  <el-form-item label="Reason:">
-                    <span>{{ props.row.Reason }}</span>
-                  </el-form-item>
-                  <el-form-item label="ReferID:">
-                    <span>{{ props.row.ReferID }}</span>
+                  <el-form-item label="Aliases/full_Name:">
+                    <span>{{ props.row.Aliases}}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
                     <span>{{ props.row.Gene_Ontology_Annotations }}</span>
@@ -71,74 +101,137 @@
                   <el-form-item label="Sequence:" >
                     <span>{{ props.row.fasta }}</span>
                   </el-form-item>
-              </el-form>
+                </el-form>
             </template>
             </el-table-column>
-            <el-table-column
-              label="ID"
-              prop="ID"
-              width="100">
-            </el-table-column>
+
+
+            </el-table>    
+          </div>
+        <!-- show tumor -->
+          <div>
+            <!-- <a name="tumor"></a> -->
+            <h3 id="tumor">tumor suppressor genes</h3>
+            <el-table
+            :data = "tumor"
+            :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
+            height="400"
+            border
+            stripe
+            style="width: 100%"
+            strip highlight-current-row
+            >
             <el-table-column
               label="Name"
               prop="Name"
-              width="100">
+              width="150">
             </el-table-column>
-            <el-table-column
-              label="NONCODEId"
-              prop="NONCODEId">
-            </el-table-column>
-            <el-table-column
-              label="NCBI gene ID"
-              prop="NCBI_gene_Id"
-              width="120">
-            <template #default="scope">
+            <el-table-column prop="NCBI_gene_Id" label="NCBI_gene_Id" width="150">
+              <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
               </a>
-            </template>
+              </template>
+            </el-table-column>
 
-            </el-table-column>
-            <el-table-column
-              label="Aliases/full Name"
-              prop="Aliases/full_Name"
-              width="500">
-            </el-table-column>
-            <!-- <el-table-column
-              label="ReferID"
-              prop="ReferID"
-              width="100">
-            </el-table-column> -->
             <el-table-column
               label="Organism"
-              prop="Organism">
+              prop="Organism"
+              width="100">
+            </el-table-column>
+            <el-table-column
+              label="Reason"
+              prop="Reason">
+            </el-table-column>
+
+            <el-table-column prop="PubMedID" label="PubMedID" width="100">
+                <template #default="scope">
+                  <a :href="url+scope.row.PMID" target="_black">
+                    {{scope.row.PMID}}
+                  </a>
+                </template>
+            </el-table-column>
+            <el-table-column type="expand" >
+              <template #default="props">label="Details" width="100"
+                <el-form label-position="left" inline class="demo-table-expand" >
+
+                  <el-form-item label="Aliases/full_Name:">
+                    <span>{{ props.row.Aliases}}</span>
+                  </el-form-item>
+                  <el-form-item label="Gene Ontology Annotations:">
+                    <span>{{ props.row.Gene_Ontology_Annotations }}</span>
+                  </el-form-item>
+                  <el-form-item label="Sequence:" >
+                    <span>{{ props.row.fasta }}</span>
+                  </el-form-item>
+                </el-form>
+            </template>
             </el-table-column>
 
             </el-table>    
           </div>
-          <!-- 显示参考文献 -->
+        <!-- show cancer -->
           <div>
-            <h3><a name="reference"></a>References</h3>
+            <!-- <a name="cancer"></a> -->
+            <h3 id = "cancer">essential lncRNA in cancer cell</h3>
             <el-table
-              :data="references"
-              :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
-              height="400"
-              border
-              stripe
-              style="width: 100%"
+            :data = "cancer"
+            :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
+            height="400"
+            border
+            stripe
+            style="width: 100%"
+            strip highlight-current-row
             >
-              <el-table-column prop="ReferID" label="ReferID" width="100">
-              </el-table-column>
-              <el-table-column prop="PubMedID" label="PubMedID" width="100">
+            <el-table-column
+              label="Name"
+              prop="Name"
+              width="150">
+            </el-table-column>
+            <el-table-column prop="NCBI_gene_Id" label="NCBI_gene_Id" width="150">
+              <template #default="scope">
+              <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
+                {{scope.row.NCBI_gene_Id}}
+              </a>
+              </template>
+            </el-table-column>
+
+            <el-table-column
+              label="Organism"
+              prop="Organism"
+              width="100">
+            </el-table-column>
+            <el-table-column
+              label="Reason"
+              prop="Reason">
+            </el-table-column>
+
+            <el-table-column prop="PubMedID" label="PubMedID" width="100">
                 <template #default="scope">
-                  <a :href="url+scope.row.PubMedID" target="_black">
-                    {{scope.row.PubMedID}}
+                  <a :href="url+scope.row.PMID" target="_black">
+                    {{scope.row.PMID}}
                   </a>
                 </template>
-              </el-table-column>
-              <el-table-column prop="Reference" label="Reference">
-              </el-table-column>
-            </el-table>
+            </el-table-column>
+
+            <el-table-column type="expand" label="Details" width="100">
+              <template #default="props">
+                <el-form label-position="left" inline class="demo-table-expand" >
+
+                  <el-form-item label="Aliases/full_Name:">
+                    <span>{{ props.row.Aliases }}</span>
+                  </el-form-item>
+                  <el-form-item label="Gene Ontology Annotations:">
+                    <span>{{ props.row.Gene_Ontology_Annotations }}</span>
+                  </el-form-item>
+                  <el-form-item label="Sequence:" >
+                    <span>{{ props.row.fasta }}</span>
+                  </el-form-item>
+                </el-form>
+            </template>
+            </el-table-column>
+
+            </el-table>    
           </div>
         </el-main>
       </el-container>
@@ -155,9 +248,11 @@ export default{
     return {
       url:"https://www.ncbi.nlm.nih.gov/pubmed/?term=",
       urlNCBI:"https://www.ncbi.nlm.nih.gov/gene/",
-      references:[],
-      lncrna:[], 
-      count:2
+      vital:[],
+      tumor:[],
+      cancer:[],
+      count:3,
+      // vitalShow:1
       // fullscreenLoading: false
     }
   },
@@ -168,17 +263,32 @@ export default{
         text:"Loading...",
         background:"rgba(0,0,0,0.7)"
       });
-      axios.post("api/property/lncrna").then(respond =>{
-      _this.lncrna = respond.data;
+
+//show vital table data 
+      axios.post("api/property/vital").then(respond =>{
+      _this.vital = respond.data;
       _this.count-- ;
       _this.LoadingClose();
+      //console.log("vital!")
 
       });
-      axios.post("api/property/references").then(respond =>{
-      _this.references = respond.data;
-      _this.count--;
+//show tumor table data
+      axios.post("api/property/tumor").then(respond =>{
+      _this.tumor = respond.data;
+      _this.count-- ;
       _this.LoadingClose();
+      //console.log("tumor")
+
       });
+//show cancer table data
+      axios.post("api/property/cancer").then(respond =>{
+      _this.cancer = respond.data;
+      _this.count-- ;
+      _this.LoadingClose();
+      //console.log("cancer")
+
+      })
+
   },
   methods: {
     LoadingClose (){
@@ -189,7 +299,12 @@ export default{
           loadingInstance.close();
         });
       }
-    }
+    },
+    goAnchor (selector) {
+      document.querySelector(selector).scrollIntoView({
+        behavior:"smooth"
+      })
+    } 
   }
 }
 </script>

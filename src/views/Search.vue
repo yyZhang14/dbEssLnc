@@ -11,7 +11,7 @@
           <!-- vue 3弃用了native  这么写不对@keyup.enter.native="Search" -->
           <el-autocomplete placeholder="search name" v-model="inputContent" clearable @keyup.enter="Search" class="input-with-select" :fetch-suggestions="querySearch">
           <template #prepend >
-            <el-select v-model="searchOpt" clearable placeholder="Options" class="select">
+            <el-select v-model="searchOpt" clearable placeholder="Human" class="select">
               <el-option-group v-for="group in options"  :key="group.label" :label="group.label">
                 <el-option  v-for="item in group.options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
@@ -29,9 +29,9 @@
           <!-- 未进行查询 没有数据显示 -->
           <el-row v-if="id==0" type="flex" justify="space-between" style="padding: 5px;" class="content">
             <el-col :span="12"  class="explain">
-              <p>
+              <!-- <p>
                 The Organism in dbEssLnc contains 158 human and 18 mouse.
-              </p>
+              </p> -->
               <img src="../assets/img/sta.png" alt="" style="height: auto; width:100%;">
             </el-col>
             <el-col :span="12" class="explain">
@@ -64,20 +64,57 @@
             style="width: 100%"
             ref="table"
           >
-            <el-table-column type="expand">
+
+            <el-table-column
+              label="ID"
+              prop="ID"
+              width="100">
+            </el-table-column>
+            <el-table-column
+              label="Name"
+              prop="Name"
+              width="150">
+            </el-table-column>
+
+            <el-table-column
+              label="NCBI gene ID"
+              prop="NCBI_gene_Id"
+              width="150">
+            <template #default="scope">
+              <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
+                {{scope.row.NCBI_gene_Id}}
+              </a>
+            </template>
+
+            </el-table-column>
+            <el-table-column
+              label="Organism"
+              prop="Organism"
+              width="100"
+            >
+            </el-table-column>
+            <el-table-column
+              label="Reason"
+              prop="Reason"
+              >
+            </el-table-column>
+
+            <el-table-column prop="PubMedID" label="PubMedID" width="150">
+              <template #default="scope">
+                <a :href="url+scope.row.PMID" target="_black">
+                  {{scope.row.PMID}}
+                </a>
+              </template>
+            </el-table-column>
+
+            <el-table-column type="expand" label="Details" width="100">
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
-                  <el-form-item label="ID:">
-                    <span>{{ props.row.ID }}</span>
+                  <el-form-item label="NONCODEId:">
+                    <span>{{ props.row.NONCODEId }}</span>
                   </el-form-item>
-                  <el-form-item label="Name:">
-                    <span>{{ props.row.Name }}</span>
-                  </el-form-item>
-                  <el-form-item label="Reason:">
-                    <span>{{ props.row.Reason }}</span>
-                  </el-form-item>
-                  <el-form-item label="Organism:">
-                    <span>{{ props.row.Organism }}</span>
+                  <el-form-item label="Aliases/full Name:">
+                    <span>{{ props.row.Aliases }}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
                     <span>{{ props.row.Gene_Ontology_Annotations }}</span>
@@ -88,43 +125,6 @@
               </el-form>
             </template>
             </el-table-column>
-            <el-table-column
-              label="ID"
-              prop="ID"
-              >
-            </el-table-column>
-            <el-table-column
-              label="Name"
-              prop="Name"
-              >
-            </el-table-column>
-            <el-table-column
-              label="NONCODEId"
-              prop="NONCODEId"
-              >
-            </el-table-column>
-            <el-table-column
-              label="NCBI gene ID"
-              prop="NCBI_gene_Id"
-              >
-            <template #default="scope">
-              <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
-                {{scope.row.NCBI_gene_Id}}
-              </a>
-            </template>
-
-            </el-table-column>
-            <el-table-column
-              label="Aliases/full Name"
-              prop="Aliases/full_Name"
-            width=500>
-            </el-table-column>
-            <!-- <el-table-column
-              label="ReferID"
-              prop="ReferID"
-              >
-            </el-table-column> -->
-
           </el-table>
 
         </div>
@@ -140,7 +140,7 @@ export default {
     return {
       lncrnaTable:"",//推到前端的数据
       inputContent:"",//输入的数据
-      searchOpt:"",// 选择框中的数据
+      searchOpt:"option2",// 选择框中的数据
       options: [
         {
           label:"Query by Organism",
@@ -151,23 +151,32 @@ export default {
 
         },
         {
-          label:"Query by ID",
+          label:"Query by Reason",
           options: [
-            {value:"option3",label:"NCBI gene ID"},
-            {value:"option4",label:"NONCODEId"}
+            {value:"option3",label:"essential lncRNA"},
+            {value:"option4",label:"tumor suppressor genes"},
+            {value:"option5",label:"essential lncRNA in cancer cell"}
           ]
         }
       ],
       id:0 ,//查询标记
+      url:"https://www.ncbi.nlm.nih.gov/pubmed/?term=",
       urlNCBI:"https://www.ncbi.nlm.nih.gov/gene/",
+
       //用于模糊搜索的输入建议
       properties:[],//空的
-      propertyresults:[],//存储结果
+      propertyresults:[{value: "Gas5"},{value: "Chaserr"},{value: "Dnm3os"},{value: "Dreh"},{value: "Fendrr"}
+      ,{value: "Gm12610"},{value: "Gm38509"},{value: "Haglr"},{value: "lncKdm2b"},{value: "Lncpint"}
+      ,{value: "Meg3"},{value: "Mir124a-1hg"},{value: "Pantr2"},{value: "Paupar"}
+      ,{value: "Trp53cor1"},{value: "Tsix"},{value: "Xist"}],//存储结果
+
+
       // property:[],//查询的结果
       fuzzyHuman:[],
       fuzzyMouse:[],
-      fuzzyNCBI:[],
-      fuzzyNONCODE:[]
+      fuzzyVital:[],
+      fuzzyTumor:[],
+      fuzzyCancer:[]
     }
   },
   methods: {
@@ -205,15 +214,8 @@ export default {
       var searchOpt = this.searchOpt;//选择框中的内容
       var _this = this;
       //有多少种情况
-      //选择框和输入框中都没有内容，默认显示所有的数据
-      if(inputContent == "" && searchOpt == "" ){
-        axios.post("api/property/lncrna").then(respond =>{
-          _this.lncrnaTable = respond.data;
-          _this.id = 1;
-          })
-      }
-      //选择option1 Human
-      else if(searchOpt == "option1"){
+      //选择option1 Human;  default option is human
+      if(searchOpt == "option1"){
         //输入框为空
         if(inputContent == ""){
           axios.post("api/property/selectHuman").then(function(respond){
@@ -246,18 +248,18 @@ export default {
           })
         }
       }
-      //选择 option3 NCBI
+      //选择 option3 reason is vital
       else if(searchOpt == "option3"){
         //输入框为空
         if(inputContent == ""){
-          axios.post("api/property/selectNCBI").then(function(respond){
+          axios.post("api/property/select_reason_vital").then(function(respond){
             _this.lncrnaTable=respond.data;
             _this.id = 1;
           })
         }
         //输入框不为空
         else{
-          axios.post("api/property/searchNCBI",{inputContent}).then(function(respond){
+          axios.post("api/property/searchVital",{inputContent}).then(function(respond){
           _this.lncrnaTable=respond.data;
           _this.id = 1;
           })
@@ -265,23 +267,46 @@ export default {
       }
 
 
-      //选择 option 4 NONCODE is not null
+      //选择 option 4 reason is tumor
       else if(searchOpt == "option4"){
         //输入框为空
         if(inputContent == ""){
-          axios.post("api/property/selectNONCODE").then(function(respond){
+          axios.post("api/property/select_reason_tumor").then(function(respond){
             _this.lncrnaTable=respond.data;
             _this.id = 1;
           })
         }
         //输入框不为空
         else{
-          axios.post("api/property/searchNONCODE",{inputContent}).then(function(respond){
+          axios.post("api/property/searchTumor",{inputContent}).then(function(respond){
           _this.lncrnaTable=respond.data;
           _this.id = 1;
           })
         }
       }
+      
+
+      //option 5 reason is cancer
+      else if(searchOpt == "option5"){
+        //输入框为空
+        if(inputContent == ""){
+          axios.post("api/property/select_reason_cancer").then(function(respond){
+            _this.lncrnaTable=respond.data;
+            _this.id = 1;
+          })
+        }
+        //输入框不为空
+        else{
+          axios.post("api/property/searchCancer",{inputContent}).then(function(respond){
+          _this.lncrnaTable=respond.data;
+          _this.id = 1;
+          })
+        }
+      }
+
+
+
+
     }
     
   },
@@ -292,11 +317,13 @@ export default {
       .all([
         axios.post("/api/property/fuzzyHuman"),
         axios.post("/api/property/fuzzyMouse"),
-        axios.post("/api/property/fuzzyNCBI"),
-        axios.post("/api/property/fuzzyNONCODE")
+        axios.post("/api/property/fuzzyVital"),
+        axios.post("/api/property/fuzzyTumor"),
+        axios.post("/api/property/fuzzyCancer")
+
       ])
       .then(
-        axios.spread((human, mouse,ncbi ,noncode) => {
+        axios.spread((human, mouse,vital ,tumor,cancer) => {
           for (let i = 0;i< human.data.length;i++){
           _this.fuzzyHuman.push({
           "value":human.data[i]["Name"]
@@ -307,16 +334,23 @@ export default {
           "value":mouse.data[i]["Name"]
           })
         }
-          for (let i = 0;i< ncbi.data.length;i++){
-          _this.fuzzyNCBI.push({
-          "value":ncbi.data[i]["Name"]
+          for (let i = 0;i< vital.data.length;i++){
+          _this.fuzzyVital.push({
+          "value":vital.data[i]["Name"]
           })
         }
-          for (let i = 0;i< noncode.data.length;i++){
-          _this.fuzzyNONCODE.push({
-          "value":noncode.data[i]["Name"]
+          for (let i = 0;i< tumor.data.length;i++){
+          _this.fuzzyTumor.push({
+          "value":tumor.data[i]["Name"]
           })
-        }      
+        }   
+        
+          for (let i = 0;i< cancer.data.length;i++){
+          _this.fuzzyCancer.push({
+          "value":cancer.data[i]["Name"]
+          })
+        }  
+
         })
       );
   },
@@ -327,21 +361,31 @@ export default {
       var searchOpt = val;
       var _this = this;
 
-      if (searchOpt == "") {
-        _this.propertyresults = _this.properties;
-      }
-      else if (searchOpt == "option1") {
+      if (searchOpt == "option1") {
         _this.propertyresults = _this.fuzzyHuman;
+        //console.log(_this.propertyresults)
       }
       else if (searchOpt == "option2") {
         _this.propertyresults =  _this.fuzzyMouse;
+       //console.log(_this.propertyresults)
+        
       } else if (searchOpt == "option3" ) {
-        console.log("选择了3")
-        _this.propertyresults =  _this.fuzzyNCBI;
+        //console.log("选择了3")
+        _this.propertyresults =  _this.fuzzyVital;
+        //console.log("3333")
       } 
       else if (searchOpt == "option4") {
-        _this.propertyresults =  _this.fuzzyNONCODE;
+        _this.propertyresults =  _this.fuzzyTumor;
+        //console.log("4444")
       }
+      else if (searchOpt == "option5") {
+        _this.propertyresults =  _this.fuzzyCancer;
+       // console.log("5555")
+      }
+
+
+
+
     }
 
   }

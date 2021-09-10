@@ -14,7 +14,8 @@
           <p>
            Essential lncRNAs are important for fundamental cellular processes including 
            gene expression regulation and signal pathways,even concerned with the progression
-            of the diseases or tumors.Here,we developed a database named dbEssLnc ,which manually 
+            of the diseases or tumors.Here,we developed a database named dbEssLnc 
+            (<b><a href="https://esslnc.pufengdu.org">https://esslnc.pufengdu.org</a></b>),which manually 
             collects and collates essential lncRNAs information from existing databases and published 
             literature. Currently, the dbEssLnc database contains <b>176</b> essential lncRNAs , 
             and the data will be continuously added and updated.
@@ -31,9 +32,16 @@
             <strong>(1).</strong> Users can browse information of essential lncRNAs 
             and their original references. The navigation bar on the left side shows 
             all the contents users can browse in the 'Browse' page. It takes some time to
-            load data when opening the page.
+            load data when opening the page.The sidebar of the web page allows you to anchor
+             three tables. There is a button on the right side of the table to expand the data in more detail.
           </p>
-          <img alt="browse help" src="../assets/img/help/bro.png" />
+          <img alt="browse help" src="../assets/img/help/bro1.png" />
+
+          <p>
+            <strong>(2).</strong> The NCBI_gene_Id and PubMed  in the table can directly go to the NCBI
+             website to read gene and article information.
+          </p>
+          <img alt="browse help" src="../assets/img/help/bro2.png" />
 
         </el-collapse-item>
         <el-collapse-item
@@ -48,8 +56,7 @@
           </p>
           <img alt="search help" src="../assets/img/help/sea1.png" />
           <p>
-            <strong>(2).</strong> When the type is not chosen, all
-            essential lncRNAs with a matching name will be displayed. 
+            <strong>(2).</strong> Clich on the button to expand the folding panel to read more essential lncRNAs information.
           </p>
           <img alt="search help" src="../assets/img/help/sea2.png" />
           <p>

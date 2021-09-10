@@ -15,8 +15,7 @@
           v-on:click="setname(item.name)"
           :class="{ 'is-active': item.name == checkName }"
           :key="item.id"
-        > 
-      
+        >    
            <router-link :to="item.url"> 
              {{item.name}}
            </router-link>  
@@ -74,14 +73,17 @@ export default {
   methods: {
     setname(val) {
       this.checkName = val;
+      this.$router.go(0);
     },
     // 响应式设计导航栏
     dropdownMenu() {
       let x = document.getElementById("dropdownClick");
       if (x.className === "topnav") {
         x.className += " responsive";
+      
       } else {
         x.className = "topnav";
+        
       }
     }
   },
@@ -90,9 +92,9 @@ export default {
     $route: {
       handler() {
         let linkName = this.$route.name;
-        // console.log(linkName);
+        //console.log(linkName);
         this.checkName = linkName;
-        // console.log(this.checkName);
+       // console.log(this.checkName);
       }
     }
   }

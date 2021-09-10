@@ -34,12 +34,12 @@ var jsonWrite = function(res, ret) {
   }
 };
 //browser 页面的sql语句
-// 关键lncRNA /NCBI
-router.post("/lncrna", (req, res) => {
-  var sql = $sql.property.selectLncRNA;
+//show final table
+router.post("/final", (req, res) => {
+  var sql = $sql.property.selectFinal;
   connection.query(sql, function(err, result) {
     if (err) {
-      console.log("[SELECT FROM essential ERROR]:", err.msg);
+      console.log("[SELECT FROM final table ERROR]:", err.msg);
     }
     if (result) {
       console.log(result)
@@ -47,12 +47,53 @@ router.post("/lncrna", (req, res) => {
     }
   });
 });
+//show vital table
+router.post("/vital", (req, res) => {
+  var sql = $sql.property.selectVital;
+  connection.query(sql, function(err, result) {
+    if (err) {
+      console.log("[SELECT FROM vital table ERROR]:", err.msg);
+    }
+    if (result) {
+      console.log(result)
+      jsonWrite(res, result);
+    }
+  });
+});
+//show tumor table
+router.post("/tumor", (req, res) => {
+  var sql = $sql.property.selectTumor;
+  connection.query(sql, function(err, result) {
+    if (err) {
+      console.log("[SELECT FROM tumor table ERROR]:", err.msg);
+    }
+    if (result) {
+      console.log(result)
+      jsonWrite(res, result);
+    }
+  });
+});
+//show cancer table
+router.post("/cancer", (req, res) => {
+  var sql = $sql.property.selectCancer;
+  connection.query(sql, function(err, result) {
+    if (err) {
+      console.log("[SELECT FROM cancer table ERROR]:", err.msg);
+    }
+    if (result) {
+      console.log(result)
+      jsonWrite(res, result);
+    }
+  });
+});
+
+//search page
 //organism is human
 router.post("/selectHuman", (req, res) => {
   var sql = $sql.property.selectHuman;
   connection.query(sql, function(err, result) {
     if (err) {
-      console.log("[SELECT FROM essential  where organism is human ERROR]:", err.msg);
+      console.log("[SELECT FROM final table where organism is human ERROR]:", err.msg);
     }
     if (result) {
       console.log(result)
@@ -65,7 +106,7 @@ router.post("/selectMouse", (req, res) => {
   var sql = $sql.property.selectMouse;
   connection.query(sql, function(err, result) {
     if (err) {
-      console.log("[SELECT FROM essential  where organism is mouse ERROR]:", err.msg);
+      console.log("[SELECT FROM final table where organism is mouse ERROR]:", err.msg);
     }
     if (result) {
       console.log(result)
@@ -73,12 +114,12 @@ router.post("/selectMouse", (req, res) => {
     }
   });
 });
-//NONCODEId is not null
-router.post("/selectNCBI", (req, res) => {
-  var sql = $sql.property.selectNCBI;
+//reason is vital
+router.post("/select_reason_vital", (req, res) => {
+  var sql = $sql.property.select_reason_vital;
   connection.query(sql, function(err, result) {
     if (err) {
-      console.log("[SELECT FROM essential  where NCBI_gene_Id is not null ERROR]:", err.msg);
+      console.log("[SELECT FROM final table  where reason is vital ERROR]:", err.msg);
     }
     if (result) {
       console.log(result)
@@ -86,11 +127,12 @@ router.post("/selectNCBI", (req, res) => {
     }
   });
 });
-router.post("/selectNONCODE", (req, res) => {
-  var sql = $sql.property.selectNONCODE;
+//reason is tumor
+router.post("/select_reason_tumor", (req, res) => {
+  var sql = $sql.property.select_reason_tumor;
   connection.query(sql, function(err, result) {
     if (err) {
-      console.log("[SELECT FROM essential  where NONCODEId is not null ERROR]:", err.msg);
+      console.log("[SELECT FROM final table where reason is tumor ERROR]:", err.msg);
     }
     if (result) {
       console.log(result)
@@ -98,27 +140,29 @@ router.post("/selectNONCODE", (req, res) => {
     }
   });
 });
-// 参考文献
-router.post("/references", (req, res) => {
-  var sql = $sql.property.references;
-  connection.query(sql, (err, result) => {
+//reason is cancer
+router.post("/select_reason_cancer", (req, res) => {
+  var sql = $sql.property.select_reason_cancer;
+  connection.query(sql, function(err, result) {
     if (err) {
-      console.log("[get references error]:", err.msg);
+      console.log("[SELECT FROM final table where reason is cancer ERROR]:", err.msg);
     }
     if (result) {
+      console.log(result)
       jsonWrite(res, result);
-      console.log(res);
     }
   });
 });
 
-//搜索页面 sql语句
+
+//quzzy search 
+
 router.post("/searchHuman",(req,res)=> {
   var sql=$sql.property.searchHuman;
   var proName = req.body;
   connection.query(sql,[proName.inputContent],(err,result)=>{
     if(err) {
-      console.log("search essential table where Organism ='human' error:",err.msg)
+      console.log("search final table where Organism ='human' error:",err.msg)
     }
     if(result){
       jsonWrite(res,result);
@@ -131,7 +175,7 @@ router.post("/searchMouse",(req,res)=> {
   var proName = req.body;
   connection.query(sql,[proName.inputContent],(err,result)=>{
     if(err) {
-      console.log("search essential table where Organism ='mouse' error:",err.msg)
+      console.log("search final table where Organism ='mouse' error:",err.msg)
     }
     if(result){
       jsonWrite(res,result);
@@ -139,12 +183,12 @@ router.post("/searchMouse",(req,res)=> {
   })
 })
 
-router.post("/searchNCBI",(req,res)=> {
-  var sql=$sql.property.searchNCBI;
+router.post("/searchVital",(req,res)=> {
+  var sql=$sql.property.searchVital;
   var proName = req.body;
   connection.query(sql,[proName.inputContent],(err,result)=>{
     if(err) {
-      console.log("search essential table by NCBI_gene_Id error:",err.msg)
+      console.log("search final table by role is vital error:",err.msg)
     }
     if(result){
       jsonWrite(res,result);
@@ -152,24 +196,42 @@ router.post("/searchNCBI",(req,res)=> {
   })
 })
 
-router.post("/searchNONCODE",(req,res)=> {
-  var sql=$sql.property.searchNONCODE;
+router.post("/searchTumor",(req,res)=> {
+  var sql=$sql.property.searchTumor;
   var proName = req.body;
   connection.query(sql,[proName.inputContent],(err,result)=>{
     if(err) {
-      console.log("search essential table by NONCODEId error:",err.msg)
+      console.log("search final table by role is tumor error:",err.msg)
     }
     if(result){
       jsonWrite(res,result);
     }
   })
 })
+
+router.post("/searchCancer",(req,res)=> {
+  var sql=$sql.property.searchCancer;
+  var proName = req.body;
+  connection.query(sql,[proName.inputContent],(err,result)=>{
+    if(err) {
+      console.log("search final table by role is cancer error:",err.msg)
+    }
+    if(result){
+      jsonWrite(res,result);
+    }
+  })
+})
+
+
+
+
+
 //模糊查询推荐输入
 router.post("/fuzzyHuman",(req,res)=> {
   var sql=$sql.property.fuzzyHuman;
   connection.query(sql,(err,result)=>{
     if(err) {
-      console.log("select Name from `essential` where Organism ='human' error:",err.msg)
+      console.log("select Name from `final` where Organism ='human' error:",err.msg)
     }
     if(result){
       jsonWrite(res,result);
@@ -181,7 +243,7 @@ router.post("/fuzzyMouse",(req,res)=> {
   var sql=$sql.property.fuzzyMouse;
   connection.query(sql,(err,result)=>{
     if(err) {
-      console.log("select Name from `essential` where Organism ='mouse' error:",err.msg)
+      console.log("select Name from `final` where Organism ='mouse' error:",err.msg)
     }
     if(result){
       jsonWrite(res,result);
@@ -189,11 +251,11 @@ router.post("/fuzzyMouse",(req,res)=> {
   })
 })
 
-router.post("/fuzzyNCBI",(req,res)=> {
-  var sql=$sql.property.fuzzyNCBI;
+router.post("/fuzzyVital",(req,res)=> {
+  var sql=$sql.property.fuzzyVital;
   connection.query(sql,(err,result)=>{
     if(err) {
-      console.log("select Name from `essential` where Organism is not null error:",err.msg)
+      console.log("select Name from `final` where role is vital error:",err.msg)
     }
     if(result){
       jsonWrite(res,result);
@@ -201,17 +263,31 @@ router.post("/fuzzyNCBI",(req,res)=> {
   })
 })
 
-router.post("/fuzzyNONCODE",(req,res)=> {
-  var sql=$sql.property.fuzzyNONCODE;
+router.post("/fuzzyTumor",(req,res)=> {
+  var sql=$sql.property.fuzzyTumor;
   connection.query(sql,(err,result)=>{
     if(err) {
-      console.log("select Name from `essential` error:",err.msg)
+      console.log("select Name from `final` where role is tumor error:",err.msg)
     }
     if(result){
       jsonWrite(res,result);
     }
   })
 })
+
+router.post("/fuzzyCancer",(req,res)=> {
+  var sql=$sql.property.fuzzyCancer;
+  connection.query(sql,(err,result)=>{
+    if(err) {
+      console.log("select Name from `final` where role is cancer error:",err.msg)
+    }
+    if(result){
+      jsonWrite(res,result);
+    }
+  })
+})
+
+
 
 
 
