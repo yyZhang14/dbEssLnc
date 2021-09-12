@@ -32,18 +32,39 @@
       <div class="download-content" style="height:40%">
         <p>
           <img src="../assets/img/downicon.png" class="icon" />
+          <a :href="'/data/essential.xlsx'" download="">
+            essential.xlsx
+          </a>
+          : This file contains all data.
+        </p>
+
+
+
+         <p>
+          <img src="../assets/img/downicon.png" class="icon" />
           <a :href="'/data/essential lncRNA.xlsx'" download="">
             essential lncRNA.xlsx
           </a>
           : This file contains all essential lncRNAs data.
         </p>
-         <p>
+
+        <p>
           <img src="../assets/img/downicon.png" class="icon" />
-          <a :href="'/data/ref.xlsx'" download="">
-            ref.xlsx
+          <a :href="'/data/tumor suppressor genes.xlsx'" download="">
+            tumor suppressor genes.xlsx
           </a>
-          : This file contains all references data.
+          : This file contains all tumor suppressor genes data.
         </p>
+
+        <p>
+          <img src="../assets/img/downicon.png" class="icon" />
+          <a :href="'/data/essential lncRNA in cancer cell.xlsx'" download="">
+            essential lncRNA in cancer cell.xlsx
+          </a>
+          : This file contains all essential lncRNA in cancer cell data.
+        </p>
+
+
       </div>
     </div>
     <div class="files">

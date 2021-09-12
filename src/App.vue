@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <router-view :key="$route.fullPath"></router-view>
+    <router-view :key="$route.fullPath" v-if="isRouterAlive"></router-view>
     <app-footer></app-footer>
     <!-- 滑动页面，可以有返回最顶端按钮 -->
     <!-- 返回顶部按钮 -->
@@ -32,6 +32,25 @@ export default {
   components: {
     appHeader: header,
     appFooter: footer
+  },
+  provide () {
+    return {
+      reload:this.reload
+    }
+  },
+  data () {
+    return {
+      isRouterAlive : true
+    }
+  },
+  methods: {
+    reload () {
+      this.isRouterAlive = false
+      this.$nextTick(function () {
+        this.isRouterAlive = true
+        
+      })
+    }
   }
 };
 </script>

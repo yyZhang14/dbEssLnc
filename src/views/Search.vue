@@ -136,6 +136,7 @@ import axios from "axios";
 // import { showLoading,hideLoading } from '../assets/js/loading.js'
 export default {
   emits: ['close'],
+  // inject:['reload'],
   data(){
     return {
       lncrnaTable:"",//推到前端的数据

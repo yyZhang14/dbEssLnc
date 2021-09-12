@@ -16,7 +16,7 @@
           :class="{ 'is-active': item.name == checkName }"
           :key="item.id"
         >    
-           <router-link :to="item.url"> 
+           <router-link :to="item.url" @click="renew()"> 
              {{item.name}}
            </router-link>  
         </li> 
@@ -32,6 +32,7 @@
 <script>
 export default {
   name: "Header",
+  inject:['reload'],
   data() {
     return {
       title: "dbEssLnc",
@@ -73,7 +74,7 @@ export default {
   methods: {
     setname(val) {
       this.checkName = val;
-      this.$router.go(0);
+      // this.$router.go(0);
     },
     // 响应式设计导航栏
     dropdownMenu() {
@@ -85,6 +86,9 @@ export default {
         x.className = "topnav";
         
       }
+    },
+    renew(){
+      this.reload()
     }
   },
   watch: {
