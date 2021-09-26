@@ -2,7 +2,7 @@
   <div>
     <el-row class="title" style="color: #606060;">
     <img style="margin-right: 20px; height: 55px; width: 55px;vertical-align: middle;" 
-         src="../assets/img/blast.png" />
+         src="../../public/assets/img/blast.png" />
       Blast
     </el-row>
     <div class="myForm" >
@@ -19,10 +19,14 @@
         <el-option v-for="item in options1" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
         <b>word size: </b>
-        <el-input 
+        <el-select v-model="word_size" clearable @change="word_change" style="margin: 0 20px 0 10px">
+        <el-option v-for="item in options2" :key="item.value" :label="item.label" :value="item.value"></el-option>
+        </el-select>
+
+        <!-- <el-input 
         v-model="word_size" 
         placeholder="integer in [4,11]" 
-        onkeyup="value=value.replace(/[^\d]/g,'')"></el-input>
+        onkeyup="value=value.replace(/[^\d]/g,'')"></el-input> -->
         <el-button 
         class="sou" 
         type="success" 
@@ -521,6 +525,17 @@ ATTGTATTTGTGGACTTGT`,
       textarea: '',
       show:false,
      word_size:'11',
+     options2:[
+       {value:'4',label:'4'},
+       {value:'5',label:'5'},
+       {value:'6',label:'6'},
+       {value:'7',label:'7'},
+       {value:'8',label:'8'},
+       {value:'9',label:'9'},
+       {value:'10',label:'10'},
+       {value:'11',label:'11'},
+       
+     ],
       // 设置eValue下拉框选项
       options1: [
           {
@@ -538,9 +553,9 @@ ATTGTATTTGTGGACTTGT`,
           },{
           value: '1e-7',
           label: '1e-7 '
-          },],
+          }],
       // 设置eValue默认值
-      eValue: '1e-4',
+      eValue: '1e-5',
       resData:[],
       tableData:[],
       urlNCBI:"https://www.ncbi.nlm.nih.gov/gene/"
@@ -555,6 +570,9 @@ ATTGTATTTGTGGACTTGT`,
     },
     evalue_change(val){
       this.eValue = val;
+    },
+    word_change(val){
+      this.word_size = val;
     },
     Search(eValue,word_size){
       ElLoading.service({
@@ -673,7 +691,7 @@ ATTGTATTTGTGGACTTGT`,
   margin-bottom: 0;
   width: 100%;
 }
-/deep/ .el-form-item__label {
+:deep(.el-form-item__label) {
   font-size: 15px;
   //color: #232324;
 }
@@ -707,66 +725,61 @@ ATTGTATTTGTGGACTTGT`,
   margin-bottom: 0;
 }
 
-.el-form-item /deep/ .el-form-item__label {
+.el-form-item :deep(.el-form-item__label)  {
   border-right: 1px solid #ebeef5;
 }
 
-// .el-form-item:nth-child(7) /deep/ .el-form-item__label {
-//   height: 80px;
-// }
-// .el-form-item:nth-child(7) /deep/ .el-form-item__content {
-//   margin-top: 15px;
-// }
+
 // /deep/ 相当于 >>>
-/deep/ .el-input__inner:hover {
+:deep(.el-input__inner:hover) {
   // background-color: rgb(115, 200, 200) !important;
   border-color: rgb(115, 200, 200) !important;
 }
 
-/deep/ .el-input .is-active .el-input__inner.el-input__inner:focus {
+:deep(.el-input .is-active .el-input__inner.el-input__inner:focus)  {
   border-color: rgb(115, 200, 200) !important;
 }
 
-/deep/ .el-radio__inner:hover {
+:deep( .el-radio__inner:hover) {
   background-color: rgb(115, 200, 200) !important;
   border-color: rgb(115, 200, 200) !important;
 }
 // 单选框的标签可以换行了
-/deep/ .all_label {
+:deep(.all_label)  {
   display: inline-grid;
   white-space: pre-line;
   word-wrap: break-word;
   overflow: hidden;
   line-height: 20px;
 }
-/deep/ .el-checkbox__input.is-checked + .el-checkbox__label {
+:deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
   color: rgb(115, 200, 200) !important;
 }
-/deep/ .el-checkbox__input.is-checked .el-checkbox__inner {
+:deep(.el-checkbox__input.is-checked .el-checkbox__inner)  {
   background-color: rgb(115, 200, 200) !important;
   border-color: rgb(115, 200, 200) !important;
 }
-/deep/ .el-checkbox__label {
+:deep(.el-checkbox__label){
   padding-left: 5px;
 }
-/deep/ .el-radio__input.is-checked + .el-radio__label {
+:deep(.el-radio__input.is-checked + .el-radio__label)  {
   color: rgb(115, 200, 200) !important;
 }
-/deep/ .el-radio__input.is-checked .el-radio__inner {
+:deep(.el-radio__input.is-checked .el-radio__inner){
   background-color: rgb(115, 200, 200) !important;
   border-color: rgb(115, 200, 200) !important;
 }
-/deep/ .el-radio__label {
+:deep(.el-radio__label) {
   padding-left: 5px;
   font-size: 15px;
   color: #232324;
 }
-/deep/ .el-textarea__inner {
+:deep(.el-textarea__inner){
   border-color: rgb(115, 200, 200) !important;
   font-size: 15px;
   color: #232324;
 }
-/deep/ .el-select .el-input__inner:focus {
+:deep(.el-select .el-input__inner:focus)  {
   border-color: rgb(115, 200, 200);
 }
 
@@ -782,15 +795,7 @@ ATTGTATTTGTGGACTTGT`,
   text-align: center;
   text-indent: 0;
 }
-// /deep/ .el-input {
-//   width: 60%;
-//   margin-left: 10px;
-//   font-size: 15px;
-// }
 
-// /deep/ .el-input .el-input__inner:focus {
-//   border-color: rgb(115, 200, 200);
-// }
 
 // 遮盖原始按钮，以改变原始按钮的样式
 .upload {

@@ -22,13 +22,13 @@ var sqlMap = {
 
       //reason is vital
       select_reason_vital:
-      "select * from `final` where Role ='essential lncRNA'",
+      "select * from `final` where Role ='general essential lncRNA'",
       //reason is tumor
       select_reason_tumor:
-      "select * from `final` where Role ='tumor suppressor genes'",
+      "select * from `final` where Role ='tumor suppressor gene'",
       //reason is cancer
       select_reason_cancer:
-      "select * from `final` where Role ='essential lncRNA in cancer cell'",
+      "select * from `final` where Role ='oncogene'",
 
 
       //fuzzy search 
@@ -37,22 +37,22 @@ var sqlMap = {
       searchMouse:
       'select * from `final` where Organism ="mouse" AND Name like "%"?"%"',
       searchVital:
-      'select * from `final` where Role="essential lncRNA" AND Name like "%"?"%"',
+      'select * from `final` where Role="general essential lncRNA" AND Name like "%"?"%"',
       searchTumor:
-      'select * from `final` where  Role="tumor suppressor genes" AND Name like "%"?"%"',
+      'select * from `final` where  Role="tumor suppressor gene" AND Name like "%"?"%"',
       searchCancer:
-      'select * from `final` where  Role="essential lncRNA in cancer cell" AND Name like "%"?"%"',
+      'select * from `final` where  Role="oncogene" AND Name like "%"?"%"',
       //用于模糊查询的输入建议
       fuzzyHuman:
       "select Name from `final` where Organism ='human' order by Name",
       fuzzyMouse:
       "select Name from `final` where Organism ='mouse' order by Name",
       fuzzyVital:
-      "select Name from `final` where Role='essential lncRNA' order by Name",
+      "select Name from `final` where Role='general essential lncRNA' order by Name",
       fuzzyTumor:
-      "select Name from `final` where Role='tumor suppressor genes' order by Name",
+      "select Name from `final` where Role='tumor suppressor gene' order by Name",
       fuzzyCancer:
-      "select Name from `final` where Role='essential lncRNA in cancer cell' order by Name",
+      "select Name from `final` where Role='oncogene' order by Name",
       //用于blast页面 通过sequence  查找对应的内容
       fuzzySeq:
       'select * from `final` where fasta  like "%"?"%"'

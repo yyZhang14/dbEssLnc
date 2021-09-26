@@ -2,7 +2,7 @@
   <div>
     <el-row class="title" style="color: #606060;">
       <img
-        src="../assets/img/home.png"
+        src="../../public/assets/img/home.png"
         style="height: 45px; vertical-align: middle; margin-right: 20px;"
       />
       Welcome to dbEssLnc
@@ -25,13 +25,17 @@
             ><b><i>Home</i></b></router-link
           >
           page mainly describes the organization of the dbEssLnc server.
+          The page also shows an example of Essential lncRNA,  
+          AF113014 over-expression significantly reduced HCC cells proliferation,  whereas AF113014 knockdown promoted cell proliferation.
         </p>
         <p>
           The
           <router-link to="/browse"
             ><b><i>Browse</i></b></router-link
           >
-          page categories all essential lncRNA. The users can browse all data on this page.
+          page categories all essential lncRNA.
+          There are three tables,namely general essential lncRNA,tumor suppressor gene and oncogene.
+           The users can browse all data on this page.
         </p>
         <p>
           The
@@ -56,7 +60,7 @@
           <router-link to="/download"
             ><b><i>Download</i></b></router-link
           >
-          page list all static links to the data packages in the dbEssLnc
+          page list all static links to the data packages and source code in the dbEssLnc
           database.
         </p>
         <p>
@@ -64,28 +68,37 @@
           <router-link to="/help"
             ><b><i>Help</i></b></router-link
           >
-          page provides step-by-step instructions on how to use the dbEssLnc
-          database.
+          page provides three parts: the Tutorial part gives detailed instruction on how to use the dbEssLnc database, 
+          the Statistics part shows the basic data analysis of the database according to organism and reason, 
+          the Contact part provides information on how to contact authors of the database.
         </p>
         <p>
-          Currently, <b>176</b> essential lncRNA are deposited in the
+          Currently, <b>191</b> essential lncRNAs are deposited in the
           dbEssLnc database,and new data are constently added by manual screening.
         </p>
         <p>
-          Last update on: Sep.3rd.2021.
+          Last update on: Sep.20th.2021.
         </p>
       </el-col>
 
       <el-col :span="10">
         <img
           alt="essential lncRNA"
-          src="../assets/img/reviewLncRNA.png"
-          style="max-width:100%; height:auto; margin: 10px;"
+          src="../../public/assets/img/AF.jpg"
+          style="width:auto;height:auto;max-width:100%;max-height:100%; margin: 10px;"
         />
         <div style="max-width: 100%;">
-          <span style="font-size: 12px; float:right;"
-            >Aliperti, V.; Skonieczna, J.; Cerase, A. Long Non-Coding RNA (lncRNA) Roles in Cell Biology, Neurodevelopment and Neurological Disorders. Non-Coding RNA 2021, 7, 36. https://doi.org/10.3390/ncrna7020036</span
-          >
+          <span style="font-size: 14px; float:right;">
+            <b>AF113014 inhibited proliferation of HCC cells in virto.</b>
+            <p>(A) Relative expressions of AF113014 in SMMC7721 and Huh-7 cells 
+              transfected with Ad-AF113014 or siAF113014. GAPDH was used as 
+              reference gene in real-time PCR. 
+              (B) Proliferations of SMMC7721 and Huh-7 cells transfected with 
+              Ad-AF113014 or siAF113014 were examined by MTS. 
+              (C) Proliferations of SMMC7721 and Huh-7 cells transfected with Ad-AF113014 
+              or siAF113014 were examined by colony formation assay.</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/28542387/"> (Tao Zeng et al.,2017)</a>
+          </span>
         </div>
       </el-col>
     </el-row>

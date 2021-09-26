@@ -3,7 +3,7 @@
         <div class="header">
           <el-row class="title" >
           <img
-            src="../assets/img/search.png"
+            src="../../public/assets/img/search.png"
               style="height: 45px; width: auto;  vertical-align: middle; margin-right: 20px;"
           />
           Search from Database
@@ -32,7 +32,7 @@
               <!-- <p>
                 The Organism in dbEssLnc contains 158 human and 18 mouse.
               </p> -->
-              <img src="../assets/img/sta.png" alt="" style="height: auto; width:100%;">
+              <img src="../../public/assets/img/sta.png" alt="" style="height: auto; width:100%;">
             </el-col>
             <el-col :span="12" class="explain">
               <p>
@@ -42,7 +42,7 @@
                 a fuzzy search can be performed by "%".More detailed fuzzy query rules are given in 'Search help' 
                 in the tutorial section of the 'Help' page.
               </p>
-              <img alt="search example" style="height:auto; width: 100%;" src="../assets/img/sea.png" />
+              <img alt="search example" style="height:auto; width: 100%;" src="../../public/assets/img/sea.png" />
             </el-col>
           </el-row>
               <!-- 展示表格  -->
@@ -133,7 +133,6 @@
 
 <script>
 import axios from "axios";
-// import { showLoading,hideLoading } from '../assets/js/loading.js'
 export default {
   emits: ['close'],
   // inject:['reload'],
@@ -154,9 +153,9 @@ export default {
         {
           label:"Query by Reason",
           options: [
-            {value:"option3",label:"essential lncRNA"},
-            {value:"option4",label:"tumor suppressor genes"},
-            {value:"option5",label:"essential lncRNA in cancer cell"}
+            {value:"option3",label:"general essential lncRNA"},
+            {value:"option4",label:"tumor suppressor gene"},
+            {value:"option5",label:"oncogene"}
           ]
         }
       ],
@@ -371,17 +370,22 @@ export default {
        //console.log(_this.propertyresults)
         
       } else if (searchOpt == "option3" ) {
-        //console.log("选择了3")
+       
         _this.propertyresults =  _this.fuzzyVital;
-        //console.log("3333")
+        //  console.log("选择了3")
+        // console.log(_this.propertyresults)
       } 
       else if (searchOpt == "option4") {
         _this.propertyresults =  _this.fuzzyTumor;
-        //console.log("4444")
+        // console.log("4444");
+        // console.log(_this.propertyresults)
+
       }
       else if (searchOpt == "option5") {
         _this.propertyresults =  _this.fuzzyCancer;
-       // console.log("5555")
+      //  console.log("5555");
+      //   console.log(_this.propertyresults);
+
       }
 
 

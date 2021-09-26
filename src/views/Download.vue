@@ -2,7 +2,7 @@
   <div>
     <el-row class="title" style="color: #606060;">
       <img
-        src="../assets/img/download.png"
+        src="../../public/assets/img/download.png"
         style="height: 45px; width: auto;  vertical-align: middle; margin-right: 20px;"
       />
       Download files
@@ -31,9 +31,9 @@
       <h3>Download Data</h3>
       <div class="download-content" style="height:40%">
         <p>
-          <img src="../assets/img/downicon.png" class="icon" />
-          <a :href="'/data/essential.xlsx'" download="">
-            essential.xlsx
+          <img src="../../public/assets/img/downicon.png" class="icon" />
+          <a :href="'/data/essential lncRNA.xlsx'" download="">
+            essential lncRNA.xlsx
           </a>
           : This file contains all data.
         </p>
@@ -41,27 +41,27 @@
 
 
          <p>
-          <img src="../assets/img/downicon.png" class="icon" />
-          <a :href="'/data/essential lncRNA.xlsx'" download="">
-            essential lncRNA.xlsx
+          <img src="../../public/assets/img/downicon.png" class="icon" />
+          <a :href="'/data/general essential lncRNA.xlsx'" download="">
+            general essential lncRNA.xlsx
           </a>
-          : This file contains all essential lncRNAs data.
+          : This file contains all general essential lncRNA data.
         </p>
 
         <p>
-          <img src="../assets/img/downicon.png" class="icon" />
-          <a :href="'/data/tumor suppressor genes.xlsx'" download="">
-            tumor suppressor genes.xlsx
+          <img src="../../public/assets/img/downicon.png" class="icon" />
+          <a :href="'/data/tumor suppressor gene.xlsx'" download="">
+            tumor suppressor gene.xlsx
           </a>
-          : This file contains all tumor suppressor genes data.
+          : This file contains all tumor suppressor gene data.
         </p>
 
         <p>
-          <img src="../assets/img/downicon.png" class="icon" />
-          <a :href="'/data/essential lncRNA in cancer cell.xlsx'" download="">
-            essential lncRNA in cancer cell.xlsx
+          <img src="../../public/assets/img/downicon.png" class="icon" />
+          <a :href="'/data/oncogene.xlsx'" download="">
+            oncogene.xlsx
           </a>
-          : This file contains all essential lncRNA in cancer cell data.
+          : This file contains all oncogene data.
         </p>
 
 
@@ -71,7 +71,7 @@
       <h3>dbEssLnc Scoure Codes</h3>
       <div class="download-content" style="height:40%">
         <div >
-          <img src="../assets/img/github.png" class="icon" />
+          <img src="../../public/assets/img/github.png" class="icon" />
           <a href=" https://github.com/yyZhang14/dbEssLnc" target="_blank">
            https://github.com/yyZhang14/dbEssLnc
           </a>

@@ -42,7 +42,7 @@ router.post("/final", (req, res) => {
       console.log("[SELECT FROM final table ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+      //console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -55,7 +55,7 @@ router.post("/vital", (req, res) => {
       console.log("[SELECT FROM vital table ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+      //console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -68,7 +68,7 @@ router.post("/tumor", (req, res) => {
       console.log("[SELECT FROM tumor table ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+      //console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -81,7 +81,7 @@ router.post("/cancer", (req, res) => {
       console.log("[SELECT FROM cancer table ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+      //console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -96,7 +96,7 @@ router.post("/selectHuman", (req, res) => {
       console.log("[SELECT FROM final table where organism is human ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+     // console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -109,7 +109,7 @@ router.post("/selectMouse", (req, res) => {
       console.log("[SELECT FROM final table where organism is mouse ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+      //console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -122,7 +122,7 @@ router.post("/select_reason_vital", (req, res) => {
       console.log("[SELECT FROM final table  where reason is vital ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+      //console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -135,7 +135,7 @@ router.post("/select_reason_tumor", (req, res) => {
       console.log("[SELECT FROM final table where reason is tumor ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+      //console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -148,7 +148,7 @@ router.post("/select_reason_cancer", (req, res) => {
       console.log("[SELECT FROM final table where reason is cancer ERROR]:", err.msg);
     }
     if (result) {
-      console.log(result)
+      //console.log(result)
       jsonWrite(res, result);
     }
   });
@@ -345,7 +345,7 @@ router.post("/blast",(req,res)=>{
         exec(cmd, function(error, stdout, stderr) {
           // 读取测试结果
           let data = fs.readFileSync(path_result, "utf8").split('\n'); 
-          console.log(data)
+          //console.log(data)
 
           // 发送给前端
             res.send({
@@ -374,7 +374,7 @@ router.post("/fuzzySeq",(req,res)=> {
   // console.log(req.body.user_sseqid)
   connection.query(sql,[req.body.user_sseqid],(err,result)=>{
     if(err) {
-      console.log("select * from `essential` where fasta  like "%"?"%":",err.msg)
+      console.log("select * from `final` where fasta  like "%"?"%":",err.msg)
     }
     if(result){
       jsonWrite(res,result);

@@ -5,7 +5,7 @@
         <li >
           <img
             alt="dbEssLnc"
-            src="../assets/img/title.png"
+            src="../../public/assets/img/title.png"
             style="height: 65px; width: auto; vertical-align: middle; margin-right: 30px;margin-left: 30px;"
           />
         </li>

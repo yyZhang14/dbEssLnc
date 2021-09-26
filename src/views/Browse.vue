@@ -3,7 +3,7 @@
     <el-row class="title" style="color: #606060;">
       <img
         style="margin-right: 20px; height: 55px; width: 55px; vertical-align: middle;"
-        src="../assets/img/browse.png"
+        src="../../public/assets/img/browse.png"
       />
       Browse all
     </el-row>
@@ -20,17 +20,17 @@
 
             <el-menu-item index="1-1" >
               <!-- <a href="#vital">essential lncRNA</a> -->
-              <a href="javascript:void(0)" @click="goAnchor('#vital')">essential lncRNA</a>
+              <a href="javascript:void(0)" @click="goAnchor('#vital')">general essential lncRNA</a>
             </el-menu-item>
 
             <el-menu-item index="1-2" >
               <!-- <a href="#tumor">tumor suppressor genes</a> -->
-              <a href="javascript:void(0)" @click="goAnchor('#tumor')">tumor suppressor genes</a>
+              <a href="javascript:void(0)" @click="goAnchor('#tumor')">tumor suppressor gene</a>
             </el-menu-item>
 
             <el-menu-item index="1-3">
               <!-- <a href="#cancer">essential lncRNA in cancer cell</a> -->
-              <a href="javascript:void(0)" @click="goAnchor('#cancer')">essential lncRNA in cancer cell</a>
+              <a href="javascript:void(0)" @click="goAnchor('#cancer')">oncogene</a>
             </el-menu-item>
 
           </el-submenu>
@@ -44,7 +44,7 @@
           <!-- show vital -->
           <div>
             <!-- <a name="vital"></a> -->
-            <h3 id="vital">essential lncRNA</h3>
+            <h3 id="vital">general essential lncRNA</h3>
             <el-table
             :data = "vital"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
@@ -111,7 +111,7 @@
         <!-- show tumor -->
           <div>
             <!-- <a name="tumor"></a> -->
-            <h3 id="tumor">tumor suppressor genes</h3>
+            <h3 id="tumor">tumor suppressor gene</h3>
             <el-table
             :data = "tumor"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
@@ -151,8 +151,8 @@
                   </a>
                 </template>
             </el-table-column>
-            <el-table-column type="expand" >
-              <template #default="props">label="Details" width="100"
+            <el-table-column type="expand" label="Details" width="100">
+              <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
 
                   <el-form-item label="Aliases/full_Name:">
@@ -173,7 +173,7 @@
         <!-- show cancer -->
           <div>
             <!-- <a name="cancer"></a> -->
-            <h3 id = "cancer">essential lncRNA in cancer cell</h3>
+            <h3 id = "cancer">oncogene</h3>
             <el-table
             :data = "cancer"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"

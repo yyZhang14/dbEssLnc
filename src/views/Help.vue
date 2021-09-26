@@ -2,7 +2,7 @@
   <div>
     <el-row class="title" style="color: #606060;">
       <img
-        src="../assets/img/help.png"
+        src="../../public/assets/img/help.png"
         style="height: 45px; width: auto;  vertical-align: middle; margin-right: 20px;"
       />
       Help
@@ -17,16 +17,11 @@
             of the diseases or tumors.Here,we developed a database named dbEssLnc 
             (<b><a href="https://esslnc.pufengdu.org">https://esslnc.pufengdu.org</a></b>),which manually 
             collects and collates essential lncRNAs information from existing databases and published 
-            literature. Currently, the dbEssLnc database contains <b>176</b> essential lncRNAs , 
+            literature. Currently, the dbEssLnc database contains <b>191</b> essential lncRNAs , 
             and the data will be continuously added and updated.
           </p>
         </el-collapse-item>
-        <!-- <el-collapse-item title="2. 'Home' page help" name="2">
-        <div>
-          home page 内容待修改
-        </div>
-        <img alt="home help" src="../assets/help/homehelp.png" />
-      </el-collapse-item> -->
+
         <el-collapse-item title="2. Browse help" name="2">
           <p>
             <strong>(1).</strong> Users can browse information of essential lncRNAs 
@@ -35,13 +30,13 @@
             load data when opening the page.The sidebar of the web page allows you to anchor
              three tables. There is a button on the right side of the table to expand the data in more detail.
           </p>
-          <img alt="browse help" src="../assets/img/help/bro1.png" />
+          <img alt="browse help" src="../../public/assets/img/help/bro1.png" />
 
           <p>
             <strong>(2).</strong> The NCBI_gene_Id and PubMed  in the table can directly go to the NCBI
              website to read gene and article information.
           </p>
-          <img alt="browse help" src="../assets/img/help/bro2.png" />
+          <img alt="browse help" src="../../public/assets/img/help/bro2.png" />
 
         </el-collapse-item>
         <el-collapse-item
@@ -54,50 +49,19 @@
             the search box matches the first few letters of the names of
             essential lncRNAs.
           </p>
-          <img alt="search help" src="../assets/img/help/sea1.png" />
+          <img alt="search help" src="../../public/assets/img/help/sea1.png" />
           <p>
             <strong>(2).</strong> Clich on the button to expand the folding panel to read more essential lncRNAs information.
           </p>
-          <img alt="search help" src="../assets/img/help/sea2.png" />
+          <img alt="search help" src="../../public/assets/img/help/sea2.png" />
           <p>
             <strong>(3).</strong>  The query box supports wildcard queries using '_' and '%'.
              Where '_' can match any single character, and '%' matches any number of characters.
           </p>
-          <img alt="search help" src="../assets/img/help/sea3.png" />
-          <img alt="search help" src="../assets/img/help/sea4.png" />
+          <img alt="search help" src="../../public/assets/img/help/sea3.png" />
+          <img alt="search help" src="../../public/assets/img/help/sea4.png" />
         </el-collapse-item>
-        <!-- <el-collapse-item title="4. Convert and Visualization" name="4">
-          <p>
-            In the 'Visualization' page, users can convert FASTA format
-            nucleotide sequences into numerical sequences according to selected
-            physicochemical properties, with basic <i>k</i>-mers of the
-            sequences as intermediate results.
-          </p>
-          <p>
-            <strong>(1).</strong> When users have selected the first three
-            parameters, the corresponding physicochemical properties will be
-            displayed for the users to choose. Due to the limited computational
-            resources, users should set the maximum number of selectable
-            physicochemical properties, which is 5 by default.
-          </p>
-          <img alt="convert help" src="../assets/img/help/sta.png" />
 
-          <p>
-            <strong>(2).</strong> After step (1), users can enter DNA or RNA
-            sequences in FASTA format or click on the 'Example' button to get an
-            example sequence. When the user clicked the 'Get value' button, the
-            <i>k</i>-mers and the numerical series will be displayed. Clicking
-            the ‘Visualize’ button will display multiple curves on a new page.
-          </p>
-          <img alt="convert help" src="../assets/img/help/sta.png" />
-          <p>
-            <strong>(3).</strong> The graphs are visualization results of (1)
-            (2), which can be shown as either multiple graphs of all sequences
-            or mean curves. Users can download the graphs locally.
-          </p>
-          <img alt="convert help" src="../assets/img/help/sta.png" />
-          <img alt="convert help" src="../assets/img/help/sta.png" />
-        </el-collapse-item> -->
         <el-collapse-item title="4. Blast help" name="4">
           <p>
             <strong>(1).</strong>
@@ -106,21 +70,36 @@
             alignment will  be display below.
              Enter lncRNA sequence or click 'Example' to use template lncRNA sequence.
           </p>
-          <img alt="batch convert help" src="../assets/img/help/bla1.png" />
+          <img alt="batch convert help" src="../../public/assets/img/help/bla1.png" />
           <p>
             <strong>(2).</strong>
             Set e-value and word size,then click 'Blast' button to doing sequence alignment, the result will be shown in following table.
           </p>
-          <img alt="bacth convert help" src="../assets/img/help/bla2.png" />
+          <img alt="bacth convert help" src="../../public/assets/img/help/bla2.png" />
         </el-collapse-item>
         <el-collapse-item title="5. Download help" name="5">
           <p>
             <strong>(1).</strong> Users can download all data and source code of dbEssLnc database.
           </p>
-          <img alt="download help" src="../assets/img/help/down.png" />
+          <img alt="download help" src="../../public/assets/img/help/down.png" />
         </el-collapse-item>
       </el-collapse>
     </div>
+    <div class="perspective">
+      <h3>Statistics</h3>
+      <div class="setborder">
+        <p>Currently,this dbEssLnc database include <b>191</b> essential lncRNAs.</p>
+        <p>Sorted by organsim, there are <b>173</b> essential lncRNAs belonging to human and <b>18</b> essential lncRNAs belonging to mouse.</p>
+        <p>Sorted by reason, there are <b>20</b> essential lncRNAs belonging to general essential lncRNA
+          , <b>72</b> essential lncRNAs belonging to tumor suppressor gene
+          and <b>99</b> essential lncRNAs belonging to oncogene.</p>
+        <div id ="first"></div>
+        <div id ="second"></div>
+
+      
+      </div>
+    </div>
+
     <div class="perspective">
       <h3>Contact</h3>
       <div class="setborder">
@@ -133,16 +112,81 @@
         </p>
       </div>
     </div>
+
+    
   </div>
 </template>
 
 <script>
+import echarts from "echarts"
 export default {
   data() {
     return {
-      
       activeName: ["1"]
     };
+  },
+  mounted () {
+    this.drawLine()
+  },
+  methods: {
+    drawLine (){
+      var chartDom1 = document.getElementById('first');
+      var myFirstChart = echarts.init(chartDom1);
+
+      var chartDom2 = document.getElementById('second');
+      var mySecondChart = echarts.init(chartDom2);
+
+      var option1 = {
+      title: {
+        text: 'Distribution by Organsim',
+        left: 'center'
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Human', 'Mouse']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      tooltip: {
+      trigger: 'item'
+    },
+      series: [
+        {
+          data: [173, 18],
+          type: 'bar'
+        }
+      ]
+    };
+    var option2 = {
+
+    title: {
+      text: 'Distribution by Role',
+      left: 'center'
+    },
+    xAxis: {
+      type: 'category',
+      data: ['general essential lncRNA', 'tumor suppressor gene', 'oncogene']
+    },
+    yAxis: {
+      type: 'value'
+    },
+    tooltip: {
+      trigger: 'item'
+    },
+    series: [
+      {
+        data: [22, 72, 99],
+        type: 'bar'
+      }
+    ]
+  };
+
+    myFirstChart.setOption(option1);
+    mySecondChart.setOption(option2);
+
+
+    }
   }
 };
 </script>
@@ -185,12 +229,12 @@ export default {
   height: auto;
 }
 
-/deep/ .el-collapse-item__header {
+:deep(.el-collapse-item__header) {
   font-size: 16px;
   padding-left: 20px;
 }
 
-/deep/ .el-collapse-item__content {
+:deep( .el-collapse-item__content ){
   border-top: 1px solid #b4ede7;
 }
 
@@ -218,4 +262,17 @@ h3 {
   color: #e6f0ef;
   border-radius: 10px;
 }
+#first{
+  width:800px;
+  height:500px;
+  display: inline-block;
+
+}
+#second {
+    width:800px;
+    height:500px;
+    display: inline-block;
+
+}
+
 </style>
