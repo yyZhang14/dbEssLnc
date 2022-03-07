@@ -88,10 +88,10 @@
     <div class="perspective">
       <h3>Statistics</h3>
       <div class="setborder">
-        <p>Currently,this dbEssLnc database include <b>191</b> essential lncRNAs.</p>
-        <p>Sorted by organsim, there are <b>173</b> essential lncRNAs belonging to human and <b>18</b> essential lncRNAs belonging to mouse.</p>
-        <p>Sorted by reason, there are <b>20</b> essential lncRNAs belonging to general essential lncRNA
-          , <b>72</b> essential lncRNAs belonging to tumor suppressor gene
+        <p>Currently,this dbEssLnc database include <b>200</b> essential lncRNAs.</p>
+        <p>Sorted by organsim, there are <b>173</b> essential lncRNAs belonging to human and <b>27</b> essential lncRNAs belonging to mouse.</p>
+        <p>Sorted by reason, there are <b>32</b> essential lncRNAs belonging to general essential lncRNA
+          , <b>69</b> essential lncRNAs belonging to tumor suppressor gene
           and <b>99</b> essential lncRNAs belonging to oncogene.</p>
         <div id ="first"></div>
         <div id ="second"></div>
@@ -135,6 +135,7 @@ export default {
 
       var chartDom2 = document.getElementById('second');
       var mySecondChart = echarts.init(chartDom2);
+      var colors=['#D3E397','#d9d9f3','#96ceb4','#ffad60','#d9534f'];
 
       var option1 = {
       title: {
@@ -150,11 +151,24 @@ export default {
       },
       tooltip: {
       trigger: 'item'
-    },
+      },
       series: [
         {
-          data: [173, 18],
-          type: 'bar'
+        data: [{value:173,name:'Human'},{value:27,name:'Mouse'}],
+        type: 'bar',
+        itemStyle:{
+          normal:{
+            color:function (params) {
+              return colors[params.dataIndex];
+            },
+              label:{
+                show:true,
+                position:'top',
+                color:'black'
+              }
+          }
+        },
+        barWidth:'40%'
         }
       ]
     };
@@ -176,8 +190,21 @@ export default {
     },
     series: [
       {
-        data: [22, 72, 99],
-        type: 'bar'
+        data: [32,69, 99],
+        type: 'bar',
+        itemStyle:{
+          normal:{
+              color:function (params) {
+              return colors[params.dataIndex+2];
+            },
+            label:{
+                show:true,
+                position:'top',
+                color:'black'
+              }
+          }        
+        },
+        barWidth:'50%'
       }
     ]
   };

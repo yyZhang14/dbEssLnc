@@ -34,7 +34,7 @@
             ><b><i>Browse</i></b></router-link
           >
           page categories all essential lncRNA.
-          There are three tables,namely general essential lncRNA,tumor suppressor gene and oncogene.
+          There are three tables,namely "general essential lncRNA","tumor suppressor gene" and "oncogene".
            The users can browse all data on this page.
         </p>
         <p>
@@ -73,11 +73,11 @@
           the Contact part provides information on how to contact authors of the database.
         </p>
         <p>
-          Currently, <b>191</b> essential lncRNAs are deposited in the
+          Currently, <b>200</b> essential lncRNAs are deposited in the
           dbEssLnc database,and new data are constently added by manual screening.
         </p>
         <p>
-          Last update on: Sep.20th.2021.
+          Last update on: Nov.17th.2021.
         </p>
       </el-col>
 

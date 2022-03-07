@@ -32,9 +32,9 @@
       <div class="download-content" style="height:40%">
         <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
-          <a :href="'/data/essential lncRNA.xlsx'" download="">
+          <!-- <a :href="'/data/essential lncRNA.xlsx'" download=""> -->
             essential lncRNA.xlsx
-          </a>
+          <!-- </a> -->
           : This file contains all data.
         </p>
 
@@ -42,25 +42,25 @@
 
          <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
-          <a :href="'/data/general essential lncRNA.xlsx'" download="">
+          <!-- <a :href="'/data/general essential lncRNA.xlsx'" download=""> -->
             general essential lncRNA.xlsx
-          </a>
+          <!-- </a> -->
           : This file contains all general essential lncRNA data.
         </p>
 
         <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
-          <a :href="'/data/tumor suppressor gene.xlsx'" download="">
+          <!-- <a :href="'/data/tumor suppressor gene.xlsx'" download=""> -->
             tumor suppressor gene.xlsx
-          </a>
+          <!-- </a> -->
           : This file contains all tumor suppressor gene data.
         </p>
 
         <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
-          <a :href="'/data/oncogene.xlsx'" download="">
+          <!-- <a :href="'/data/oncogene.xlsx'" download=""> -->
             oncogene.xlsx
-          </a>
+          <!-- </a> -->
           : This file contains all oncogene data.
         </p>
 

@@ -98,7 +98,7 @@
                   <el-form-item label="Gene Ontology Annotations:">
                     <span>{{ props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Sequence:" >
+                  <el-form-item label="Gene Sequence:" >
                     <span>{{ props.row.fasta }}</span>
                   </el-form-item>
                 </el-form>
@@ -161,7 +161,7 @@
                   <el-form-item label="Gene Ontology Annotations:">
                     <span>{{ props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Sequence:" >
+                  <el-form-item label="Gene Sequence:" >
                     <span>{{ props.row.fasta }}</span>
                   </el-form-item>
                 </el-form>
@@ -224,7 +224,7 @@
                   <el-form-item label="Gene Ontology Annotations:">
                     <span>{{ props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Sequence:" >
+                  <el-form-item label="Gene Sequence:" >
                     <span>{{ props.row.fasta }}</span>
                   </el-form-item>
                 </el-form>
