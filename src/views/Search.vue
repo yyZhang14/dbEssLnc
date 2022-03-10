@@ -36,11 +36,11 @@
             </el-col>
             <el-col :span="12" class="explain">
               <p>
-                You can obtain the desired information by selecting the search type and searching for 
-                the corresponding name. If you want to know which are the essential lncRNAs in a certain 
-                type, you can directly select the type and click search.If you forget how to spell it, 
-                a fuzzy search can be performed by "%".More detailed fuzzy query rules are given in 'Search help' 
-                in the tutorial section of the 'Help' page.
+                You can obtain the desired information by selecting the search type and searching for
+                the corresponding name.If you want to know which are the essential lncRNAs in a certain
+                type,you can directly select the type and click search.If you forget how to spell it,
+                a fuzzy search can be performed by "%".More detailed fuzzy query rules are given in 'Search help'
+                in the tutorial section of the 'Help' page.
               </p>
               <img alt="search example" style="height:auto; width: 100%;" src="../../public/assets/img/sea.png" />
             </el-col>

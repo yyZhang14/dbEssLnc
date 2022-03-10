@@ -163,7 +163,7 @@ ul.topnav li a {
   height: 30px;
   line-height: 30px;
   text-align: center;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 
 ul.topnav li a:hover {

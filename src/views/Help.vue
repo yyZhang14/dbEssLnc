@@ -139,7 +139,7 @@ export default {
 
       var option1 = {
       title: {
-        text: 'Distribution by Organsim',
+        text: 'Group by Organism',
         left: 'center'
       },
       xAxis: {
@@ -175,7 +175,7 @@ export default {
     var option2 = {
 
     title: {
-      text: 'Distribution by Role',
+      text: 'Group by Reason',
       left: 'center'
     },
     xAxis: {
