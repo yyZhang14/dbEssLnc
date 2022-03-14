@@ -13,20 +13,17 @@
       placeholder="Enter the query lncRNA sequence(FASTA)" 
       v-model="textarea" 
       clearable></el-input>
-      <div class="middle" style="margin-top: 20px">
-        <b>e-value: </b>
+      <div  style="margin-top: 20px">
+        <b class="sou" >e-value: </b>
         <el-select v-model="eValue" clearable @change="evalue_change" style="margin: 0 20px 0 10px">
         <el-option v-for="item in options1" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
-        <b>word size: </b>
+        <b class="sou" >word size: </b>
         <el-select v-model="word_size" clearable @change="word_change" style="margin: 0 20px 0 10px">
         <el-option v-for="item in options2" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
 
-        <!-- <el-input 
-        v-model="word_size" 
-        placeholder="integer in [4,11]" 
-        onkeyup="value=value.replace(/[^\d]/g,'')"></el-input> -->
+
         <el-button 
         class="sou" 
         type="success" 
@@ -52,31 +49,61 @@
                   <span>{{ props.row.Name }}</span>
                 </el-form-item>
                 <el-form-item label="NONCODEId:">
-                  <span>{{ props.row.NONCODEId }}</span>
+                  <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId }}</span>
                 </el-form-item>
 
-                <el-form-item label="NCBI_gene_Id:">
-                  <span>{{props.row.NCBI_gene_Id}}</span>
+                <el-form-item label="NCBI gene Id:">
+                  <span @click="toUrl_NCBI(props.row.NCBI_gene_Id)" class="hand">{{props.row.NCBI_gene_Id}}</span>
 
                 </el-form-item>
-                <el-form-item label="Aliases_fullName:">
-                  <span>{{ props.row.Aliases_fullName }}</span>
+                <el-form-item label="Aliases or Full name:">
+                  <span>{{ props.row.Aliases_fullName}}</span>
                 </el-form-item>
                 <el-form-item label="Reason:">
-                  <span>{{ props.row.Reason }}</span>
+                  <span>{{ props.row.Reason }}</span> 
                 </el-form-item>
                 <el-form-item label="Organism:" >
                   <span>{{ props.row.Organism }}</span>
                 </el-form-item>
-                <el-form-item label="Gene_Ontology_Annotations:" >
-                  <span>{{ props.row.Gene_Ontology_Annotations }}</span>
+                <el-form-item label="Gene Ontology Annotations:">
+                  <span style="width:80%">{{ props.row.Gene_Ontology_Annotations }}</span>
                 </el-form-item>
                 <el-form-item label="Sequence:" >
-                  <span>{{ props.row.Sequence }}</span>
+
+                  <span class="newlist" >{{props.row.Sequence}}
+                    <!-- <img
+                      src="../../public/assets/img/open.png"
+                      v-if="isShow"
+                      class="open_style"
+                      @click="kzClick(props.$index)"
+                    />
+                    <img
+                      src="../../public/assets/img/close.png"
+                      v-else
+                      class="open_style"
+                      @click="kzClick(props.$index)"
+                    /> -->
+                  </span>
                 </el-form-item>
+
+
+
+                
               </el-form>
             </template>
           </el-table-column>
+
+          <el-table-column
+            label="Name"
+            prop="Name"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            label="Organism"
+            prop="Organism"
+            width="100">
+          </el-table-column>
+
           <el-table-column
             label="Subject seq id"
             prop="sseqid"
@@ -526,7 +553,6 @@ ATTGTATTTGTGGACTTGT`,
       show:false,
      word_size:'11',
      options2:[
-       {value:'4',label:'4'},
        {value:'5',label:'5'},
        {value:'6',label:'6'},
        {value:'7',label:'7'},
@@ -555,10 +581,13 @@ ATTGTATTTGTGGACTTGT`,
           label: '1e-7 '
           }],
       // 设置eValue默认值
-      eValue: '1e-5',
+      eValue: '1e-7',
       resData:[],
       tableData:[],
-      urlNCBI:"https://www.ncbi.nlm.nih.gov/gene/"
+      urlNCBI:"https://www.ncbi.nlm.nih.gov/gene/",
+      isShow:true,
+      ShowSeq:"",
+      tableLoading:false
       
       
     }
@@ -588,10 +617,11 @@ ATTGTATTTGTGGACTTGT`,
           user_wordSize: word_size,
           user_eValue: eValue
       }).then(respond =>{
-        //console.log(respond.data.message.data.length)
+        console.log(respond.data.message.data.length)
         if(respond.data.message.data.length == 1){
           window.alert("Blast Query is Empty!")
         }
+        // this.tableLoading=true;
         for(let i = 0;i<respond.data.message.data.length;i++){
           let resData = respond.data.message.data[i];
           if(resData != ""){
@@ -605,10 +635,12 @@ ATTGTATTTGTGGACTTGT`,
 
             axios.post("api/property/fuzzySeq",{user_sseqid:sseqid}).then(function( respond ){  
               // console.log(respond.data);
+              // this.ShowSeq=respond.data[0]["fasta"];
+              // _this.tableLoading=false;
               let Name = respond.data[0]["Name"];
               let NONCODEId = respond.data[0]["NONCODEId"];
               let NCBI_gene_Id = respond.data[0]["NCBI_gene_Id"];
-              let Aliases_fullName = respond.data[0]["Aliases/full_Name"];
+              let Aliases_fullName = respond.data[0]["Aliases"];
               let Reason = respond.data[0]["Reason"];
               let Organism = respond.data[0]["Organism"];
               let Gene_Ontology_Annotations = respond.data[0]["Gene_Ontology_Annotations"];
@@ -628,6 +660,10 @@ ATTGTATTTGTGGACTTGT`,
                 "Organism":Organism,
                 "Gene_Ontology_Annotations":Gene_Ontology_Annotations,
                 "Sequence":Sequence
+                // "Sequence":Sequence.substr(0,100),
+                // "SequenceJq":Sequence.substr(0,100),
+                // "Sequenceqb":Sequence,
+                
               };           
               // console.log(result)
               _this.tableData.push(result)
@@ -636,18 +672,34 @@ ATTGTATTTGTGGACTTGT`,
           }
         }
         
-    let loadingInstance = ElLoading.service({});
-        this.$nextTick(() => {
-       // 以服务的方式调用的 Loading 需要异步关闭
-        loadingInstance.close();
-    });
+        let loadingInstance = ElLoading.service({});
+          this.$nextTick(() => {
+        // 以服务的方式调用的 Loading 需要异步关闭
+          loadingInstance.close();
+        });
       }).catch(err=>{
         console.log(err)
       })
 
     
           
+    },
+    toUrl_NONCODE(data){
+      window.location.href = "http://www.noncode.org/show_rna.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
+    },
+    toUrl_NCBI(data){
+      window.location.href = "https://www.ncbi.nlm.nih.gov/gene/"+data
+
     }
+    // kzClick(i) {
+    //   if(this.isShow){
+    //     this.tableData[i].Sequence = this.tableData[i].Sequenceqb;
+    //   }
+    //   else{
+    //     this.tableData[i].Sequence = this.tableData[i].SequenceJq;
+    //   }
+    //   this.isShow=!this.isShow;
+    // }
 
   }
 
@@ -870,11 +922,46 @@ ATTGTATTTGTGGACTTGT`,
 }
 span {
   display:inline-block;
-  width:100%; 
   // 在span标签中，可设置输出的内容截断 
   word-wrap:break-word; 
   word-break: break-all; 
   white-space:normal ; 
-  font-family:monospace;
+  width:100%;
+  font-size:15px;
+  font-family:"Avenir", Helvetica, Arial, sans-serif;
 } 
+
+.hand:hover{
+  color:#1ee3cf;
+  cursor:pointer
+}
+.newlist {
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+  min-height: 30px;
+  line-height: 20px;
+  /* border: 1px solid ; */
+  word-break: break-all;
+  hyphens: auto;
+  text-align: left;
+  padding: 5px 10px;
+  background:#f2f4f6;
+  font-family:monospace;
+}
+.open_style{
+  height:18px;
+  width:18px;
+}
+.sou{
+  font-weight:700;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-size:15px;
+
+}
+/deep/ .el-button span {
+  font-weight:700;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-size:15px;
+}
 </style>

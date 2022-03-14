@@ -12,9 +12,15 @@ var fs = require("fs");
 
 //blast的一些路径
 const BLASTDB = ""
+//服务器的路径
+// const tempPath_query = "/home/yyzhang/dbesslnc/blast/temp/"
+// const tempPath_result= "/home/yyzhang/dbesslnc/blast/temp/" 
+// const db_path = "/home/yyzhang/dbesslnc/blast/lncrna/lncrna.fasta"
+//本地的路径
 const tempPath_query = "/Users/zyy/Desktop/code/ES-test/blast/temp/"
 const tempPath_result= "/Users/zyy/Desktop/code/ES-test/blast/temp/" 
 const db_path = "/Users/zyy/Desktop/code/ES-test/blast/lncrna/lncrna.fasta"
+
 const {MYSQL_CONFIG} = require('../db.js');
 // var blast = require("../blast.js")
 //创建连接
@@ -86,6 +92,8 @@ router.post("/cancer", (req, res) => {
     }
   });
 });
+
+
 
 //search page
 //organism is human
@@ -223,9 +231,6 @@ router.post("/searchCancer",(req,res)=> {
 })
 
 
-
-
-
 //模糊查询推荐输入
 router.post("/fuzzyHuman",(req,res)=> {
   var sql=$sql.property.fuzzyHuman;
@@ -288,9 +293,6 @@ router.post("/fuzzyCancer",(req,res)=> {
 })
 
 
-
-
-
 router.post("/blast",(req,res)=>{
 
   if(
@@ -335,12 +337,12 @@ router.post("/blast",(req,res)=>{
         fs.writeFileSync(path_result,"");   
         // 调用命令行测试
 
-        var cmd = BLASTDB+' blastn -query '+path_query+
-                  ' -out '+path_result+
-                  ' -db '+db_path+
-                  ' -outfmt "6 qseqid sseqid pident length evalue bitscore "'+
-                  ' -evalue '+user_eValue+
-                  ' -word_size '+user_wordSize;
+        var cmd = BLASTDB+' blastn -query '+path_query+
+                  ' -out '+path_result+
+                  ' -db '+db_path+
+                  ' -outfmt "6 qseqid sseqid pident length evalue bitscore "'+
+                  ' -evalue '+user_eValue+
+                  ' -word_size '+user_wordSize;
         // console.log(cmd)
         exec(cmd, function(error, stdout, stderr) {
           // 读取测试结果
@@ -381,5 +383,21 @@ router.post("/fuzzySeq",(req,res)=> {
     }
   })
 })
+
+router.post("/profiles",(req,res)=> {
+
+  var id=req.body.id;
+  // console.log("profile req",id);
+  var sql=$sql.property.profile;
+  connection.query(sql,[id],(err,result)=>{
+    if(err) {
+      console.log("select * from `expression` where ID = ?",err.msg)
+    }
+    if(result){
+      jsonWrite(res,result);
+    }
+  })
+})
+
 
 module.exports = router;

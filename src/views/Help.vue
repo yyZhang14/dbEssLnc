@@ -39,10 +39,28 @@
           <img alt="browse help" src="../../public/assets/img/help/bro2.png" />
 
         </el-collapse-item>
-        <el-collapse-item
-          title="3. Descriptions about 'Search' page and Fuzzy search"
-          name="3"
-        >
+
+        <el-collapse-item title="3. Visual help" name="5">
+          <p>
+            <strong>(1).</strong> Users click lncRNA gene name, page will jump to this 'visual' page. The 'visual'
+            page show detail information of lncRNA gene, such as name, NONCODE id, NCBI gene id ,the reason to be 
+            essential,organsim, gene ontology annotations and gene sequence.
+          </p>
+          <img alt="download help" src="../../public/assets/img/help/visual1.png" />
+          <p>
+            <strong>(2).</strong>This part show the expression profile data of lncRNA. The mouse expression
+            profile data included six tissues.
+          </p>
+          <img alt="download help" src="../../public/assets/img/help/visual2.png" />
+          <p>
+            <strong>(3).</strong>This part show the expression profile data of lncRNA. The human expression 
+            profile data included 24 tissues.
+          </p>
+          <img alt="download help" src="../../public/assets/img/help/visual3.png" />
+        </el-collapse-item>
+
+        <el-collapse-item title="4. Descriptions about 'Search' page and Fuzzy search"
+          name="3">
           <p>
             <strong>(1).</strong> The picture below is an introduction to the
             'Search' page. A dropdown menu will be displayed if the content of
@@ -55,14 +73,14 @@
           </p>
           <img alt="search help" src="../../public/assets/img/help/sea2.png" />
           <p>
-            <strong>(3).</strong>  The query box supports wildcard queries using '_' and '%'.
+            <strong>(3).</strong>The query box supports wildcard queries using '_' and '%'.
              Where '_' can match any single character, and '%' matches any number of characters.
           </p>
           <img alt="search help" src="../../public/assets/img/help/sea3.png" />
           <img alt="search help" src="../../public/assets/img/help/sea4.png" />
         </el-collapse-item>
-
-        <el-collapse-item title="4. Blast help" name="4">
+        
+        <el-collapse-item title="5. Blast help" name="4">
           <p>
             <strong>(1).</strong>
             In the 'Blast' page, the user can enter the lncRNA sequence in FASTA format for  
@@ -77,7 +95,7 @@
           </p>
           <img alt="bacth convert help" src="../../public/assets/img/help/bla2.png" />
         </el-collapse-item>
-        <el-collapse-item title="5. Download help" name="5">
+        <el-collapse-item title="6. Download help" name="5">
           <p>
             <strong>(1).</strong> Users can download all data and source code of dbEssLnc database.
           </p>
@@ -90,13 +108,12 @@
       <div class="setborder">
         <p>Currently,this dbEssLnc database include <b>200</b> essential lncRNAs.</p>
         <p>Sorted by organsim, there are <b>173</b> essential lncRNAs belonging to human and <b>27</b> essential lncRNAs belonging to mouse.</p>
-        <p>Sorted by reason, there are <b>32</b> essential lncRNAs belonging to general essential lncRNA
+        <p>Sorted by reason, there are <b>32</b> essential lncRNAs belonging to general
           , <b>69</b> essential lncRNAs belonging to tumor suppressor gene
           and <b>99</b> essential lncRNAs belonging to oncogene.</p>
         <div id ="first"></div>
         <div id ="second"></div>
 
-      
       </div>
     </div>
 
@@ -180,7 +197,7 @@ export default {
     },
     xAxis: {
       type: 'category',
-      data: ['general essential lncRNA', 'tumor suppressor gene', 'oncogene']
+      data: ['general', 'tumor suppressor gene', 'oncogene']
     },
     yAxis: {
       type: 'value'

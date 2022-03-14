@@ -8,6 +8,7 @@ import Search from '../views/Search.vue'
 import Blast from '../views/Blast.vue'
 import Download from '../views/Download.vue'
 import Help from '../views/Help.vue'
+import Visual from '../views/Visual.vue'
 //1.通过Vue.use（插件），安装插件
 // Vue.use(VueRouter)
 
@@ -49,6 +50,11 @@ const routes = [
         path:"/help",
         component: Help,
         name:'Help'
+    },
+    {
+        path:"/visual",
+        component: Visual,
+        name:'Visual'  
     }
 
 ]

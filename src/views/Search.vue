@@ -27,23 +27,24 @@
         </div>
         <div class="content">
           <!-- 未进行查询 没有数据显示 -->
-          <el-row v-if="id==0" type="flex" justify="space-between" style="padding: 5px;" class="content">
-            <el-col :span="12"  class="explain">
-              <!-- <p>
-                The Organism in dbEssLnc contains 158 human and 18 mouse.
-              </p> -->
-              <img src="../../public/assets/img/sta.png" alt="" style="height: auto; width:100%;">
-            </el-col>
-            <el-col :span="12" class="explain">
-              <p>
+          <el-row v-if="id==0" style="padding: 5px;" class="content">
+            <div class="wrapper">
+              <el-col :span="12"  class="explain">
+                <img src="../../public/assets/img/sta.png" alt="" style="height: auto; width:100%;">
+              </el-col>
+              <el-col :span="12" class="explain">
+                <p>
                 You can obtain the desired information by selecting the search type and searching for
                 the corresponding name.If you want to know which are the essential lncRNAs in a certain
                 type,you can directly select the type and click search.If you forget how to spell it,
                 a fuzzy search can be performed by "%".More detailed fuzzy query rules are given in 'Search help'
                 in the tutorial section of the 'Help' page.
-              </p>
-              <img alt="search example" style="height:auto; width: 100%;" src="../../public/assets/img/sea.png" />
-            </el-col>
+                </p>
+                <img alt="search example" style="height:auto; width: 100%;" src="../../public/assets/img/sea.png" />
+              </el-col>
+            </div>
+
+
           </el-row>
               <!-- 展示表格  -->
           <div class="tabletitle" v-if="id==1">
@@ -111,7 +112,7 @@
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
                   <el-form-item label="NONCODEId:">
-                    <span>{{ props.row.NONCODEId }}</span>
+                    <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId }}</span>
                   </el-form-item>
                   <el-form-item label="Aliases/full Name:">
                     <span>{{ props.row.Aliases }}</span>
@@ -119,8 +120,8 @@
                   <el-form-item label="Gene Ontology Annotations:">
                     <span>{{ props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Gene Sequence:" >
-                    <span>{{ props.row.fasta }}</span>
+                  <el-form-item label="Gene Sequence:" class="gene">
+                    <span id="span_style">{{ props.row.fasta }}</span>
                   </el-form-item>
               </el-form>
             </template>
@@ -153,9 +154,9 @@ export default {
         {
           label:"Query by Reason",
           options: [
-            {value:"option3",label:"general essential lncRNA"},
-            {value:"option4",label:"tumor suppressor gene"},
-            {value:"option5",label:"oncogene"}
+            {value:"option3",label:"General"},
+            {value:"option4",label:"Humor suppressor gene"},
+            {value:"option5",label:"Oncogene"}
           ]
         }
       ],
@@ -307,6 +308,9 @@ export default {
 
 
 
+    },
+    toUrl_NONCODE(data){
+      window.location.href = "http://www.noncode.org/show_rna.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
     }
     
   },
@@ -440,6 +444,8 @@ export default {
 
 .el-select-group__title {
   text-align: left;
+  font-size:16px;
+  font-family:monospace;
 }
 
 .el-select-dropdown__item {
@@ -473,7 +479,7 @@ export default {
   font-weight: bold;
 }
 .explain {
-  border: solid 1px #99cccc;
+  /* border: solid 1px #99cccc; */
   padding: 10px;
   width: 70%;
 }
@@ -501,6 +507,9 @@ export default {
   margin-bottom: 0;
   width: 100%;
 }
+.gene{
+  font-family:monospace;
+}
 span {
   display:inline-block;
   width:100%; 
@@ -512,4 +521,14 @@ span {
 .el-input__prefix, .el-input__suffix{
   text-align: right;
 }
+#span_style{
+  background:#f2f4f6;
+}
+.wrapper{
+  display:flex;
+  align-item:center;
+  padding-left:10px;
+}
+
+
 </style>

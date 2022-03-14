@@ -20,18 +20,35 @@
 
             <el-menu-item index="1-1" >
               <!-- <a href="#vital">essential lncRNA</a> -->
-              <a href="javascript:void(0)" @click="goAnchor('#vital')">general essential lncRNA</a>
+              <a href="javascript:void(0)" @click="goAnchor('#vital')">General</a>
             </el-menu-item>
 
             <el-menu-item index="1-2" >
               <!-- <a href="#tumor">tumor suppressor genes</a> -->
-              <a href="javascript:void(0)" @click="goAnchor('#tumor')">tumor suppressor gene</a>
+              <a href="javascript:void(0)" @click="goAnchor('#tumor')">Tumor suppressor gene</a>
             </el-menu-item>
 
             <el-menu-item index="1-3">
               <!-- <a href="#cancer">essential lncRNA in cancer cell</a> -->
-              <a href="javascript:void(0)" @click="goAnchor('#cancer')">oncogene</a>
+              <a href="javascript:void(0)" @click="goAnchor('#cancer')">Oncogene</a>
             </el-menu-item>
+
+          </el-submenu>
+         <el-submenu index="2">
+            <template v-slot:title>
+              <i class="el-icon-s-grid"></i><b>Organism</b>
+            </template>
+
+            <el-menu-item index="2-1" >
+              <!-- <a href="#vital">essential lncRNA</a> -->
+              <a href="javascript:void(0)" @click="goAnchor('#ren')">Human</a>
+            </el-menu-item>
+
+            <el-menu-item index="2-2" >
+              <!-- <a href="#tumor">tumor suppressor genes</a> -->
+              <a href="javascript:void(0)" @click="goAnchor('#xiaoshu')">Mouse</a>
+            </el-menu-item>
+
 
           </el-submenu>
 
@@ -40,11 +57,11 @@
       </el-aside>
       <!-- 显示表格 -->
       <el-container >
-        <el-main class="browseBody">
-          <!-- show vital -->
+        <el-main>
+        <!-- show vital -->
           <div>
             <!-- <a name="vital"></a> -->
-            <h3 id="vital">general essential lncRNA</h3>
+            <h3 id="vital">General</h3>
             <el-table
             :data = "vital"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
@@ -54,12 +71,13 @@
             style="width: 100%"
             strip highlight-current-row
             >
-            <el-table-column
-              label="Name"
-              prop="Name"
-              width="150">
+            <el-table-column label="Name" prop="Name" width="150">
+              <template #default="scope">
+                <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
+              </template>
             </el-table-column>
-            <el-table-column prop="NCBI_gene_Id" label="NCBI_gene_Id" width="150">
+
+            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
               <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
@@ -90,19 +108,20 @@
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
                   <el-form-item label="NONCODEId:">
-                    <span>{{ props.row.NONCODEId}}</span>
+                    <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
                   </el-form-item>
-                  <el-form-item label="Aliases/full_Name:">
+                  <el-form-item label="Aliases or full Name:">
                     <span>{{ props.row.Aliases}}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
-                    <span>{{ props.row.Gene_Ontology_Annotations }}</span>
+                    <span id="span_style">{{props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Gene Sequence:" >
-                    <span>{{ props.row.fasta }}</span>
-                  </el-form-item>
+                  <!-- <el-form-item label="Gene Sequence:" >
+                    <span id="span_style">{{props.row.fasta }}</span>
+                  </el-form-item> -->
+
                 </el-form>
-            </template>
+              </template>
             </el-table-column>
 
 
@@ -111,7 +130,7 @@
         <!-- show tumor -->
           <div>
             <!-- <a name="tumor"></a> -->
-            <h3 id="tumor">tumor suppressor gene</h3>
+            <h3 id="tumor">Tumor suppressor gene</h3>
             <el-table
             :data = "tumor"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
@@ -121,12 +140,12 @@
             style="width: 100%"
             strip highlight-current-row
             >
-            <el-table-column
-              label="Name"
-              prop="Name"
-              width="150">
+            <el-table-column label="Name" prop="Name" width="150">
+              <template #default="scope">
+                <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
+              </template>
             </el-table-column>
-            <el-table-column prop="NCBI_gene_Id" label="NCBI_gene_Id" width="150">
+            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
               <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
@@ -155,15 +174,19 @@
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
 
-                  <el-form-item label="Aliases/full_Name:">
+                  <el-form-item label="NONCODEId:">
+                    <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
+                  </el-form-item>
+
+                  <el-form-item label="Aliases or full Name:">
                     <span>{{ props.row.Aliases}}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
-                    <span>{{ props.row.Gene_Ontology_Annotations }}</span>
+                    <span id="span_style">{{ props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Gene Sequence:" >
-                    <span>{{ props.row.fasta }}</span>
-                  </el-form-item>
+                  <!-- <el-form-item label="Gene Sequence:" >
+                    <span id="span_style">{{ props.row.fasta }}</span>
+                  </el-form-item> -->
                 </el-form>
             </template>
             </el-table-column>
@@ -173,7 +196,7 @@
         <!-- show cancer -->
           <div>
             <!-- <a name="cancer"></a> -->
-            <h3 id = "cancer">oncogene</h3>
+            <h3 id = "cancer">Oncogene</h3>
             <el-table
             :data = "cancer"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
@@ -187,8 +210,11 @@
               label="Name"
               prop="Name"
               width="150">
+              <template #default="scope">
+                <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
+              </template>
             </el-table-column>
-            <el-table-column prop="NCBI_gene_Id" label="NCBI_gene_Id" width="150">
+            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
               <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
@@ -217,16 +243,152 @@
             <el-table-column type="expand" label="Details" width="100">
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
-
-                  <el-form-item label="Aliases/full_Name:">
+                  <el-form-item label="NONCODEId:">
+                    <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
+                  </el-form-item>
+                  <el-form-item label="Aliases or full Name:">
                     <span>{{ props.row.Aliases }}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
-                    <span>{{ props.row.Gene_Ontology_Annotations }}</span>
+                    <span id="span_style">{{ props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Gene Sequence:" >
-                    <span>{{ props.row.fasta }}</span>
+                  <!-- <el-form-item label="Gene Sequence:" >
+                    <span id="span_style">{{ props.row.fasta }}</span>
+                  </el-form-item> -->
+                </el-form>
+            </template>
+            </el-table-column>
+
+            </el-table>    
+          </div>
+          <!-- human -->
+ <div>
+         
+            <h3 id = "ren">Human</h3>
+            <el-table
+            :data = "ren"
+            :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
+            height="400"
+            border
+            stripe
+            style="width: 100%"
+            strip highlight-current-row
+            >
+            <el-table-column
+              label="Name"
+              prop="Name"
+              width="150">
+              <template #default="scope">
+                <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
+              </template>
+            </el-table-column>
+            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
+              <template #default="scope">
+              <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
+                {{scope.row.NCBI_gene_Id}}
+              </a>
+              </template>
+            </el-table-column>
+
+            <el-table-column
+              label="Role"
+              prop="Role"
+              width="140">
+            </el-table-column>
+            <el-table-column
+              label="Reason"
+              prop="Reason">
+            </el-table-column>
+
+            <el-table-column prop="PubMedID" label="PubMedID" width="100">
+                <template #default="scope">
+                  <a :href="url+scope.row.PMID" target="_black">
+                    {{scope.row.PMID}}
+                  </a>
+                </template>
+            </el-table-column>
+
+            <el-table-column type="expand" label="Details" width="100">
+              <template #default="props">
+                <el-form label-position="left" inline class="demo-table-expand" >
+                  <el-form-item label="NONCODEId:">
+                    <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
                   </el-form-item>
+                  <el-form-item label="Aliases or full Name:">
+                    <span>{{ props.row.Aliases }}</span>
+                  </el-form-item>
+                  <el-form-item label="Gene Ontology Annotations:">
+                    <span id="span_style">{{ props.row.Gene_Ontology_Annotations }}</span>
+                  </el-form-item>
+                  <!-- <el-form-item label="Gene Sequence:" >
+                    <span id="span_style">{{ props.row.fasta }}</span>
+                  </el-form-item> -->
+                </el-form>
+            </template>
+            </el-table-column>
+
+            </el-table>    
+          </div>
+          <!-- mouse -->
+ <div>
+           
+            <h3 id = "xiaoshu">Mouse</h3>
+            <el-table
+            :data = "xiaoshu"
+            :header-cell-style ="{background:'#eef1f6',color:'#606266'}"
+            height="400"
+            border
+            stripe
+            style="width: 100%"
+            strip highlight-current-row
+            >
+            <el-table-column
+              label="Name"
+              prop="Name"
+              width="150">
+              <template #default="scope">
+                <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
+              </template>
+            </el-table-column>
+            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
+              <template #default="scope">
+              <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
+                {{scope.row.NCBI_gene_Id}}
+              </a>
+              </template>
+            </el-table-column>
+
+            <el-table-column
+              label="Role"
+              prop="Role"
+              width="140">
+            </el-table-column>
+            <el-table-column
+              label="Reason"
+              prop="Reason">
+            </el-table-column>
+
+            <el-table-column prop="PubMedID" label="PubMedID" width="100">
+                <template #default="scope">
+                  <a :href="url+scope.row.PMID" target="_black">
+                    {{scope.row.PMID}}
+                  </a>
+                </template>
+            </el-table-column>
+
+            <el-table-column type="expand" label="Details" width="100">
+              <template #default="props">
+                <el-form label-position="left" inline class="demo-table-expand" >
+                  <el-form-item label="NONCODEId:">
+                    <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
+                  </el-form-item>
+                  <el-form-item label="Aliases or full Name:">
+                    <span>{{ props.row.Aliases }}</span>
+                  </el-form-item>
+                  <el-form-item label="Gene Ontology Annotations:">
+                    <span id="span_style">{{ props.row.Gene_Ontology_Annotations }}</span>
+                  </el-form-item>
+            
                 </el-form>
             </template>
             </el-table-column>
@@ -248,10 +410,13 @@ export default{
     return {
       url:"https://www.ncbi.nlm.nih.gov/pubmed/?term=",
       urlNCBI:"https://www.ncbi.nlm.nih.gov/gene/",
+     
       vital:[],
       tumor:[],
       cancer:[],
-      count:3,
+      ren:[],
+      xiaoshu:[],
+      count:5,
       // vitalShow:1
       // fullscreenLoading: false
     }
@@ -267,10 +432,9 @@ export default{
 //show vital table data 
       axios.post("api/property/vital").then(respond =>{
       _this.vital = respond.data;
+      //console.log(_this.vital);
       _this.count-- ;
       _this.LoadingClose();
-      //console.log("vital!")
-
       });
 //show tumor table data
       axios.post("api/property/tumor").then(respond =>{
@@ -287,7 +451,25 @@ export default{
       _this.LoadingClose();
       //console.log("cancer")
 
+      });
+      axios.post("api/property/selectHuman").then(respond =>{
+      _this.ren = respond.data;
+      // console.log(_this.ren);
+      _this.count-- ;
+      _this.LoadingClose();
+      //console.log("cancer")
+
+      });
+      axios.post("api/property/selectMouse").then(respond =>{
+        
+      _this.xiaoshu = respond.data;
+      // console.log(_this.xiaoshu);
+      _this.count-- ;
+      _this.LoadingClose();
+      //console.log("cancer")
+
       })
+
 
   },
   methods: {
@@ -304,7 +486,19 @@ export default{
       document.querySelector(selector).scrollIntoView({
         behavior:"smooth"
       })
-    } 
+    },
+
+    toUrl(data){
+      sessionStorage.setItem('data', JSON.stringify(data));
+      this.$router.push({
+        name:'Visual',
+        params:data
+      })
+    },
+
+    toUrl_NONCODE(data){
+      window.location.href = "http://www.noncode.org/show_rna.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
+    }
   }
 }
 </script>
@@ -367,7 +561,9 @@ a:hover {
 }
 .demo-table-expand label {
   width: auto;
-  color: #99a9bf;
+  /* color: #99a9bf; */
+  font-size:16px;
+  font-weight:bold;
 }
 .demo-table-expand {
   margin-right: 0;
@@ -382,19 +578,27 @@ a:hover {
  width:100%;
  
 }
-/* .body{
-  font-family:monospace;
-} */
+
 
 span {
   
   display:inline-block;
   width:100%;
-  /* word-wrap:break-word; */
   word-break: break-all;
   white-space:normal ;
-  font-family:monospace;
+  font-family:"Avenir", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  /* font-weight:bold; */
 
+}
+#span_style{
+  background:#f2f4f6;
   
+}
+.hand:hover{
+  color:#1ee3cf;
+  cursor:pointer;
+  font-size:15px;
+  font-family:"Avenir", Helvetica, Arial, sans-serif;
 }
 </style>

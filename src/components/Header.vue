@@ -67,6 +67,11 @@ export default {
           url: "/help",
           name: "Help"
         }
+        // {
+        //   id: 7,
+        //   url: "/visual",
+        //   name:"Visual"
+        // }
       ],
       checkName: this.$route.name
     };

@@ -23,7 +23,7 @@
           <a :href="'/data/general essential lncRNA.xlsx'" download="">
             general essential lncRNA.xlsx
           </a>
-          : This file contains all general essential lncRNA data.
+          : This file contains all general data.
         </p>
 
         <p>

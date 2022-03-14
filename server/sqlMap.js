@@ -12,6 +12,9 @@ var sqlMap = {
       //show essential lncRNA in cancer cell
       selectCancer:"select * from `cancer`",
 
+  
+  
+
       //search page
       //organism is human
       selectHuman:
@@ -55,8 +58,10 @@ var sqlMap = {
       "select Name from `final` where Role='oncogene' order by Name",
       //用于blast页面 通过sequence  查找对应的内容
       fuzzySeq:
-      'select * from `final` where fasta  like "%"?"%"'
-
+      'select * from `final` where fasta  like "%"?"%"',
+      //用于 visual 页面 ，通过ID 查询对应的内容，做可视化
+      profile:
+      'select * from `expression` where ID = ?'
     
       
     }
