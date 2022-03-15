@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <router-view v-if="isReload"/> -->
     <app-header></app-header>
     <router-view :key="$route.fullPath" v-if="isRouterAlive"></router-view>
     <app-footer></app-footer>
@@ -46,12 +47,30 @@ export default {
   methods: {
     reload () {
       this.isRouterAlive = false
+      // this.isReload = false
       this.$nextTick(function () {
         this.isRouterAlive = true
+        // this.isReload = true
         
       })
     }
   }
+  // watch:{
+  //   $route(to,from){
+  //     if(to.path === '/visual'){
+  //       console.log("visual进去")
+  //       // setTimeout(() => {
+  //       //   window.location.reload(true);
+  //       // }, 5000);
+        
+  //     }
+
+
+      
+  //     console.log(from.path, 'fromApp');
+  //     console.log(to.path, 'toApp');
+  //   }
+  // }
 };
 </script>
 

@@ -41,25 +41,16 @@
                 <span>{{ dataList.Gene_Ontology_Annotations }}</span>
               </el-form-item>
               <el-form-item label="Sequence:" >
-                  <span> 
-                    <!-- <span>expend and close</span> -->
-                    <img
-                      src="../../public/assets/img/open.png"
-                      v-if="isShow"
-                      class="open_style"
-                      @click="kzClick"
-                    />
-                    <img
-                      src="../../public/assets/img/close.png"
-                      v-else
-                      class="open_style"
-                      @click="kzClick"
-                    /></span>
-                  <span class="newlist" v-html="showData">
-
-
+                
+                  <span>
+                      <button v-if="isShow" @click="kzClick" >Expend gene sequence</button>
+                      <button v-else @click="kzClick">Reduce gene sequence</button>
                   </span>
+                  <span class="newlist" v-html="showData">
+                  </span>
+
               </el-form-item>
+
             </el-form>
           </div>
 
@@ -150,7 +141,10 @@ export default{
 
       let sessionData = JSON.parse(sessionStorage.getItem("data"));
       
-      // console.log(sessionData);
+        if(location.href.indexOf('#reloaded')==-1){
+        location.href=location.href+"#reloaded";
+         location.reload();
+       }
 
       this.dataList=sessionData;
       this.showData=this.dataList.fasta.slice(0,1000);
@@ -303,18 +297,7 @@ export default{
  
       
     }
-    // watch:{
-    //   data(){
-    //     this._showLoading();
-    //     this.$nextTick(()=>{
-    //       if(this.data){
-    //         this._chart();
-    //       }
-    //       this._hideLoading();
-    //     })
-
-    //   }
-    // }
+ 
 }
 </script>
 
@@ -424,5 +407,14 @@ span {
 }
 .el-form-item{
   font-size:16px;
+}
+button{
+  font-size:15px;
+  font-family:"Avenir", Helvetica, Arial, sans-serif;
+  margin-left: 10px; 
+  padding-left: 10px;
+  background-color: #5bd1d7;
+  border:none;
+  border-radius: 10px;
 }
 </style>

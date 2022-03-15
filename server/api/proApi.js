@@ -13,13 +13,13 @@ var fs = require("fs");
 //blast的一些路径
 const BLASTDB = ""
 //服务器的路径
-// const tempPath_query = "/home/yyzhang/dbesslnc/blast/temp/"
-// const tempPath_result= "/home/yyzhang/dbesslnc/blast/temp/" 
-// const db_path = "/home/yyzhang/dbesslnc/blast/lncrna/lncrna.fasta"
+const tempPath_query = "/home/yyzhang/dbesslnc/blast/temp/"
+const tempPath_result= "/home/yyzhang/dbesslnc/blast/temp/" 
+const db_path = "/home/yyzhang/dbesslnc/blast/lncrna/lncrna.fasta"
 //本地的路径
-const tempPath_query = "/Users/zyy/Desktop/code/ES-test/blast/temp/"
-const tempPath_result= "/Users/zyy/Desktop/code/ES-test/blast/temp/" 
-const db_path = "/Users/zyy/Desktop/code/ES-test/blast/lncrna/lncrna.fasta"
+// const tempPath_query = "/Users/zyy/Desktop/code/ES-test/blast/temp/"
+// const tempPath_result= "/Users/zyy/Desktop/code/ES-test/blast/temp/" 
+// const db_path = "/Users/zyy/Desktop/code/ES-test/blast/lncrna/lncrna.fasta"
 
 const {MYSQL_CONFIG} = require('../db.js');
 // var blast = require("../blast.js")
@@ -337,7 +337,7 @@ router.post("/blast",(req,res)=>{
         fs.writeFileSync(path_result,"");   
         // 调用命令行测试
 
-        var cmd = BLASTDB+' blastn -query '+path_query+
+        var cmd = BLASTDB+'blastn -query '+path_query+
                   ' -out '+path_result+
                   ' -db '+db_path+
                   ' -outfmt "6 qseqid sseqid pident length evalue bitscore "'+
@@ -390,12 +390,16 @@ router.post("/profiles",(req,res)=> {
   // console.log("profile req",id);
   var sql=$sql.property.profile;
   connection.query(sql,[id],(err,result)=>{
+    // console.log("zhixingle!");
     if(err) {
       console.log("select * from `expression` where ID = ?",err.msg)
     }
     if(result){
+      // console.log(result);
       jsonWrite(res,result);
+      
     }
+    
   })
 })
 

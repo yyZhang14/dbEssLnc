@@ -114,14 +114,18 @@
                   <el-form-item label="NONCODEId:">
                     <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId }}</span>
                   </el-form-item>
-                  <el-form-item label="Aliases/full Name:">
+                  <el-form-item label="Aliases or Full name:">
                     <span>{{ props.row.Aliases }}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
                     <span>{{ props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Gene Sequence:" class="gene">
-                    <span id="span_style">{{ props.row.fasta }}</span>
+                  <el-form-item label="Gene Sequence:" >
+                    <!-- <span>
+                        <button v-if="isShow" @click="kzClick" >Expend gene sequence</button>
+                        <button v-else @click="kzClick">Reduce gene sequence</button>
+                    </span> -->
+                    <span class="span_style"  v-html="props.row.fasta"></span>
                   </el-form-item>
               </el-form>
             </template>
@@ -139,6 +143,7 @@ export default {
   // inject:['reload'],
   data(){
     return {
+      isShow:true,
       lncrnaTable:"",//推到前端的数据
       inputContent:"",//输入的数据
       searchOpt:"option2",// 选择框中的数据
@@ -183,6 +188,15 @@ export default {
   methods: {
     // 表格显示具有斑马线
     // eslint-disable-next-line no-unused-vars
+    kzClick(){
+        if(this.isShow){
+          this.showData=this.dataList.fasta;
+        }
+        else{
+          this.showData=this.dataList.fasta.slice(0,1000);
+        }
+        this.isShow=!this.isShow;
+    },
     tabRowClassName({ row, rowIndex }) {
       var index = rowIndex + 1;
       if (index % 2 == 0) {
@@ -507,9 +521,7 @@ export default {
   margin-bottom: 0;
   width: 100%;
 }
-.gene{
-  font-family:monospace;
-}
+
 span {
   display:inline-block;
   width:100%; 
@@ -521,8 +533,10 @@ span {
 .el-input__prefix, .el-input__suffix{
   text-align: right;
 }
-#span_style{
+.span_style{
   background:#f2f4f6;
+  width:70%;
+  font-family:monospace;
 }
 .wrapper{
   display:flex;

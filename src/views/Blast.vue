@@ -70,19 +70,7 @@
                 </el-form-item>
                 <el-form-item label="Sequence:" >
 
-                  <span class="newlist" >{{props.row.Sequence}}
-                    <!-- <img
-                      src="../../public/assets/img/open.png"
-                      v-if="isShow"
-                      class="open_style"
-                      @click="kzClick(props.$index)"
-                    />
-                    <img
-                      src="../../public/assets/img/close.png"
-                      v-else
-                      class="open_style"
-                      @click="kzClick(props.$index)"
-                    /> -->
+                  <span class="newlist" v-html="props.row.Sequence">
                   </span>
                 </el-form-item>
 
@@ -587,7 +575,8 @@ ATTGTATTTGTGGACTTGT`,
       urlNCBI:"https://www.ncbi.nlm.nih.gov/gene/",
       isShow:true,
       ShowSeq:"",
-      tableLoading:false
+      tableLoading:false,
+      length:10,
       
       
     }
@@ -609,6 +598,8 @@ ATTGTATTTGTGGACTTGT`,
         text:"Loading...",
         background:"rgba(0,0,0,0.7)"
       });
+
+
       
       var _this = this
       _this.show = true;
@@ -617,7 +608,13 @@ ATTGTATTTGTGGACTTGT`,
           user_wordSize: word_size,
           user_eValue: eValue
       }).then(respond =>{
+        ElLoading.service({
+          fullscreen:true,
+          text:"Loading...",
+          background:"rgba(0,0,0,0.7)"
+        });
         console.log(respond.data.message.data.length)
+        _this.length=respond.data.message.data.length
         if(respond.data.message.data.length == 1){
           window.alert("Blast Query is Empty!")
         }
@@ -634,9 +631,9 @@ ATTGTATTTGTGGACTTGT`,
             // console.log(qseqid,sseqid,pident,length,evalue,bitscore)
 
             axios.post("api/property/fuzzySeq",{user_sseqid:sseqid}).then(function( respond ){  
-              // console.log(respond.data);
-              // this.ShowSeq=respond.data[0]["fasta"];
-              // _this.tableLoading=false;
+
+              _this.length--;
+              _this.LoadingClose();
               let Name = respond.data[0]["Name"];
               let NONCODEId = respond.data[0]["NONCODEId"];
               let NCBI_gene_Id = respond.data[0]["NCBI_gene_Id"];
@@ -667,22 +664,32 @@ ATTGTATTTGTGGACTTGT`,
               };           
               // console.log(result)
               _this.tableData.push(result)
-              // console.log(_this.tableData)
+              
             })
           }
         }
         
-        let loadingInstance = ElLoading.service({});
-          this.$nextTick(() => {
-        // 以服务的方式调用的 Loading 需要异步关闭
-          loadingInstance.close();
-        });
+        // let loadingInstance = ElLoading.service({});
+        //   this.$nextTick(() => {
+        // // 以服务的方式调用的 Loading 需要异步关闭
+        //   loadingInstance.close();
+        // });
       }).catch(err=>{
         console.log(err)
       })
 
     
           
+    },
+
+    LoadingClose (){
+      if(this.length=== 1){
+        let loadingInstance = ElLoading.service({});
+        this.$nextTick(() => {
+       // 以服务的方式调用的 Loading 需要异步关闭
+          loadingInstance.close();
+        });
+      }
     },
     toUrl_NONCODE(data){
       window.location.href = "http://www.noncode.org/show_rna.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
@@ -938,7 +945,7 @@ span {
 .newlist {
   position: relative;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   min-height: 30px;
   line-height: 20px;
   /* border: 1px solid ; */
