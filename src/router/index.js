@@ -9,6 +9,7 @@ import Blast from '../views/Blast.vue'
 import Download from '../views/Download.vue'
 import Help from '../views/Help.vue'
 import Visual from '../views/Visual.vue'
+import Gene from '../views/Gene.vue'
 //1.通过Vue.use（插件），安装插件
 // Vue.use(VueRouter)
 
@@ -55,6 +56,11 @@ const routes = [
         path:"/visual",
         component: Visual,
         name:'Visual'  
+    },
+    {
+        path:"/gene",
+        component: Gene,
+        name:'Gene'  
     }
 
 ]

@@ -13,31 +13,31 @@
       <div class="download-content" style="height:40%">
         <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
-          <a :href="'/data/essential lncRNA.xlsx'" download="">
-            essential lncRNA.xlsx
+          <a :href="'/data/essential lncRNA.json'" download="">
+            essential lncRNA.json
           </a>
           : This file contains all data.
         </p>
          <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
-          <a :href="'/data/general essential lncRNA.xlsx'" download="">
-            general essential lncRNA.xlsx
+          <a :href="'/data/general.json'" download="">
+            general.json
           </a>
           : This file contains all general data.
         </p>
 
         <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
-          <a :href="'/data/tumor suppressor gene.xlsx'" download="">
-            tumor suppressor gene.xlsx
+          <a :href="'/data/tumor suppressor gene.json'" download="">
+            tumor suppressor gene.json
           </a>
           : This file contains all tumor suppressor gene data.
         </p>
 
         <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
-          <a :href="'/data/oncogene.xlsx'" download="">
-            oncogene.xlsx
+          <a :href="'/data/oncogene.json'" download="">
+            oncogene.json
           </a>
           : This file contains all oncogene data.
         </p>

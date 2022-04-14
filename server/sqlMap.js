@@ -18,50 +18,53 @@ var sqlMap = {
       //search page
       //organism is human
       selectHuman:
-      "select * from `final` where Organism ='human'",
+      "select * from `final` where Organism ='Human'",
        //organism is mouse
       selectMouse:
-      "select * from `final` where Organism ='mouse'",
+      "select * from `final` where Organism ='Mouse'",
 
       //reason is vital
       select_reason_vital:
-      "select * from `final` where Role ='general essential lncRNA'",
+      "select * from `final` where Role ='General'",
       //reason is tumor
       select_reason_tumor:
-      "select * from `final` where Role ='tumor suppressor gene'",
+      "select * from `final` where Role ='Tumor suppressor gene'",
       //reason is cancer
       select_reason_cancer:
-      "select * from `final` where Role ='oncogene'",
+      "select * from `final` where Role ='Oncogene'",
 
 
-      //fuzzy search 
+      //fuzzy search 模糊查询
       searchHuman:
-      'select * from `final` where Organism ="human" AND Name like "%"?"%"',
+      'select * from `final` where Organism ="Human" AND concat(Name,Aliases,NONCODEId,Reason) like "%"?"%"',
       searchMouse:
-      'select * from `final` where Organism ="mouse" AND Name like "%"?"%"',
+      'select * from `final` where Organism ="Mouse" AND concat(Name,Aliases,NONCODEId,Reason) like "%"?"%"',
       searchVital:
-      'select * from `final` where Role="general essential lncRNA" AND Name like "%"?"%"',
+      'select * from `vital` where  concat(Name,Aliases,NONCODEId,Reason) like "%"?"%"',
       searchTumor:
-      'select * from `final` where  Role="tumor suppressor gene" AND Name like "%"?"%"',
+      'select * from `tumor` where  concat(Name,Aliases,NONCODEId,Reason) like "%"?"%"',
       searchCancer:
-      'select * from `final` where  Role="oncogene" AND Name like "%"?"%"',
+      'select * from `cancer` where concat(Name,Aliases,NONCODEId,Reason) like "%"?"%"',
       //用于模糊查询的输入建议
       fuzzyHuman:
-      "select Name from `final` where Organism ='human' order by Name",
+      "select Name from `final` where Organism ='Human' order by Name",
       fuzzyMouse:
-      "select Name from `final` where Organism ='mouse' order by Name",
+      "select Name from `final` where Organism ='Mouse' order by Name",
       fuzzyVital:
-      "select Name from `final` where Role='general essential lncRNA' order by Name",
+      "select Name from `vital`  order by Name",
       fuzzyTumor:
-      "select Name from `final` where Role='tumor suppressor gene' order by Name",
+      "select Name from `tumor`  order by Name",
       fuzzyCancer:
-      "select Name from `final` where Role='oncogene' order by Name",
-      //用于blast页面 通过sequence  查找对应的内容
-      fuzzySeq:
-      'select * from `final` where fasta  like "%"?"%"',
+      "select Name from `cancer` order by Name",
+      //用于blast页面 通过 转录本id 查找对应的内容
+      // fuzzySeq:
+      // 'select * from `trans` where NONCODE_TRANSCRIPT_ID in (?)',
+      // "select * from `trans` where NONCODE_TRANSCRIPT_ID in ("?")"
       //用于 visual 页面 ，通过ID 查询对应的内容，做可视化
       profile:
-      'select * from `expression` where ID = ?'
+      'select * from `expression` where RNAID = ?',
+      transcript:
+      'select * from `trans` where NONCODE_Gene_ID = ?'
     
       
     }

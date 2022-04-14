@@ -17,7 +17,7 @@
             of the diseases or tumors.Here,we developed a database named dbEssLnc 
             (<b><a href="https://esslnc.pufengdu.org">https://esslnc.pufengdu.org</a></b>),which manually 
             collects and collates essential lncRNAs information from existing databases and published 
-            literature. Currently, the dbEssLnc database contains <b>191</b> essential lncRNAs , 
+            literature. Currently, the dbEssLnc database contains <b>200</b> essential lncRNAs , 
             and the data will be continuously added and updated.
           </p>
         </el-collapse-item>
@@ -39,28 +39,42 @@
           <img alt="browse help" src="../../public/assets/img/help/bro2.png" />
 
         </el-collapse-item>
+        <el-collapse-item title="3. Gene help" name="3">
+          <p>
+            <strong>(1).</strong> Users can click lncRNA gene name in "Browse" or "Search" page, then page will jump to this "Gene" page. The "Gene"
+            page show detail information of gene, such as name, NONCODE gene id, NCBI gene id ,aliase,the reason to be essential,organism 
+            and gene ontology annotations. Users click "NONCODE Gene ID" can link to NONCODE database, click "NCBI Gene ID" can link to NCBI website.
+          </p>
+          <img alt="gene help" src="../../public/assets/img/help/gene1.png" />
 
-        <el-collapse-item title="3. Visual help" name="5">
+          <p>
+            <strong>(2).</strong> Gene page also show  all transcript id of this gene in NONCODE database.Users click "NONCODE transcript id" can link to
+            "Visual" page.
+          </p>
+          <img alt="gene help" src="../../public/assets/img/help/gene2.png" />
+
+        </el-collapse-item>
+
+        <el-collapse-item title="4. Visual help" name="4">
           <p>
             <strong>(1).</strong> Users click lncRNA gene name, page will jump to this 'visual' page. The 'visual'
             page show detail information of lncRNA gene, such as name, NONCODE id, NCBI gene id ,the reason to be 
             essential,organsim, gene ontology annotations and gene sequence.
           </p>
-          <img alt="download help" src="../../public/assets/img/help/visual1.png" />
+          <img alt="visual help" src="../../public/assets/img/help/visual1.png" />
           <p>
             <strong>(2).</strong>This part show the expression profile data of lncRNA. The mouse expression
             profile data included six tissues.
           </p>
-          <img alt="download help" src="../../public/assets/img/help/visual2.png" />
+          <img alt="visual help" src="../../public/assets/img/help/visual2.png" />
           <p>
             <strong>(3).</strong>This part show the expression profile data of lncRNA. The human expression 
             profile data included 24 tissues.
           </p>
-          <img alt="download help" src="../../public/assets/img/help/visual3.png" />
+          <img alt="visual help" src="../../public/assets/img/help/visual3.png" />
         </el-collapse-item>
 
-        <el-collapse-item title="4. Descriptions about 'Search' page and Fuzzy search"
-          name="3">
+        <el-collapse-item title="5. Descriptions about 'Search' page and Fuzzy search" name="5">
           <p>
             <strong>(1).</strong> The picture below is an introduction to the
             'Search' page. A dropdown menu will be displayed if the content of
@@ -78,9 +92,13 @@
           </p>
           <img alt="search help" src="../../public/assets/img/help/sea3.png" />
           <img alt="search help" src="../../public/assets/img/help/sea4.png" />
+          <p>
+            <strong>(4).</strong> Users click gene name ,page will link to "Gene" page.
+          </p>
+           <img alt="search help" src="../../public/assets/img/help/sea5.png" />
         </el-collapse-item>
         
-        <el-collapse-item title="5. Blast help" name="4">
+        <el-collapse-item title="6. Blast help" name="6">
           <p>
             <strong>(1).</strong>
             In the 'Blast' page, the user can enter the lncRNA sequence in FASTA format for  
@@ -94,8 +112,13 @@
             Set e-value and word size,then click 'Blast' button to doing sequence alignment, the result will be shown in following table.
           </p>
           <img alt="bacth convert help" src="../../public/assets/img/help/bla2.png" />
+          <p>
+            <strong>(3).</strong>
+            For example, Users input the sequence of Meg3 in mouse,will see homologous gene MEG3 in human.
+          </p>
+          <img alt="bacth convert help" src="../../public/assets/img/help/bla3.png" />
         </el-collapse-item>
-        <el-collapse-item title="6. Download help" name="5">
+        <el-collapse-item title="7. Download help" name="7">
           <p>
             <strong>(1).</strong> Users can download all data and source code of dbEssLnc database.
           </p>
@@ -109,8 +132,8 @@
         <p>Currently,this dbEssLnc database include <b>200</b> essential lncRNAs.</p>
         <p>Sorted by organsim, there are <b>173</b> essential lncRNAs belonging to human and <b>27</b> essential lncRNAs belonging to mouse.</p>
         <p>Sorted by reason, there are <b>32</b> essential lncRNAs belonging to general
-          , <b>69</b> essential lncRNAs belonging to tumor suppressor gene
-          and <b>99</b> essential lncRNAs belonging to oncogene.</p>
+          , <b>70</b> essential lncRNAs belonging to tumor suppressor gene
+          and <b>98</b> essential lncRNAs belonging to oncogene.</p>
         <div id ="first"></div>
         <div id ="second"></div>
 
@@ -207,7 +230,7 @@ export default {
     },
     series: [
       {
-        data: [32,69, 99],
+        data: [32,70,98],
         type: 'bar',
         itemStyle:{
           normal:{

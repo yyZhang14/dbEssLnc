@@ -9,19 +9,20 @@
           Search from Database
           </el-row>
           <!-- vue 3弃用了native  这么写不对@keyup.enter.native="Search" -->
-          <el-autocomplete placeholder="search name" v-model="inputContent" clearable @keyup.enter="Search" class="input-with-select" :fetch-suggestions="querySearch">
-          <template #prepend >
-            <el-select v-model="searchOpt" clearable placeholder="Human" class="select">
-              <el-option-group v-for="group in options"  :key="group.label" :label="group.label">
-                <el-option  v-for="item in group.options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-option-group>
-            </el-select>
-          </template>
+          <el-autocomplete placeholder="Search By Gene Name/Aliase/NONCODE GENE ID/Detailed Reason Description,eg.Meg3/2900016C05Rik/NONMMUG009962.3/lethality" 
+          v-model="inputContent" clearable @keyup.enter="Search" class="input-with-select" :fetch-suggestions="querySearch">
+            <template #prepend >
+              <el-select v-model="searchOpt" clearable placeholder="Human" class="select" >
+                <el-option-group v-for="group in options"  :key="group.label" :label="group.label">
+                  <el-option  v-for="item in group.options" :key="item.value" :label="item.label" :value="item.value">
+                  </el-option>
+                </el-option-group>
+              </el-select>
+            </template>
 
-          <template #append>
-            <el-button icon="el-icon-search" @click="Search"></el-button>
-          </template>
+            <template #append>
+              <el-button icon="el-icon-search" @click="Search"></el-button>
+            </template>
             
           </el-autocomplete>
         </div>
@@ -56,7 +57,7 @@
           </div>
           <el-table
             v-if="id==1"
-            id="myTable1"
+            
             :header-cell-style="{background:'#eef1f6',color:'#606266'}"
             :data="lncrnaTable"
             :row-class-name="tabRowClassName"
@@ -65,42 +66,25 @@
             style="width: 100%"
             ref="table"
           >
-
-            <el-table-column
-              label="ID"
-              prop="ID"
-              width="100">
+            <el-table-column label="Name" prop="Name" width="150px" >
+              <template #default="scope">
+                <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
+              </template>
             </el-table-column>
-            <el-table-column
-              label="Name"
-              prop="Name"
-              width="150">
+            <el-table-column label="NONCODE Gene ID" prop="NONCODEId" width="180px" >
+              <template #default="scope">
+                <span @click="toUrl_NONCODE(scope.row.NONCODEId)" class="hand">{{scope.row.NONCODEId }}</span>
+              </template>
+              
             </el-table-column>
-
-            <el-table-column
-              label="NCBI gene ID"
-              prop="NCBI_gene_Id"
-              width="150">
-            <template #default="scope">
-              <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
-                {{scope.row.NCBI_gene_Id}}
-              </a>
-            </template>
-
+            <el-table-column label="Aliase" prop="Aliases"  >
             </el-table-column>
-            <el-table-column
-              label="Organism"
-              prop="Organism"
-              width="100"
-            >
+            <el-table-column label="Organism" prop="Organism" width="100px" >
             </el-table-column>
-            <el-table-column
-              label="Reason"
-              prop="Reason"
-              >
+            <el-table-column label="Detailed Reason Description" prop="Reason"  >
             </el-table-column>
 
-            <el-table-column prop="PubMedID" label="PubMedID" width="150">
+            <el-table-column prop="PubMedID" label="PubMedID" width="100px" >
               <template #default="scope">
                 <a :href="url+scope.row.PMID" target="_black">
                   {{scope.row.PMID}}
@@ -108,27 +92,22 @@
               </template>
             </el-table-column>
 
-            <el-table-column type="expand" label="Details" width="100">
+            <el-table-column type="expand" label="Details" width="80px">
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
-                  <el-form-item label="NONCODEId:">
-                    <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId }}</span>
+                  <el-form-item label="NCBI Gene ID">
+                    <span @click="toUrl_NCBI(props.row.NCBI_gene_Id)" class="hand">{{props.row.NCBI_gene_Id}}</span>
                   </el-form-item>
-                  <el-form-item label="Aliases or Full name:">
-                    <span>{{ props.row.Aliases }}</span>
+
+                  <el-form-item label="Reason">
+                    <span>{{ props.row.Role }}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
                     <span>{{ props.row.Gene_Ontology_Annotations }}</span>
                   </el-form-item>
-                  <el-form-item label="Gene Sequence:" >
-                    <!-- <span>
-                        <button v-if="isShow" @click="kzClick" >Expend gene sequence</button>
-                        <button v-else @click="kzClick">Reduce gene sequence</button>
-                    </span> -->
-                    <span class="span_style"  v-html="props.row.fasta"></span>
-                  </el-form-item>
-              </el-form>
-            </template>
+
+                </el-form>
+              </template>
             </el-table-column>
           </el-table>
 
@@ -160,7 +139,7 @@ export default {
           label:"Query by Reason",
           options: [
             {value:"option3",label:"General"},
-            {value:"option4",label:"Humor suppressor gene"},
+            {value:"option4",label:"Tumor suppressor gene"},
             {value:"option5",label:"Oncogene"}
           ]
         }
@@ -324,7 +303,21 @@ export default {
 
     },
     toUrl_NONCODE(data){
-      window.location.href = "http://www.noncode.org/show_rna.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
+      window.location.href = "http://www.noncode.org/show_gene.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
+    },
+    toUrl_NCBI(data){
+      window.location.href = "https://www.ncbi.nlm.nih.gov/gene/"+data
+    },
+    toUrl(data){
+      
+
+      sessionStorage.setItem('dataSearch', JSON.stringify(data));
+      this.$router.push({
+        name:'Gene',
+        params:data,
+        query:{page:"Search"}
+      })
+
     }
     
   },
@@ -381,29 +374,19 @@ export default {
 
       if (searchOpt == "option1") {
         _this.propertyresults = _this.fuzzyHuman;
-        //console.log(_this.propertyresults)
       }
       else if (searchOpt == "option2") {
         _this.propertyresults =  _this.fuzzyMouse;
-       //console.log(_this.propertyresults)
         
       } else if (searchOpt == "option3" ) {
        
         _this.propertyresults =  _this.fuzzyVital;
-        //  console.log("选择了3")
-        // console.log(_this.propertyresults)
       } 
       else if (searchOpt == "option4") {
         _this.propertyresults =  _this.fuzzyTumor;
-        // console.log("4444");
-        // console.log(_this.propertyresults)
-
       }
       else if (searchOpt == "option5") {
         _this.propertyresults =  _this.fuzzyCancer;
-      //  console.log("5555");
-      //   console.log(_this.propertyresults);
-
       }
 
 
@@ -445,7 +428,7 @@ export default {
   line-height: 80px;
 }
 .input-with-select {
-  width: 70%;
+  width: 80%;
   /* font-size: 15px; */
 }
 .el-collapse-item__header {
@@ -453,17 +436,17 @@ export default {
 }
 
 .el-select {
-  width: 200px;
+  width: 220px;
 }
 
 .el-select-group__title {
-  text-align: left;
+  text-align: center;
   font-size:16px;
   font-family:monospace;
 }
 
 .el-select-dropdown__item {
-  text-align: left;
+  text-align: center;
   text-indent: 2em;
 }
 
@@ -533,11 +516,11 @@ span {
 .el-input__prefix, .el-input__suffix{
   text-align: right;
 }
-.span_style{
+/* .span_style{
   background:#f2f4f6;
   width:70%;
   font-family:monospace;
-}
+} */
 .wrapper{
   display:flex;
   align-item:center;

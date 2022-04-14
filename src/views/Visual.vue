@@ -7,49 +7,34 @@
           
           @click="toUrl()"
          />
-            <p>Detail information of {{dataList.Name}}</p>
+            <p>Detail information of {{dataList.NONCODE_TRANSCRIPT_ID}}</p>
 
         </el-row>
 
         <div class="files">
-          <h3 class="top">LncRNA information</h3>
+          <h3 class="top">LncRNA Information</h3>
           <div class="content" style="height:40%">
             <el-form label-position="left" inline class="demo-table-expand" >
-              <el-form-item label="Name:">
-                <span>{{ dataList.Name }}</span>
+              <el-form-item label="Gene Name:">
+                <span>{{ dataList.Name}}</span>
               </el-form-item>
-              <el-form-item label="NONCODEId:">
-                <span @click="toUrl_NONCODE(dataList.NONCODEId)" class="hand">{{ dataList.NONCODEId }}</span>
-              </el-form-item>
-
-              <el-form-item label="NCBI gene Id:">
-                
-                <span @click="toUrl_NCBI(dataList.NCBI_gene_Id)" class="hand">{{dataList.NCBI_gene_Id}}</span>
-                
-              </el-form-item>
-
-              <el-form-item label="Aliases or Full name:">
-                <span>{{ dataList.Aliases}}</span>
-              </el-form-item>
-              <el-form-item label="Reason:" style="width:70%">
-                <span>{{ dataList.Reason }}</span>
-              </el-form-item>
-              <el-form-item label="Organism:" >
+              <el-form-item label="Organism:">
                 <span>{{ dataList.Organism }}</span>
               </el-form-item>
-              <el-form-item label="Gene Ontology Annotations:" style="width:70%">
-                <span>{{ dataList.Gene_Ontology_Annotations }}</span>
+              <el-form-item label="NONCODE Gene ID:">
+                <span @click="toUrl_DNA(dataList.NONCODE_Gene_ID)" class="hand">{{ dataList.NONCODE_Gene_ID }}</span>
+              </el-form-item>
+              <el-form-item label="NONCODE Transcript ID:">  
+                <span @click="toUrl_RNA(dataList.NONCODE_TRANSCRIPT_ID)" class="hand">{{dataList.NONCODE_TRANSCRIPT_ID}}</span>
+              </el-form-item>
+              <el-form-item label="Length:">
+                <span>{{ dataList.length}}</span>
               </el-form-item>
               <el-form-item label="Sequence:" >
-                
-                  <span>
-                      <button v-if="isShow" @click="kzClick" >Expend gene sequence</button>
-                      <button v-else @click="kzClick">Reduce gene sequence</button>
-                  </span>
-                  <span class="newlist" v-html="showData">
-                  </span>
-
+                    <span class="newlist" v-html="this.showData" @click="kzClick($event)">
+                    </span>   
               </el-form-item>
+              
 
             </el-form>
           </div>
@@ -58,7 +43,7 @@
         <div class="files">
           <h3 class="top">Expression Profile</h3>
           <!-- human -->
-          <div v-show="isShow1" class="content" style="height:40%">
+          <div v-show="isShow1" class="content" style="height:40%" id="outerDiv1">
             <el-table :data="profile"  :header-cell-style="{background:'rgb(115, 200, 200)',color:'#fff'}" style="width: 100%" >
               <el-table-column prop="adipose" label="adipose" ></el-table-column>
               <el-table-column prop="adrenal" label="adrenal" ></el-table-column>
@@ -94,7 +79,7 @@
             <div id ="figure1"></div>
           </div>
           <!-- mouse -->
-          <div v-show="isShow2" class="content" style="height:40%">
+          <div v-show="isShow2" class="content" style="height:40%" id="outerDiv2">
             <el-table :data="profile"  :header-cell-style="{background:'rgb(115, 200, 200)',color:'#fff'}" style="width: 100%" >
               <el-table-column prop="adipose" label="heart" ></el-table-column>
               <el-table-column prop="adrenal" label="hippocampus" ></el-table-column>
@@ -105,11 +90,6 @@
             </el-table>
             <div id="figure2"></div>
           </div>
-          <!-- NONCODE id 为 N.A. -->
-          <div v-show="isShow3" class="content" style="height:40%">
-              <h3>This lncRNA gene can't found in NONCODE database, 
-                so the expression profile data are not availiable for the time beging. </h3>
-          </div>
         </div>
 
     </div>
@@ -118,7 +98,6 @@
 <script>
 import axios from "axios";
 import echarts from "echarts";
-
 export default{
     data(){
       return{
@@ -126,7 +105,7 @@ export default{
         isShow:true,
         showData:"",
         profile:[],
-        id:"EL000001",
+        RNAid:"NONHSAT000530.2",
         item_data_human:['adipose', 'adrenal', 'brain', 'brain_R', 'breast', 'colon',
             'foreskin','heart','heart_R','HLF_1','HLF_2','kidney',
             'liver','liver_R','lung','lymphNode','ovary','placenta_R',
@@ -134,66 +113,86 @@ export default{
         item_data_mouse:['adipose', 'adrenal', 'brain', 'brain_R', 'breast', 'colon'],
         isShow1:false,
         isShow2:false,
-        isShow3:false
+        FromPage:""
+      
       }
     },
     mounted(){
 
-      let sessionData = JSON.parse(sessionStorage.getItem("data"));
+      let sessionData = JSON.parse(sessionStorage.getItem("dataGene"));
       
-        if(location.href.indexOf('#reloaded')==-1){
-        location.href=location.href+"#reloaded";
-         location.reload();
-       }
-
+      if(location.href.indexOf('#reloaded')==-1){
+      location.href=location.href+"#reloaded";
+        location.reload();
+      }
+      this.FromPage = this.$route.query.page;
+      //console.log("visual页面的，标记从哪里来",this.FromPage)
       this.dataList=sessionData;
-      this.showData=this.dataList.fasta.slice(0,1000);
-      this.id=sessionData.ID;
+      //console.log(this.dataList)
+      // this.showData=this.dataList.FASTA.slice(0,1000);
+      this.showData = `${this.dataList.FASTA.slice(0,1000)}
+                    <img
+                    src="./open.png"
+                    style="width:12px; height:12px"
+                    class="open"
+                    />
+                    `
+    
+      this.RNAid=sessionData.NONCODE_TRANSCRIPT_ID;
 
 
       axios.post("api/property/profiles",{    
-        id:this.id
+        RNAid:this.RNAid
       }).then(respond =>{
         // console.log(respond.data);
         this.profile=respond.data;
+        //console.log(this.profile)
         
-        if(this.profile[0].organism == "human" && this.profile[0].NONCODEid !="N.A."){
+        if(this.profile[0].organism == "Human"){
 
           this.isShow1=true;
           this.drawLine1();
         }
-        else if(this.profile[0].organism == "mouse" && this.profile[0].NONCODEid !="N.A." ){
+        else{
 
           this.isShow2=true;
           this.drawLine2();
-        }
-        else{
-           this.isShow3=true;
-        }
-
-       
+        }      
       });
 
 
     },
     methods:{
-      kzClick(){
-        if(this.isShow){
-          this.showData=this.dataList.fasta;
+
+      kzClick(event){      
+        if(event.target.className === 'open' && event.target.nodeName === 'IMG'){
+                this.showData = `${this.dataList.FASTA}
+                    <img
+                    src="./close.png"
+                    style="width:12px; height:12px"
+                    class="close"
+                    />
+                    `
         }
-        else{
-          this.showData=this.dataList.fasta.slice(0,1000);
+        if(event.target.className === 'close' && event.target.nodeName === 'IMG'){
+                this.showData = `${this.dataList.FASTA.slice(0,1000)}
+                    <img
+                    src="./open.png"
+                    style="width:12px; height:12px"
+                    class="open"
+                    />
+                    `
         }
-        this.isShow=!this.isShow;
+
       },
       drawLine1(){
         // console.log("调用dramLine1");
                 // 解决数据初始渲染不出来的问题
-        setTimeout(()=>{
-            this.initChart()
-        },1000)
+        // setTimeout(()=>{
+        //     this.initChart()
+        // },1000)
         var chartDom = document.getElementById('figure1');
-        var myChart = echarts.init(chartDom);
+        var myChart1 = echarts.init(chartDom);
         var option;
         option = {
           title: {
@@ -211,7 +210,7 @@ export default{
             data:this.item_data_human,
               axisLabel: {
                 interval: 0,
-                rotate:15
+                rotate:35
             }
           },
           yAxis: {
@@ -227,19 +226,17 @@ export default{
           ]
         };
         option.series[0].data=[];
-        option.title.text="Expression profile of "+ this.profile[0].name+" in "+this.profile[0].organism+" tissues"
+        option.title.text="Expression profile of "+ this.dataList.NONCODE_TRANSCRIPT_ID+" in "+this.profile[0].organism+" tissues"
         this.item_data_human.forEach(item=>{
           option.series[0].data.push(this.profile[0][item]);
         })
-        // console.log(option);
-        myChart.setOption(option);
-
+        myChart1.setOption(option);
       },
       drawLine2(){
         // console.log("调用dramLine2");
         
         var chartDom = document.getElementById('figure2');
-        var myChart = echarts.init(chartDom);
+        var myChart2 = echarts.init(chartDom);
         var option;
         option = {
           title: {
@@ -273,26 +270,30 @@ export default{
           ]
         };
         option.series[0].data=[];
-        option.title.text="Expression profile of "+ this.profile[0].name+" in "+this.profile[0].organism+" tissues"
+        option.title.text="Expression profile of "+ this.dataList.NONCODE_TRANSCRIPT_ID+" in "+this.profile[0].organism+" tissues"
         this.item_data_mouse.forEach(item=>{
           option.series[0].data.push(this.profile[0][item]);
         })
-        myChart.setOption(option);
+        myChart2.setOption(option);
 
       },
       toUrl(){
         this.$router.push({
-          name:'Browse',
+          name:'Gene',
+          query:{page:this.FromPage}
 
         })
       },
-      toUrl_NCBI(data){
-         window.location.href = "https://www.ncbi.nlm.nih.gov/gene/"+data
+      toUrl_RNA(data){
+          window.location.href = "http://www.noncode.org/show_rna.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
 
       },
-      toUrl_NONCODE(data){
-         window.location.href = "http://www.noncode.org/show_rna.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
+      toUrl_DNA(data){
+         window.location.href = "http://www.noncode.org/show_gene.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
       }
+      // toImg(data){
+      //   this.ShowImg=!data;
+      // }
 
  
       
@@ -417,4 +418,5 @@ button{
   border:none;
   border-radius: 10px;
 }
+
 </style>

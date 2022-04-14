@@ -15,7 +15,7 @@
         <el-menu :default-openeds="['1']">
            <el-submenu index="1">
             <template v-slot:title>
-              <i class="el-icon-s-grid"></i><b>Browse</b>
+              <i class="el-icon-s-grid"></i><b>Reason</b>
             </template>
 
             <el-menu-item index="1-1" >
@@ -77,7 +77,7 @@
               </template>
             </el-table-column>
 
-            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
+            <el-table-column prop="NCBI_gene_Id" label="NCBI Gene ID" width="150">
               <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
@@ -91,7 +91,7 @@
               width="100">
             </el-table-column>
             <el-table-column
-              label="Reason"
+              label="Detailed Reason Description"
               prop="Reason">
             </el-table-column>
 
@@ -107,10 +107,10 @@
             <el-table-column type="expand" label="Details" width="100">
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
-                  <el-form-item label="NONCODEId:">
+                  <el-form-item label="NONCODE Gene ID:">
                     <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
                   </el-form-item>
-                  <el-form-item label="Aliases or full Name:">
+                  <el-form-item label="Aliase:">
                     <span>{{ props.row.Aliases}}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
@@ -145,7 +145,7 @@
                 <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
               </template>
             </el-table-column>
-            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
+            <el-table-column prop="NCBI_gene_Id" label="NCBI Gene ID" width="150">
               <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
@@ -159,7 +159,7 @@
               width="100">
             </el-table-column>
             <el-table-column
-              label="Reason"
+              label="Detailed Reason Description"
               prop="Reason">
             </el-table-column>
 
@@ -174,11 +174,11 @@
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
 
-                  <el-form-item label="NONCODEId:">
+                  <el-form-item label="NONCODE Gene ID:">
                     <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
                   </el-form-item>
 
-                  <el-form-item label="Aliases or full Name:">
+                  <el-form-item label="Aliase:">
                     <span>{{ props.row.Aliases}}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
@@ -214,7 +214,7 @@
                 <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
               </template>
             </el-table-column>
-            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
+            <el-table-column prop="NCBI_gene_Id" label="NCBI Gene ID" width="150">
               <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
@@ -228,7 +228,7 @@
               width="100">
             </el-table-column>
             <el-table-column
-              label="Reason"
+              label="Detailed Reason Description"
               prop="Reason">
             </el-table-column>
 
@@ -243,10 +243,10 @@
             <el-table-column type="expand" label="Details" width="100">
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
-                  <el-form-item label="NONCODEId:">
+                  <el-form-item label="NONCODE Gene ID:">
                     <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
                   </el-form-item>
-                  <el-form-item label="Aliases or full Name:">
+                  <el-form-item label="Aliase:">
                     <span>{{ props.row.Aliases }}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
@@ -282,7 +282,7 @@
                 <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
               </template>
             </el-table-column>
-            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
+            <el-table-column prop="NCBI_gene_Id" label="NCBI Gene ID" width="150">
               <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
@@ -296,7 +296,7 @@
               width="140">
             </el-table-column>
             <el-table-column
-              label="Reason"
+              label="Detailed Reason Description"
               prop="Reason">
             </el-table-column>
 
@@ -311,10 +311,10 @@
             <el-table-column type="expand" label="Details" width="100">
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
-                  <el-form-item label="NONCODEId:">
+                  <el-form-item label="NONCODE Gene ID:">
                     <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
                   </el-form-item>
-                  <el-form-item label="Aliases or full Name:">
+                  <el-form-item label="Aliase:">
                     <span>{{ props.row.Aliases }}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
@@ -350,7 +350,7 @@
                 <span @click="toUrl(scope.row)" class="hand">{{scope.row.Name}}</span>
               </template>
             </el-table-column>
-            <el-table-column prop="NCBI_gene_Id" label="NCBI gene Id" width="150">
+            <el-table-column prop="NCBI_gene_Id" label="NCBI Gene ID" width="150">
               <template #default="scope">
               <a :href="urlNCBI+scope.row.NCBI_gene_Id" target="_black">
                 {{scope.row.NCBI_gene_Id}}
@@ -364,7 +364,7 @@
               width="140">
             </el-table-column>
             <el-table-column
-              label="Reason"
+              label="Detailed Reason Description"
               prop="Reason">
             </el-table-column>
 
@@ -379,10 +379,10 @@
             <el-table-column type="expand" label="Details" width="100">
               <template #default="props">
                 <el-form label-position="left" inline class="demo-table-expand" >
-                  <el-form-item label="NONCODEId:">
+                  <el-form-item label="NONCODE Gene ID:">
                     <span @click="toUrl_NONCODE(props.row.NONCODEId)" class="hand">{{ props.row.NONCODEId}}</span>
                   </el-form-item>
-                  <el-form-item label="Aliases or full Name:">
+                  <el-form-item label="Aliase:">
                     <span>{{ props.row.Aliases }}</span>
                   </el-form-item>
                   <el-form-item label="Gene Ontology Annotations:">
@@ -489,15 +489,18 @@ export default{
     },
 
     toUrl(data){
-      sessionStorage.setItem('data', JSON.stringify(data));
+      // data.page = "Browse"
+      sessionStorage.setItem('dataBrowse', JSON.stringify(data));
       this.$router.push({
-        name:'Visual',
-        params:data
+        name:'Gene',
+        params:data,
+        query:{page:"Browse"}
       })
     },
 
     toUrl_NONCODE(data){
-      window.location.href = "http://www.noncode.org/show_rna.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
+      
+      window.location.href = "http://www.noncode.org/show_gene.php?id="+data.split(".")[0]+"&version="+data.split(".")[1]+"&utd=1#"
     }
   }
 }

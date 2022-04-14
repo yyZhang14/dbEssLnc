@@ -39,6 +39,14 @@ var jsonWrite = function(res, ret) {
     res.json(ret);
   }
 };
+//将json数据转换为dict的格式，供BLAST页面使用
+
+// var dictWrite = function(dictRes,res) {
+//   if(typeof res === "undefined"){
+
+//   }
+// }
+
 //browser 页面的sql语句
 //show final table
 router.post("/final", (req, res) => {
@@ -309,33 +317,19 @@ router.post("/blast",(req,res)=>{
       else{
         let inputFile = randomStr();
         let outputFile = randomStr();
-        // let inputFile = "in";
-        // let outputFile = "out";
-        // // console.log(res.cookies)
-        // let inputFile;
-        // let outputFile;
-        // if(req.cookies.input == null){
-        //   console.log("cookies")
-          // inputFile = randomStr();
-          // outputFile = randomStr();
-        //   res.cookies("input",inputFile,{maxAge:900000,httpOnly:true})
-        //   res.cookies("output",outputFile,{maxAge:900000,httpOnly:true})
-        // }else{
-        //   inputFile = req.cookies.input;
-        //   outputFile = req.cookies.output;
-        // }
-
         // 将前端的请求序列存在文件中
         var user_seq = req.body.user_seq;
         var user_wordSize = req.body.user_wordSize.toString();
         var user_eValue = req.body.user_eValue.toString();
-
+        //console.log(user_seq,user_wordSize,user_eValue);
         var path_query = tempPath_query + inputFile + '.fasta';
         var path_result = tempPath_result + outputFile + '.txt';
 
         fs.writeFileSync(path_query, user_seq); 
         fs.writeFileSync(path_result,"");   
         // 调用命令行测试
+        // let tempSeq = fs.readFileSync(path_query, "utf8");
+        // console.log(tempSeq)
 
         var cmd = BLASTDB+'blastn -query '+path_query+
                   ' -out '+path_result+
@@ -343,7 +337,7 @@ router.post("/blast",(req,res)=>{
                   ' -outfmt "6 qseqid sseqid pident length evalue bitscore "'+
                   ' -evalue '+user_eValue+
                   ' -word_size '+user_wordSize;
-        // console.log(cmd)
+        //console.log(cmd)
         exec(cmd, function(error, stdout, stderr) {
           // 读取测试结果
           let data = fs.readFileSync(path_result, "utf8").split('\n'); 
@@ -371,22 +365,26 @@ router.post("/blast",(req,res)=>{
 
 
 router.post("/fuzzySeq",(req,res)=> {
-  var sql=$sql.property.fuzzySeq;
+  //var sql=$sql.property.fuzzySeq;  
+  var alignId = req.body.alignId;
   
-  // console.log(req.body.user_sseqid)
-  connection.query(sql,[req.body.user_sseqid],(err,result)=>{
+  var sql = "select * from `trans` where NONCODE_TRANSCRIPT_ID in ("+alignId+")";
+  connection.query(sql,(err,result)=>{
+    
     if(err) {
-      console.log("select * from `final` where fasta  like "%"?"%":",err.msg)
+      console.log(err.msg)
     }
-    if(result){
+    if(result){      
       jsonWrite(res,result);
+      
     }
+   
   })
 })
 
 router.post("/profiles",(req,res)=> {
 
-  var id=req.body.id;
+  var id=req.body.RNAid;
   // console.log("profile req",id);
   var sql=$sql.property.profile;
   connection.query(sql,[id],(err,result)=>{
@@ -402,6 +400,25 @@ router.post("/profiles",(req,res)=> {
     
   })
 })
+router.post("/transcript",(req,res)=> {
+
+  var DNAid=req.body.DNAid;
+  
+  var sql=$sql.property.transcript;
+  connection.query(sql,[DNAid],(err,result)=>{
+    
+    if(err) {
+      console.log("select * from `trans` where NONCODE_Gene_ID = ?",err.msg)
+    }
+    if(result){
+      jsonWrite(res,result);
+      
+    }
+    
+  })
+})
+
+
 
 
 module.exports = router;
