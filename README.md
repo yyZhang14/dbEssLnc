@@ -21,7 +21,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 cnpm -v
 npm install /cnpm i
 ```
-
+![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/node.PNG)
 ### 2.2 Add SQL file to the database
 
 After downloading mysql services,Users can download MYSQL Workbench software to import SQL files **dbesslnc** into the database. Note that the encoding format of the database is UTF8. There are 6 tables in the database dbesslnc, 
@@ -35,18 +35,18 @@ trans table: all gene transcript information.
 expression table: all lncRNA expression profile information.
 ```
 
-！[Alt text](/public/md/mysql.PNG)
+![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/mysql.PNG)
 
 
 
 ### 2.3 Start frontend
 
 Go to the root directory of the project, and execute the command `npm run serve`. 
-![2][https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/fonter.PNG]
+![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/fonter.PNG)
 
 ### 2.4 Start backend
 
 Go to the root directory of the project,and enter **server** directory , then execute the command `nodemon index.js` or `node index.js` to start backend service.Finally, Type `http://localhost:3000` in the browser, will see the website.
 
-![3][https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/ser.PNG]
+![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/ser.PNG)
 
