@@ -34,7 +34,9 @@ cancer table: all oncogene information.
 trans table: all gene transcript information.
 expression table: all lncRNA expression profile information.
 ```
-![1][https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/mysql.PNG]
+
+！[Alt text](/public/md/mysql.PNG)
+
 
 
 ### 2.3 Start frontend
