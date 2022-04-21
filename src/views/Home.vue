@@ -12,8 +12,8 @@
         <el-col :span="2">
 
         </el-col>
-        <el-col :span="10"  class="duiqi">
-          <i style="font-size: 20px; margin-right: 10px; color: #606060; margin: 40px" class="el-icon-info" >
+        <el-col :span="8"  class="duiqi">
+          <i style="font-size: 20px;  color: #606060; margin: 40px" class="el-icon-info" >
             Introduction of dbEssLnc</i>
           <p>
             <b>dbEssLnc</b> is the abbreviation of <b>Ess</b>ential <b>Lnc</b>RNA
@@ -80,29 +80,35 @@
             Last update on: Mar.13th.2022.
           </p>
         </el-col>
-        <el-col :span="10">
+        <el-col :span="12">
           <img
             alt="essential lncRNA"
-            src="../../public/assets/img/AF.jpg"
-            style="width: 500px; height:500px; margin: 40px;"
+            src="../../public/assets/img/figure1.svg"
+            style="width: 800px; margin-top: 90px;"
+            
           />
           <div>
             <span style="font-size: 14px; float:right;" class="duiqi">
-              <b>AF113014 inhibited proliferation of HCC cells in virto.</b>
-              <p>(A) Relative expressions of AF113014 in SMMC7721 and Huh-7 cells 
-                transfected with Ad-AF113014 or siAF113014. GAPDH was used as 
-                reference gene in real-time PCR. 
-                (B) Proliferations of SMMC7721 and Huh-7 cells transfected with 
-                Ad-AF113014 or siAF113014 were examined by MTS. 
-                (C) Proliferations of SMMC7721 and Huh-7 cells transfected with Ad-AF113014 
-                or siAF113014 were examined by colony formation assay.</p>
-                <a href="https://pubmed.ncbi.nlm.nih.gov/28542387/"> (Tao Zeng et al.,2017)</a>
+              <b></b>
+              <p>The work flow of data curation process and architecture in dbEssLnc. (A) 
+                  Work flow is divided to 5 steps. Step1: Using key words to collect essential 
+                  lncRNA data in PubMed. Step2: Screening details of essential lncRNA from literatures.
+                   Step3:Mapping gene name to order databases to get other details. Step4: Essential lncRNAs 
+                   are categorized as general essential lncRNA, lncRNA tumor suppressor gene and lncRNA oncogene. 
+                   Step5:Marking “N.A.” for information not collected.
+                    (B) Architecture of dbEssLnc. dbEsslnc has four functional pages, including "Browse", 
+                    "Search","BLAST", and "Download". An additional "Help" page gives instructions on how to 
+                    use the dbEssLnc database. Users click the gene name in the "Browse" and Search" to jump 
+                    to the "Gene" page for detailed information of gene. "Gene" page can jump to "Visual" page
+                     to get information about lncRNA transcript by clicking gene transcript id in NONCODE.
+ </p>
+               
             </span>
           </div>
         </el-col >
-        <el-col :span="2">
+        <!-- <el-col :span="2">
 
-        </el-col>
+        </el-col> -->
       </div>
 
     </el-row>
@@ -143,6 +149,7 @@
 }
 .duiqi{
   text-align: justify; 
+ 
 }
 .wrapper{
   display:flex;
@@ -151,5 +158,6 @@
 }
 .wrapper p{
   line-height:200%;
+  font-size:16px;
 }
 </style>
