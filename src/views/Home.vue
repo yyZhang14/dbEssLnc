@@ -12,7 +12,7 @@
         <el-col :span="2">
 
         </el-col>
-        <el-col :span="8"  class="duiqi">
+        <el-col :span="10"  class="duiqi" >
           <i style="font-size: 20px;  color: #606060; margin: 40px" class="el-icon-info" >
             Introduction of dbEssLnc</i>
           <p>
@@ -25,8 +25,6 @@
               ><b><i>Home</i></b></router-link
             >
             page mainly describes the organization of the dbEssLnc server.
-            The page also shows an example of Essential lncRNA,  
-            AF113014 over-expression significantly reduced HCC cells proliferation,  whereas AF113014 knockdown promoted cell proliferation.
           </p>
           <p>
             The
@@ -34,18 +32,14 @@
               ><b><i>Browse</i></b></router-link
             >
             page categories all essential lncRNA.
-            There are three tables,namely "general","tumor suppressor gene" and "oncogene".
-            The users can browse all data on this page.
           </p>
           <p>
             The
             <router-link to="/search"
               ><b><i>Search</i></b></router-link
             >
-            page provides the ability to search by the name of essential lncRNA.
-            If the content of the search box matches the first few letters of the 
-            selected search item, a drop down menu will be displayed. The corresponding 
-            values will be displayed in a table with links to the original references for each lncRNA.
+            page provides the ability to search by the name/aliases/NONCODE gene ID/reason of essential lncRNA.
+           
           </p>
           <p>
             The
@@ -80,11 +74,11 @@
             Last update on: Mar.13th.2022.
           </p>
         </el-col>
-        <el-col :span="12">
+        <el-col :span="10">
           <img
             alt="essential lncRNA"
             src="../../public/assets/img/figure1.svg"
-            style="width: 800px; margin-top: 90px;"
+            style="width: 600px; margin-top: 90px;"
             
           />
           <div>
@@ -96,19 +90,18 @@
                    Step3:Mapping gene name to order databases to get other details. Step4: Essential lncRNAs 
                    are categorized as general essential lncRNA, lncRNA tumor suppressor gene and lncRNA oncogene. 
                    Step5:Marking “N.A.” for information not collected.
-                    (B) Architecture of dbEssLnc. dbEsslnc has four functional pages, including "Browse", 
-                    "Search","BLAST", and "Download". An additional "Help" page gives instructions on how to 
-                    use the dbEssLnc database. Users click the gene name in the "Browse" and Search" to jump 
-                    to the "Gene" page for detailed information of gene. "Gene" page can jump to "Visual" page
-                     to get information about lncRNA transcript by clicking gene transcript id in NONCODE.
- </p>
+                    (B) Architecture of dbEssLnc. dbEsslnc has seven functional pages, including "Browse", 
+                    "Search","Blast","Download","Help", "Gene" and "Visual" page. Users click the gene name in the "Browse" and "Search" 
+                    to jump to the "Gene" page for detailed information of gene. "Gene" page can jump to 
+                    "Visual" page to get information about lncRNA transcript by clicking gene transcript id in NONCODE.
+              </p>
                
             </span>
           </div>
         </el-col >
-        <!-- <el-col :span="2">
+        <el-col :span="2">
 
-        </el-col> -->
+        </el-col>
       </div>
 
     </el-row>

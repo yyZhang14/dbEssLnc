@@ -17,9 +17,9 @@ const tempPath_query = "/home/yyzhang/dbesslnc/blast/temp/"
 const tempPath_result= "/home/yyzhang/dbesslnc/blast/temp/" 
 const db_path = "/home/yyzhang/dbesslnc/blast/lncrna/lncrna.fasta"
 //本地的路径
-// const tempPath_query = "/Users/zyy/Desktop/code/ES-test/blast/temp/"
-// const tempPath_result= "/Users/zyy/Desktop/code/ES-test/blast/temp/" 
-// const db_path = "/Users/zyy/Desktop/code/ES-test/blast/lncrna/lncrna.fasta"
+// const tempPath_query = "/Users/zyy/Desktop/code/dbEssLnc-main/blast/temp/"
+// const tempPath_result= "/Users/zyy/Desktop/code/dbEssLnc-main/blast/temp/" 
+// const db_path = "/Users/zyy/Desktop/code/dbEssLnc-main/blast/lncrna/lncrna.fasta"
 
 const {MYSQL_CONFIG} = require('../db.js');
 // var blast = require("../blast.js")
@@ -39,13 +39,7 @@ var jsonWrite = function(res, ret) {
     res.json(ret);
   }
 };
-//将json数据转换为dict的格式，供BLAST页面使用
 
-// var dictWrite = function(dictRes,res) {
-//   if(typeof res === "undefined"){
-
-//   }
-// }
 
 //browser 页面的sql语句
 //show final table

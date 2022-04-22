@@ -187,7 +187,7 @@ AGCACAGAAGACGAAGAGCTGGAATAGAGCTCGCCTCGGCTCTGCTGGCCTTGGCTGCAGCTCTTCCAGAAACCCGGGGC
         
         _this.resData=respond.data.message.data
         _this.length=respond.data.message.data.length
-        console.log(_this.length)
+        //console.log(_this.length)
         if(_this.length == 1){
           window.alert("Blast query is Empty or FASTA sequence format error!")
         }
@@ -245,12 +245,13 @@ AGCACAGAAGACGAAGAGCTGGAATAGAGCTCGCCTCGGCTCTGCTGGCCTTGGCTGCAGCTCTTCCAGAAACCCGGGGC
 
             _this.tableData.push(result)
            
-          } 
-          //console.log(_this.tableData)
+          }
+          loadingInstance.close() 
+         
         
         })
         
-        loadingInstance.close()
+        
         
       })
       
