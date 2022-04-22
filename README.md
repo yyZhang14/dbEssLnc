@@ -89,7 +89,7 @@ show tables;
 5. Use Xftp software to upload the **dist** folder, **server** folder , **blast** folder and package.json file to dbEssLnc directory.
 ![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/ftp.PNG)
 6. Execute the command `npm install` to install all the dependencies in the dbEssLnc directory.
-7. Install and configure Nginx. Please pay special attention to the configuration of the nginx.conf file.
+7. Install and configure Nginx. Please pay special attention to path and configuration of the **nginx.conf** file(Nginx.conf is given above).
 ![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/nginx.PNG)
 test nginx use following command.
 ```
