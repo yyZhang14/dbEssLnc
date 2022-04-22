@@ -99,4 +99,5 @@ service nginx restart
 8. You can install PM2 to manager your node process.
 9. Type and execute the command `pm2 start index.js` in the server folder to start the project.Open your browser, type in the domain name, and you will see the website.
 ![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/pm2.PNG)
+![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/bro.PNG)
 ### 
