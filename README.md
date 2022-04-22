@@ -55,12 +55,26 @@ If you want to deploy the project to your own server when there are no problems 
 ### Steps for production
 1. Install Node.js and MySQL on the server.
 2. Create a database and add data to the database by loading SQL file.
+
+```
+create database dbesslnc；
+use dbesslnc；
+source sqlpath(eg. /home/yyzhang/dbesslnc.sql)；
+show databases;
+show tables;
+```
 3. Create a new directory (e.g. dbEssLnc) on the server.
-4. Upload the **dist** folder, **server** folder and package.json file to dbEssLnc directory.
+4. Use Xftp software to upload the **dist** folder, **server** folder , **blast** folder and package.json file to dbEssLnc directory.
 ![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/ftp.PNG)
-5. Execute the command npm install to install all the dependencies in the dbEssLnc directory.
-6. Install and configure Nginx.
+5. Execute the command `npm install` to install all the dependencies in the dbEssLnc directory.
+6. Install and configure Nginx, especially nginx.conf file.
+![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/nginx.PNG)
+test nginx use following command.
+```
+nginx -t
+service nginx restart
+```
 7. You can install PM2 to manager your node process.
-8. Type and execute the command pm2 start index.js in the server folder to start the project.
+8. Type and execute the command `pm2 start index.js` in the server folder to start the project.
 ![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/pm2.PNG)
 ### 
