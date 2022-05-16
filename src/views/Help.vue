@@ -17,7 +17,7 @@
             of the diseases or tumors.Here,we developed a database named dbEssLnc 
             (<b><a href="https://esslnc.pufengdu.org">https://esslnc.pufengdu.org</a></b>),which manually 
             collects and collates essential lncRNAs information from existing databases and published 
-            literature. Currently, the dbEssLnc database contains <b>200</b> essential lncRNAs , 
+            literature. Currently, the dbEssLnc database contains <b>206</b> essential lncRNAs , 
             and the data will be continuously added and updated.
           </p>
         </el-collapse-item>
@@ -129,9 +129,9 @@
     <div class="perspective">
       <h3>Statistics</h3>
       <div class="setborder">
-        <p>Currently,this dbEssLnc database include <b>200</b> essential lncRNAs.</p>
-        <p>Sorted by organsim, there are <b>173</b> essential lncRNAs belonging to human and <b>27</b> essential lncRNAs belonging to mouse.</p>
-        <p>Sorted by reason, there are <b>32</b> essential lncRNAs belonging to general
+        <p>Currently,this dbEssLnc database include <b>206</b> essential lncRNAs.</p>
+        <p>Sorted by organsim, there are <b>173</b> essential lncRNAs belonging to human and <b>33</b> essential lncRNAs belonging to mouse.</p>
+        <p>Sorted by reason, there are <b>38</b> essential lncRNAs belonging to general
           , <b>70</b> essential lncRNAs belonging to tumor suppressor gene
           and <b>98</b> essential lncRNAs belonging to oncogene.</p>
         <div id ="first"></div>
@@ -194,7 +194,7 @@ export default {
       },
       series: [
         {
-        data: [{value:173,name:'Human'},{value:27,name:'Mouse'}],
+        data: [{value:173,name:'Human'},{value:33,name:'Mouse'}],
         type: 'bar',
         itemStyle:{
           normal:{
@@ -230,7 +230,7 @@ export default {
     },
     series: [
       {
-        data: [32,70,98],
+        data: [38,70,98],
         type: 'bar',
         itemStyle:{
           normal:{

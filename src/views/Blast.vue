@@ -204,6 +204,7 @@ AGCACAGAAGACGAAGAGCTGGAATAGAGCTCGCCTCGGCTCTGCTGGCCTTGGCTGCAGCTCTTCCAGAAACCCGGGGC
         }
         //console.log(_this.length)
         //console.log( _this.RNAID)
+     
          
         axios.post("api/property/fuzzySeq",{
         alignId: _this.RNAID

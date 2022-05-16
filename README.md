@@ -1,5 +1,5 @@
 # dbEssLnc: A manually curated database of human and mouse essential lncRNA genes
-We manually curated 200 essential lncRNAs from literatures for establishing a database on essential lncRNAs, which is named as dbEssLnc (Database of essential lncRNAs). The dbEssLnc database has a web-based user-friendly interface for the users to browse, to search, to visualize and to blast search the records in the database. The dbEssLnc database is freely accessible at https://esslnc.pufengdu.org. 
+We manually curated 206 essential lncRNAs from literatures for establishing a database on essential lncRNAs, which is named as dbEssLnc (Database of essential lncRNAs). The dbEssLnc database has a web-based user-friendly interface for the users to browse, to search, to visualize and to blast search the records in the database. The dbEssLnc database is freely accessible at https://esslnc.pufengdu.org. 
 ## 1.Intruduction
 
 We store some essential lncRNAs information in a MySQL database. We used the node.js script engine and javaScript from the

@@ -150,10 +150,13 @@ export default {
 
       //用于模糊搜索的输入建议
       properties:[],//空的
-      propertyresults:[{value: "Gas5"},{value: "Chaserr"},{value: "Dnm3os"},{value: "Dreh"},{value: "Fendrr"}
-      ,{value: "Gm12610"},{value: "Gm38509"},{value: "Haglr"},{value: "lncKdm2b"},{value: "Lncpint"}
-      ,{value: "Meg3"},{value: "Mir124a-1hg"},{value: "Pantr2"},{value: "Paupar"}
-      ,{value: "Trp53cor1"},{value: "Tsix"},{value: "Xist"}],//存储结果
+      propertyresults:[{value: "Fendrr"},{value: "Gm38509"},{value: "Haglr"},{value: "Pantr2"},{value: "Lncpint"},
+                      {value: "Tsix"},{value: "Dnm3os"},{value: "Mir124a-1hg"},{value: "Meg3"},{value: "Chaserr"},
+                      {value: "Xist"},{value: "Gm12610"},{value: "lncKdm2b"},{value: "Bvht"},{value: "Paupar"},
+                      {value: "Trp53cor1"},{value: "Dreh"},{value: "Gas5"},{value: "Miat"},{value: "Tunar"},
+                      {value: "Dlx6os1"},{value: "9030622O22Rik"},{value: "Tslrn1"},{value: "Hm629797"},{value: "4933409F18Rik"},
+                      {value: "Gm2044"},{value: "Mhrt"},{value: "Jpx"},{value: "Airn"},{value: "Kcnq1ot1"},
+                      {value: "Hand2os1"},{value: "Ttc39aos1"},{value: "Neat1"}],
 
 
       // property:[],//查询的结果
