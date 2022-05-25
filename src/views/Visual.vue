@@ -125,6 +125,7 @@ export default{
       location.href=location.href+"#reloaded";
         location.reload();
       }
+     
       this.FromPage = this.$route.query.page;
       //console.log("visual页面的，标记从哪里来",this.FromPage)
       this.dataList=sessionData;

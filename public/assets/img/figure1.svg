@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- 由 Microsoft Visio, SVG Export 生成 figure1.svg Page-1 -->
+<!-- 由 Microsoft Visio, SVG Export 生成 figure1.svg 页-1 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
-		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="15.8039in" height="8.4129in"
-		viewBox="0 0 1137.88 605.729" xml:space="preserve" color-interpolation-filters="sRGB" class="st25">
-	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
-		<v:userDefs>
-			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
-		</v:userDefs>
-	</v:documentProperties>
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="15.3039in" height="7.9129in"
+		viewBox="0 0 1101.88 569.729" xml:space="preserve" color-interpolation-filters="sRGB" class="st25">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
 	<![CDATA[
-		.st1 {fill:#c07a92;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st2 {fill:#000000;font-family:Times New Roman;font-size:1.00001em}
-		.st3 {font-family:Symbol;font-size:1em}
-		.st4 {font-size:1em}
-		.st5 {fill:#e2c3c9;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st6 {fill:#7f7f7f}
-		.st7 {stroke:#000000;stroke-dasharray:3.6,2.16;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
-		.st8 {fill:#80afbf;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st9 {fill:#608595;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st10 {fill:#dfc286;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st11 {fill:#87bba4;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st12 {fill:#e57b7f;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st13 {marker-end:url(#mrkr13-113);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st14 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.22935779816514}
-		.st15 {marker-start:url(#mrkr13-129);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st16 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st17 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st18 {fill:#000000;font-family:Symbol;font-size:1.00001em}
-		.st19 {font-family:Times New Roman;font-size:1em}
-		.st20 {fill:#b7dde8;stroke:#000000;stroke-dasharray:5.25,3.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st21 {font-family:宋体;font-size:1em}
-		.st22 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st23 {fill:#000000;font-family:Times New Roman;font-size:1.5em;font-weight:bold}
-		.st24 {fill:#000000;font-family:Calibri;font-size:1.00001em}
+		.st1 {fill:#b7dde8;stroke:#000000;stroke-dasharray:5.25,3.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Calibri;font-size:1.00001em}
+		.st3 {font-size:1em}
+		.st4 {fill:#c07a92;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st5 {fill:#000000;font-family:Times New Roman;font-size:1.00001em}
+		.st6 {font-family:Symbol;font-size:1em}
+		.st7 {fill:#e2c3c9;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st8 {fill:#7f7f7f}
+		.st9 {stroke:#000000;stroke-dasharray:3.6,2.16;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st10 {fill:#80afbf;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st11 {fill:#608595;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st12 {fill:#dfc286;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st13 {fill:#87bba4;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st14 {fill:#e57b7f;stroke:#000000;stroke-dasharray:11.25,6.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st15 {marker-end:url(#mrkr13-117);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st16 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.22935779816514}
+		.st17 {marker-start:url(#mrkr13-133);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st18 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st19 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st20 {fill:#000000;font-family:Symbol;font-size:1.00001em}
+		.st21 {font-family:Times New Roman;font-size:1em}
+		.st22 {font-family:宋体;font-size:1em}
+		.st23 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st24 {fill:#000000;font-family:Times New Roman;font-size:1.5em;font-weight:bold}
 		.st25 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
@@ -44,11 +40,11 @@
 		<g id="lend13">
 			<path d="M 3 1 L 0 0 L 3 -1 L 3 1 " style="stroke:none"/>
 		</g>
-		<marker id="mrkr13-113" class="st14" v:arrowType="13" v:arrowSize="2" v:setback="13.08" refX="-13.08" orient="auto"
+		<marker id="mrkr13-117" class="st16" v:arrowType="13" v:arrowSize="2" v:setback="13.08" refX="-13.08" orient="auto"
 				markerUnits="strokeWidth" overflow="visible">
 			<use xlink:href="#lend13" transform="scale(-4.36,-4.36) "/>
 		</marker>
-		<marker id="mrkr13-129" class="st14" v:arrowType="13" v:arrowSize="2" v:setback="12.6" refX="12.6" orient="auto"
+		<marker id="mrkr13-133" class="st16" v:arrowType="13" v:arrowSize="2" v:setback="12.6" refX="12.6" orient="auto"
 				markerUnits="strokeWidth" overflow="visible">
 			<use xlink:href="#lend13" transform="scale(4.36) "/>
 		</marker>
@@ -57,15 +53,21 @@
 		<title>页-1</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>
-		<v:layer v:name="容器" v:index="0"/>
+		<v:layer v:name="流程图" v:index="0"/>
 		<v:layer v:name="连接线" v:index="1"/>
-		<v:layer v:name="网站图形状" v:index="2"/>
-		<v:layer v:name="流程图" v:index="3"/>
-		<g id="group138-1" transform="translate(18.375,-18.375)" v:mID="138" v:groupContext="group">
-			<title>工作表.138</title>
-			<g id="group131-2" transform="translate(454.831,0)" v:mID="131" v:groupContext="group">
+		<g id="group137-1" transform="translate(0.375,-0.375)" v:mID="137" v:groupContext="group">
+			<title>工作表.137</title>
+			<g id="shape6-2" v:mID="6" v:groupContext="shape" transform="translate(35.3034,-458.242)">
+				<title>工作表.6</title>
+				<desc>Step1: Collect the essential lncRNA data records manually fro...</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+				<v:textRect cx="188.504" cy="522.32" width="377.01" height="94.8189"/>
+				<path d="M0 569.73 L377.01 569.73 L377.01 474.91 L0 474.91 L0 569.73 Z" class="st1"/>
+				<text x="4" y="489.71" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>Step1: Collect the essential lncRNA data records manually from 201 <tspan
+							x="4" dy="1.2em" class="st3">literatures using keywords.</tspan></text>			</g>
+			<g id="group131-6" transform="translate(454.831,0)" v:mID="131" v:groupContext="group">
 				<title>工作表.131</title>
-				<g id="shape72-3" v:mID="72" v:groupContext="shape" v:layerMember="3" transform="translate(452.409,-231.151)">
+				<g id="shape72-7" v:mID="72" v:groupContext="shape" v:layerMember="0" transform="translate(452.409,-231.151)">
 					<title>流程.72</title>
 					<desc>Download page All data download Source code</desc>
 					<v:custProps>
@@ -92,15 +94,15 @@
 						<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(1.0629921259843):24"/>
 					</v:userDefs>
 					<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="45.3543" cy="522.77" width="90.71" height="165.918"/>
-					<path d="M0 605.73 L90.71 605.73 L90.71 439.81 L0 439.81 L0 605.73 Z" class="st1"/>
-					<text x="2" y="452.61" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Download page<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>All data <tspan x="34.17" dy="1.2em"
-								class="st4">download<v:newlineChar/></tspan><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Source <tspan x="34.17" dy="1.2em"
-								class="st4">code</tspan></text>				</g>
-				<g id="shape73-12" v:mID="73" v:groupContext="shape" v:layerMember="3" transform="translate(564.378,-231.151)">
+					<v:textRect cx="45.3543" cy="486.77" width="90.71" height="165.918"/>
+					<path d="M0 569.73 L90.71 569.73 L90.71 403.81 L0 403.81 L0 569.73 Z" class="st4"/>
+					<text x="2" y="416.61" class="st5" v:langID="1033"><v:paragraph/><v:tabList/>Download page<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>All data <tspan x="34.17" dy="1.2em"
+								class="st3">download<v:newlineChar/></tspan><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Source <tspan x="34.17" dy="1.2em"
+								class="st3">code</tspan></text>				</g>
+				<g id="shape73-16" v:mID="73" v:groupContext="shape" v:layerMember="0" transform="translate(564.378,-231.151)">
 					<title>流程.73</title>
 					<desc>Help page Tutorial Statistics Contact</desc>
 					<v:custProps>
@@ -127,14 +129,14 @@
 						<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.86614173228346):24"/>
 					</v:userDefs>
 					<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="40.9606" cy="522.77" width="81.93" height="165.918"/>
-					<path d="M0 605.73 L81.92 605.73 L81.92 439.81 L0 439.81 L0 605.73 Z" class="st5"/>
-					<text x="2" y="452.61" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Help page<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Tutorial <v:newlineChar/><tspan x="16.17"
-								dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Statistics<v:newlineChar/><tspan
-								x="16.17" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Contact</text>				</g>
-				<g id="shape67-21" v:mID="67" v:groupContext="shape" v:layerMember="3" transform="translate(234.213,-487.769)">
+					<v:textRect cx="40.9606" cy="486.77" width="81.93" height="165.918"/>
+					<path d="M0 569.73 L81.92 569.73 L81.92 403.81 L0 403.81 L0 569.73 Z" class="st7"/>
+					<text x="2" y="416.61" class="st5" v:langID="1033"><v:paragraph/><v:tabList/>Help page<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Tutorial <v:newlineChar/><tspan x="16.17"
+								dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Statistics<v:newlineChar/><tspan
+								x="16.17" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Contact</text>				</g>
+				<g id="shape67-25" v:mID="67" v:groupContext="shape" v:layerMember="0" transform="translate(234.213,-487.769)">
 					<title>数据库.8</title>
 					<desc>The dbEssLnc database</desc>
 					<v:custProps>
@@ -160,14 +162,14 @@
 						<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 					</v:userDefs>
 					<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-					<v:textRect cx="107.362" cy="573.083" width="198.41" height="65.2925"/>
-					<path d="M8.16 540.44 L214.72 540.44 A69.3733 69.3733 0 0 1 214.72 605.73 L8.16 605.73 A69.3733 69.3733 0 0 1
-								 8.16 540.44 Z" class="st6"/>
-					<path d="M8.16 540.44 L214.72 540.44 A69.3733 69.3733 0 0 1 214.72 605.73 L8.16 605.73 A69.3733 69.3733 0 0 1
-								 8.16 540.44" class="st7"/>
-					<path d="M214.72 540.44 A69.3733 69.3733 -180 0 0 214.72 605.73" class="st7"/>
-					<text x="50.72" y="576.68" class="st2" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>The dbEssLnc database</text>				</g>
-				<g id="shape69-26" v:mID="69" v:groupContext="shape" v:layerMember="3" transform="translate(0,-231.151)">
+					<v:textRect cx="107.362" cy="537.083" width="198.41" height="65.2925"/>
+					<path d="M8.16 504.44 L214.72 504.44 A69.3733 69.3733 0 0 1 214.72 569.73 L8.16 569.73 A69.3733 69.3733 0 0 1
+								 8.16 504.44 Z" class="st8"/>
+					<path d="M8.16 504.44 L214.72 504.44 A69.3733 69.3733 0 0 1 214.72 569.73 L8.16 569.73 A69.3733 69.3733 0 0 1
+								 8.16 504.44" class="st9"/>
+					<path d="M214.72 504.44 A69.3733 69.3733 -180 0 0 214.72 569.73" class="st9"/>
+					<text x="50.72" y="540.68" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>The dbEssLnc database</text>				</g>
+				<g id="shape69-30" v:mID="69" v:groupContext="shape" v:layerMember="0" transform="translate(0,-231.151)">
 					<title>流程</title>
 					<desc>Browse page Reason General essential lncRNA LncRNA tumor supp...</desc>
 					<v:custProps>
@@ -194,23 +196,23 @@
 						<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(2.0866141732283):24"/>
 					</v:userDefs>
 					<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="74.4803" cy="522.77" width="148.97" height="165.918"/>
-					<path d="M0 605.73 L148.96 605.73 L148.96 439.81 L0 439.81 L0 605.73 Z" class="st8"/>
-					<text x="2" y="452.61" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Browse page<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="18" v:bullet="1"/><tspan x="2" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Reason<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>General essential <tspan x="34.17"
-								dy="1.2em" class="st4">lncRNA<v:newlineChar/></tspan><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>LncRNA tumor <tspan x="34.17" dy="1.2em"
-								class="st4">suppressor gene<v:newlineChar/></tspan><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>LncRNA oncogene<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="18" v:bullet="1"/><tspan x="2" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Organism<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Human<v:newlineChar/><tspan x="16.17"
-								dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Mouse</text>				</g>
-				<g id="shape70-45" v:mID="70" v:groupContext="shape" v:layerMember="3" transform="translate(170.22,-231.151)">
+					<v:textRect cx="74.4803" cy="486.77" width="148.97" height="165.918"/>
+					<path d="M0 569.73 L148.96 569.73 L148.96 403.81 L0 403.81 L0 569.73 Z" class="st10"/>
+					<text x="2" y="416.61" class="st5" v:langID="1033"><v:paragraph/><v:tabList/>Browse page<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="18" v:bullet="1"/><tspan x="2" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Reason<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>General essential <tspan x="34.17"
+								dy="1.2em" class="st3">lncRNA<v:newlineChar/></tspan><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>LncRNA tumor <tspan x="34.17" dy="1.2em"
+								class="st3">suppressor <v:newlineChar/></tspan><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>LncRNA oncogene<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="18" v:bullet="1"/><tspan x="2" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Organism<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Human<v:newlineChar/><tspan x="16.17"
+								dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Mouse</text>				</g>
+				<g id="shape70-49" v:mID="70" v:groupContext="shape" v:layerMember="0" transform="translate(170.22,-231.151)">
 					<title>流程.70</title>
 					<desc>Search page Search by essential gene name/NONCODE gene id/ de...</desc>
 					<v:custProps>
@@ -237,18 +239,18 @@
 						<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(1.8897637795276):24"/>
 					</v:userDefs>
 					<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="66.685" cy="522.77" width="133.38" height="165.918"/>
-					<path d="M0 605.73 L133.37 605.73 L133.37 439.81 L0 439.81 L0 605.73 Z" class="st9"/>
-					<text x="2" y="452.61" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Search page<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Search by essential <tspan x="34.17"
-								dy="1.2em" class="st4">gene name/</tspan><tspan x="34.17" dy="1.2em" class="st4">NONCODE gene </tspan><tspan
-								x="34.17" dy="1.2em" class="st4">id/ detailed reason </tspan><tspan x="34.17" dy="1.2em"
-								class="st4">description<v:newlineChar/></tspan><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Fuzzy search <v:newlineChar/><tspan
-								x="16.17" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Auto-complete <tspan
-								x="34.17" dy="1.2em" class="st4">ability</tspan></text>				</g>
-				<g id="shape71-59" v:mID="71" v:groupContext="shape" v:layerMember="3" transform="translate(324.85,-231.151)">
+					<v:textRect cx="66.685" cy="486.77" width="133.38" height="165.918"/>
+					<path d="M0 569.73 L133.37 569.73 L133.37 403.81 L0 403.81 L0 569.73 Z" class="st11"/>
+					<text x="2" y="416.61" class="st5" v:langID="1033"><v:paragraph/><v:tabList/>Search page<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Search by essential <tspan x="34.17"
+								dy="1.2em" class="st3">gene name/</tspan><tspan x="34.17" dy="1.2em" class="st3">NONCODE gene </tspan><tspan
+								x="34.17" dy="1.2em" class="st3">id/ detailed reason </tspan><tspan x="34.17" dy="1.2em"
+								class="st3">description<v:newlineChar/></tspan><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Fuzzy search <v:newlineChar/><tspan
+								x="16.17" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Auto-complete <tspan
+								x="34.17" dy="1.2em" class="st3">ability</tspan></text>				</g>
+				<g id="shape71-63" v:mID="71" v:groupContext="shape" v:layerMember="0" transform="translate(324.85,-231.151)">
 					<title>流程.71</title>
 					<desc>Blast page Perform blast Show relevant lncRNA information</desc>
 					<v:custProps>
@@ -275,14 +277,14 @@
 						<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(1.0629921259843):24"/>
 					</v:userDefs>
 					<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="53.1496" cy="522.77" width="106.3" height="165.918"/>
-					<path d="M0 605.73 L106.3 605.73 L106.3 439.81 L0 439.81 L0 605.73 Z" class="st10"/>
-					<text x="2" y="452.61" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Blast page<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Perform blast <v:newlineChar/><tspan
-								x="16.17" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Show relevant <tspan
-								x="34.17" dy="1.2em" class="st4">lncRNA </tspan><tspan x="34.17" dy="1.2em" class="st4">information</tspan></text>				</g>
-				<g id="shape74-68" v:mID="74" v:groupContext="shape" v:layerMember="3" transform="translate(69.4488,-1.13687E-13)">
+					<v:textRect cx="53.1496" cy="486.77" width="106.3" height="165.918"/>
+					<path d="M0 569.73 L106.3 569.73 L106.3 403.81 L0 403.81 L0 569.73 Z" class="st12"/>
+					<text x="2" y="416.61" class="st5" v:langID="1033"><v:paragraph/><v:tabList/>Blast page<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Perform blast <v:newlineChar/><tspan
+								x="16.17" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Show relevant <tspan
+								x="34.17" dy="1.2em" class="st3">lncRNA </tspan><tspan x="34.17" dy="1.2em" class="st3">information</tspan></text>				</g>
+				<g id="shape74-72" v:mID="74" v:groupContext="shape" v:layerMember="0" transform="translate(69.4488,-1.13687E-13)">
 					<title>流程.74</title>
 					<desc>Gene page Gene information Gene name NONCODE Gene ID NCBI gen...</desc>
 					<v:custProps>
@@ -309,23 +311,22 @@
 						<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(2.0866141732283):24"/>
 					</v:userDefs>
 					<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="95.315" cy="527.591" width="190.63" height="156.275"/>
-					<path d="M0 605.73 L190.63 605.73 L190.63 449.45 L0 449.45 L0 605.73 Z" class="st11"/>
-					<text x="2" y="462.25" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Gene page<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Gene information<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="46.35" v:bullet="1"/><tspan x="30.35" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Gene name<v:newlineChar/><tspan x="30.35"
-								dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>NONCODE Gene ID<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>NCBI gene ID<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Aliase<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Reason<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Organism<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Gene ontology annotaion<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Transcript ID in NONCODE</text>				</g>
-				<g id="shape110-89" v:mID="110" v:groupContext="shape" v:layerMember="3"
-						transform="translate(357.064,-1.13687E-13)">
+					<v:textRect cx="95.315" cy="491.591" width="190.63" height="156.275"/>
+					<path d="M0 569.73 L190.63 569.73 L190.63 413.45 L0 413.45 L0 569.73 Z" class="st13"/>
+					<text x="2" y="426.25" class="st5" v:langID="1033"><v:paragraph/><v:tabList/>Gene page<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Gene information<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="46.35" v:bullet="1"/><tspan x="30.35" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Gene name<v:newlineChar/><tspan x="30.35"
+								dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>NONCODE Gene ID<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>NCBI gene ID<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Aliase<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Reason<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Organism<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Gene ontology annotaion<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Transcript ID in NONCODE</text>				</g>
+				<g id="shape110-93" v:mID="110" v:groupContext="shape" v:layerMember="0" transform="translate(357.064,0)">
 					<title>流程.110</title>
 					<desc>Visual page LncRNA information Gene name Organism NONCODE gen...</desc>
 					<v:custProps>
@@ -352,69 +353,69 @@
 						<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(1.8897637795276):24"/>
 					</v:userDefs>
 					<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="95.315" cy="527.591" width="190.63" height="156.275"/>
-					<path d="M0 605.73 L190.63 605.73 L190.63 449.45 L0 449.45 L0 605.73 Z" class="st12"/>
-					<text x="2" y="462.25" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Visual page<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>LncRNA information<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="46.35" v:bullet="1"/><tspan x="30.35" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Gene name<v:newlineChar/><tspan x="30.35"
-								dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Organism<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>NONCODE gene ID<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>NONCODE transcript ID<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>lncRNA sequence length<v:newlineChar/><tspan
-								x="30.35" dy="1.2em" class="st3" v:isBullet="true">·</tspan><tspan class="st3"> </tspan>lncRNA FASTA sequence<v:newlineChar/><v:paragraph
-								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st3"
-								v:isBullet="true">·</tspan><tspan class="st3"> </tspan>Expression profile</text>				</g>
-				<g id="shape122-108" v:mID="122" v:groupContext="shape" v:layerMember="1" transform="translate(341.575,-487.769)">
+					<v:textRect cx="95.315" cy="491.591" width="190.63" height="156.275"/>
+					<path d="M0 569.73 L190.63 569.73 L190.63 413.45 L0 413.45 L0 569.73 Z" class="st14"/>
+					<text x="2" y="426.25" class="st5" v:langID="1033"><v:paragraph/><v:tabList/>Visual page<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>LncRNA information<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="46.35" v:bullet="1"/><tspan x="30.35" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Gene name<v:newlineChar/><tspan x="30.35"
+								dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Organism<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>NONCODE gene ID<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>NONCODE transcript ID<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>lncRNA sequence length<v:newlineChar/><tspan
+								x="30.35" dy="1.2em" class="st6" v:isBullet="true">·</tspan><tspan class="st6"> </tspan>lncRNA FASTA sequence<v:newlineChar/><v:paragraph
+								v:indentFirst="-18" v:indentLeft="32.17" v:bullet="1"/><tspan x="16.17" dy="1.2em" class="st6"
+								v:isBullet="true">·</tspan><tspan class="st6"> </tspan>Expression profile</text>				</g>
+				<g id="shape122-112" v:mID="122" v:groupContext="shape" v:layerMember="1" transform="translate(341.575,-487.769)">
 					<title>动态连接线.122</title>
-					<path d="M0 605.73 L0 641.82 L36.43 641.82 L36.43 686.62" class="st13"/>
+					<path d="M0 569.73 L0 605.82 L36.43 605.82 L36.43 650.62" class="st15"/>
 				</g>
-				<g id="shape123-114" v:mID="123" v:groupContext="shape" v:layerMember="1" transform="translate(341.575,-487.769)">
+				<g id="shape123-118" v:mID="123" v:groupContext="shape" v:layerMember="1" transform="translate(341.575,-487.769)">
 					<title>动态连接线.123</title>
-					<path d="M0 605.73 L-0 641.67 L-104.67 641.67 L-104.67 686.62" class="st13"/>
+					<path d="M0 569.73 L0 605.67 L-104.67 605.67 L-104.67 650.62" class="st15"/>
 				</g>
-				<g id="shape124-119" v:mID="124" v:groupContext="shape" v:layerMember="1" transform="translate(378,-451.625)">
+				<g id="shape124-123" v:mID="124" v:groupContext="shape" v:layerMember="1" transform="translate(378,-451.625)">
 					<title>动态连接线.124</title>
-					<path d="M0 605.73 L119.76 605.73 L119.76 650.47" class="st13"/>
+					<path d="M0 569.73 L119.76 569.73 L119.76 614.47" class="st15"/>
 				</g>
-				<g id="shape125-124" v:mID="125" v:groupContext="shape" v:layerMember="1" transform="translate(605.339,-397.07)">
+				<g id="shape125-128" v:mID="125" v:groupContext="shape" v:layerMember="1" transform="translate(605.339,-397.07)">
 					<title>动态连接线.125</title>
-					<path d="M0 596.28 L0 595.92 L0 551.17 L-107.57 551.17" class="st15"/>
+					<path d="M0 560.28 L0 559.92 L0 515.17 L-107.57 515.17" class="st17"/>
 				</g>
-				<g id="shape126-130" v:mID="126" v:groupContext="shape" v:layerMember="1" transform="translate(74.4803,-397.07)">
+				<g id="shape126-134" v:mID="126" v:groupContext="shape" v:layerMember="1" transform="translate(74.4803,-397.07)">
 					<title>动态连接线.126</title>
-					<path d="M0 596.28 L0 595.92 L0 551.03 L162.43 551.03" class="st15"/>
+					<path d="M0 560.28 L0 559.92 L0 515.03 L162.43 515.03" class="st17"/>
 				</g>
-				<g id="shape128-135" v:mID="128" v:groupContext="shape" v:layerMember="1" transform="translate(236.906,-231.151)">
+				<g id="shape128-139" v:mID="128" v:groupContext="shape" v:layerMember="1" transform="translate(236.906,-231.151)">
 					<title>动态连接线.128</title>
-					<path d="M0 605.73 L0 625.68 L-72.14 625.68" class="st16"/>
+					<path d="M0 569.73 L0 589.68 L-72.14 589.68" class="st18"/>
 				</g>
-				<g id="shape129-138" v:mID="129" v:groupContext="shape" v:layerMember="1" transform="translate(260.079,-71.051)">
+				<g id="shape129-142" v:mID="129" v:groupContext="shape" v:layerMember="1" transform="translate(260.079,-71.051)">
 					<title>动态连接线.129</title>
-					<path d="M0 598.64 L87.18 598.64" class="st13"/>
+					<path d="M0 562.64 L87.18 562.64" class="st15"/>
 				</g>
-				<g id="shape130-143" v:mID="130" v:groupContext="shape" v:layerMember="1" transform="translate(74.4803,-231.151)">
+				<g id="shape130-147" v:mID="130" v:groupContext="shape" v:layerMember="1" transform="translate(74.4803,-231.151)">
 					<title>动态连接线.130</title>
-					<path d="M0 605.73 L0 625.49 L90.28 625.49 L90.28 670.79" class="st13"/>
+					<path d="M0 569.73 L0 589.49 L90.28 589.49 L90.28 634.79" class="st15"/>
 				</g>
 			</g>
-			<g id="shape8-148" v:mID="8" v:groupContext="shape" transform="translate(35.3034,-461.115)">
+			<g id="shape8-152" v:mID="8" v:groupContext="shape" transform="translate(35.3034,-461.115)">
 				<title>工作表.8</title>
 				<desc>Knockout or knockdown lncRNA LncRNA lethality Long non-coding...</desc>
 				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="109.15" cy="575.583" width="218.3" height="60.2913"/>
-				<rect x="0" y="545.438" width="218.299" height="60.2913" class="st17"/>
-				<text x="4" y="557.58" class="st18" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18" v:bullet="1"/><v:tabList/><tspan
-							class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Knockout or knockdown lncRNA<v:newlineChar/></tspan><tspan
-							x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">LncRNA lethality<v:newlineChar/></tspan><tspan
-							x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Long non</tspan><tspan
-							class="st19">-</tspan><tspan class="st19">coding RNA<v:newlineChar/></tspan><tspan x="4" dy="1.2em"
-							class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Essential lncRNA</tspan></text>			</g>
-			<g id="shape9-161" v:mID="9" v:groupContext="shape" transform="translate(267.744,-492.165)">
+				<v:textRect cx="109.15" cy="539.583" width="218.3" height="60.2913"/>
+				<rect x="0" y="509.438" width="218.299" height="60.2913" class="st19"/>
+				<text x="4" y="521.58" class="st20" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18" v:bullet="1"/><v:tabList/><tspan
+							class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Knockout or knockdown lncRNA<v:newlineChar/></tspan><tspan
+							x="4" dy="1.2em" class="st3" v:isBullet="true">·</tspan> <tspan class="st21">LncRNA lethality<v:newlineChar/></tspan><tspan
+							x="4" dy="1.2em" class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Long non</tspan><tspan
+							class="st21">-</tspan><tspan class="st21">coding RNA<v:newlineChar/></tspan><tspan x="4" dy="1.2em"
+							class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Essential lncRNA</tspan></text>			</g>
+			<g id="shape9-165" v:mID="9" v:groupContext="shape" transform="translate(267.744,-492.165)">
 				<title>工作表.9</title>
-				<rect v:rectContext="foreign" x="0" y="576.488" width="85.0394" height="29.2407" class="st17"/>
-				<image x="0" y="576.488" width="85.0394" height="29.2407" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+				<rect v:rectContext="foreign" x="0" y="540.488" width="85.0394" height="29.2407" class="st19"/>
+				<image x="0" y="540.488" width="85.0394" height="29.2407" preserveAspectRatio="none" xlink:href="data:image/png;base64,
 							iVBORw0KGgoAAAANSUhEUgAAAT0AAABtCAYAAADTYrbeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUA
 							ABYlAUlSJPAAAA5kSURBVHhe7Z3Ni11JGYfzP2SfZXZBENw0BHEliNk5qxYSBwZciAxkYTMu3EgYUReiRDIIokZBZhEYyTAEYZhF
 							I6JIIBuHLFxNVm7iP9DydPpN3lTe+jj3ns9bvwMP9+O8VefeOnWe+1bV7duXnj9/fiaEEL0g6QkhukLSE0J0haQnhOgKSU8I0RWS
@@ -466,60 +467,60 @@
 							JD2xKGSeadYn6YkpkfTE4qTDXUlPTImkJ1YBw10Tn6QnpkTSE6sC4Ul6YkokPbE61rDCLA4XSU8I0RWSnhCiKyQ9IURXSHpCiK6Q
 							9IQQXSHpCSG6QtITQnSFpCeE6ApJTwjRFZKeEKIrJD0hRFdIekKIrpD0hBBdIekJIbpC0hNCdIWkJ4ToCklPCNEVkp4QoiskPSFE
 							V0h6QoiukPSEEF0h6QkhOuL52f8Bs9MXV6cOIhMAAAAASUVORK5CYII="/>
-				<rect v:rectContext="foreign" x="0" y="576.488" width="85.0394" height="29.2407" class="st17"/>
+				<rect v:rectContext="foreign" x="0" y="540.488" width="85.0394" height="29.2407" class="st19"/>
 			</g>
-			<g id="group32-165" transform="translate(35.3034,-356.722)" v:mID="32" v:groupContext="group">
+			<g id="group32-169" transform="translate(35.3034,-356.722)" v:mID="32" v:groupContext="group">
 				<title>工作表.32</title>
-				<g id="shape10-166" v:mID="10" v:groupContext="shape">
+				<g id="shape10-170" v:mID="10" v:groupContext="shape">
 					<title>工作表.10</title>
 					<desc>Step2: Screen the literatures to find out details of essentia...</desc>
 					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="188.504" cy="568.879" width="377.01" height="73.7008"/>
-					<path d="M0 605.73 L377.01 605.73 L377.01 532.03 L0 532.03 L0 605.73 Z" class="st20"/>
-					<text x="4" y="546.83" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>Step2: Screen the literatures to find out details of essential lncRNAs</text>				</g>
-				<g id="shape11-169" v:mID="11" v:groupContext="shape">
+					<v:textRect cx="188.504" cy="532.879" width="377.01" height="73.7008"/>
+					<path d="M0 569.73 L377.01 569.73 L377.01 496.03 L0 496.03 L0 569.73 Z" class="st1"/>
+					<text x="4" y="510.83" class="st5" v:langID="2052"><v:paragraph/><v:tabList/>Step2: Screen the literatures to find out details of essential lncRNAs</text>				</g>
+				<g id="shape11-173" v:mID="11" v:groupContext="shape">
 					<title>工作表.11</title>
 					<desc>Gene name The organism The reason of essential</desc>
 					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-					<v:textRect cx="132.661" cy="576.762" width="265.33" height="57.934"/>
-					<rect x="0" y="547.795" width="265.323" height="57.934" class="st17"/>
-					<text x="4" y="565.96" class="st18" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18"
-								v:bullet="1"/><v:tabList/><tspan class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Gene name<v:newlineChar/></tspan><tspan
-								x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">The organism<v:newlineChar/></tspan><tspan
-								x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">The reason of essential</tspan></text>				</g>
+					<v:textRect cx="132.661" cy="540.762" width="265.33" height="57.934"/>
+					<rect x="0" y="511.795" width="265.323" height="57.934" class="st19"/>
+					<text x="4" y="529.96" class="st20" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18"
+								v:bullet="1"/><v:tabList/><tspan class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Gene name<v:newlineChar/></tspan><tspan
+								x="4" dy="1.2em" class="st3" v:isBullet="true">·</tspan> <tspan class="st21">The organism<v:newlineChar/></tspan><tspan
+								x="4" dy="1.2em" class="st3" v:isBullet="true">·</tspan> <tspan class="st21">The reason of essential</tspan></text>				</g>
 			</g>
-			<g id="group33-178" transform="translate(35.3034,-210.738)" v:mID="33" v:groupContext="group">
+			<g id="group33-182" transform="translate(35.3034,-210.738)" v:mID="33" v:groupContext="group">
 				<title>工作表.33</title>
-				<g id="shape12-179" v:mID="12" v:groupContext="shape">
+				<g id="shape12-183" v:mID="12" v:groupContext="shape">
 					<title>工作表.12</title>
 					<desc>Step3: Map gene name to other databases to get other details</desc>
 					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="188.504" cy="543.367" width="377.01" height="124.724"/>
-					<path d="M0 605.73 L377.01 605.73 L377.01 481 L0 481 L0 605.73 Z" class="st20"/>
-					<text x="4" y="495.8" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>Step3: Map gene name to other databases to get other details<v:newlineChar/></text>				</g>
-				<g id="shape13-182" v:mID="13" v:groupContext="shape" transform="translate(1.41732,-3.62192)">
+					<v:textRect cx="188.504" cy="507.367" width="377.01" height="124.724"/>
+					<path d="M0 569.73 L377.01 569.73 L377.01 445 L0 445 L0 569.73 Z" class="st1"/>
+					<text x="4" y="459.8" class="st5" v:langID="2052"><v:paragraph/><v:tabList/>Step3: Map gene name to other databases to get other details<v:newlineChar/></text>				</g>
+				<g id="shape13-186" v:mID="13" v:groupContext="shape" transform="translate(1.41732,-3.62192)">
 					<title>工作表.13</title>
 					<desc>MCBI gene id NONCODE gene/transcript id Transcript FASTA sequ...</desc>
 					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-					<v:textRect cx="89.2441" cy="555.037" width="178.49" height="101.384"/>
-					<rect x="0" y="504.344" width="178.488" height="101.384" class="st17"/>
-					<text x="4" y="521.94" class="st18" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18"
-								v:bullet="1"/><v:tabList/><tspan class="st4" v:isBullet="true">·</tspan> <tspan class="st19">MCBI gene id<v:newlineChar/></tspan><tspan
-								x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">NONCODE gene/transcript id<v:newlineChar/></tspan><tspan
-								x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Transcript FASTA sequence<v:newlineChar/></tspan><tspan
-								x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Full gene aliases<v:newlineChar/></tspan><tspan
-								x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Gene ontology annotations<v:newlineChar/></tspan><tspan
-								x="4" dy="1.287em" class="st4" v:isBullet="true">·</tspan> <tspan class="st21">……</tspan></text>				</g>
-				<g id="group30-197" transform="translate(212.598,-9.68504)" v:mID="30" v:groupContext="group">
+					<v:textRect cx="89.2441" cy="519.037" width="178.49" height="101.384"/>
+					<rect x="0" y="468.344" width="178.488" height="101.384" class="st19"/>
+					<text x="4" y="485.94" class="st20" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18"
+								v:bullet="1"/><v:tabList/><tspan class="st3" v:isBullet="true">·</tspan> <tspan class="st21">MCBI gene id<v:newlineChar/></tspan><tspan
+								x="4" dy="1.2em" class="st3" v:isBullet="true">·</tspan> <tspan class="st21">NONCODE gene/transcript id<v:newlineChar/></tspan><tspan
+								x="4" dy="1.2em" class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Transcript FASTA sequence<v:newlineChar/></tspan><tspan
+								x="4" dy="1.2em" class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Full gene aliases<v:newlineChar/></tspan><tspan
+								x="4" dy="1.2em" class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Gene ontology annotations<v:newlineChar/></tspan><tspan
+								x="4" dy="1.287em" class="st3" v:isBullet="true">·</tspan> <tspan class="st22">……</tspan></text>				</g>
+				<g id="group30-201" transform="translate(212.598,-9.68504)" v:mID="30" v:groupContext="group">
 					<title>工作表.30</title>
-					<g id="shape14-198" v:mID="14" v:groupContext="shape">
+					<g id="shape14-202" v:mID="14" v:groupContext="shape">
 						<title>工作表.14</title>
-						<rect x="0" y="525.886" width="147.402" height="79.8425" class="st22"/>
+						<rect x="0" y="489.886" width="147.402" height="79.8425" class="st23"/>
 					</g>
-					<g id="shape15-200" v:mID="15" v:groupContext="shape" transform="translate(8.59843,-30.6352)">
+					<g id="shape15-204" v:mID="15" v:groupContext="shape" transform="translate(8.59843,-30.6352)">
 						<title>工作表.15</title>
-						<rect v:rectContext="foreign" x="0" y="585.853" width="78.6142" height="19.876" class="st17"/>
-						<image x="0" y="585.853" width="78.6142" height="19.876" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+						<rect v:rectContext="foreign" x="0" y="549.853" width="78.6142" height="19.876" class="st19"/>
+						<image x="0" y="549.853" width="78.6142" height="19.876" preserveAspectRatio="none" xlink:href="data:image/png;base64,
 									iVBORw0KGgoAAAANSUhEUgAAAQkAAABDCAYAAACP3PDaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZ
 									cwAAFiUAABYlAUlSJPAAACWpSURBVHhe7X1neFVV2rYUlSIWxBLpIdQASSCd9F4ghRQSIAECCRBKQuhVkCaI0gRFRRQE
 									pAkoiDL2No6FYazYQcbGjL7vzPX+ea/vx/099zrZYZ199o5JCL4Z2D/uK+fsrPWsstdzr6esvc81gweXwYEDBw7s4JCE
@@ -662,12 +663,12 @@
 									pydJFJl9slHSMRjFQgijhSByhSAC2nqhR7vOiiBuu9lbvUKvPi/RdeDAgScuH0lcZvDZjaS+OYjvHI64uwIR2TEEfbrF
 									ubk1dXlU3IEDB7XjP5YkHDhw8MfAIQkHDhzUCockHDhwUCscknDgwEGtcEjCgQMHtcIhCQcOHNQKhyQcOHBQC8rw/wHl
 									eurW6qcxCgAAAABJRU5ErkJggg=="/>
-						<rect v:rectContext="foreign" x="0" y="585.853" width="78.6142" height="19.876" class="st17"/>
+						<rect v:rectContext="foreign" x="0" y="549.853" width="78.6142" height="19.876" class="st19"/>
 					</g>
-					<g id="shape16-204" v:mID="16" v:groupContext="shape" transform="translate(9.82677,-5.6685)">
+					<g id="shape16-208" v:mID="16" v:groupContext="shape" transform="translate(9.82677,-5.6685)">
 						<title>工作表.16</title>
-						<rect v:rectContext="foreign" x="0" y="587.306" width="63.874" height="18.4226" class="st17"/>
-						<image x="0" y="587.306" width="63.874" height="18.4226" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+						<rect v:rectContext="foreign" x="0" y="551.306" width="63.874" height="18.4226" class="st19"/>
+						<image x="0" y="551.306" width="63.874" height="18.4226" preserveAspectRatio="none" xlink:href="data:image/png;base64,
 									iVBORw0KGgoAAAANSUhEUgAAAdsAAACJCAYAAABkS5J8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZ
 									cwAAFiUAABYlAUlSJPAAACmWSURBVHhe7Z35vyRlfe/zSm7uzU1yo4mJJqIeo0ajBpOIIBFzjgIDA8omzsAA3WCi7Myw
 									zgx4etiHmWFJ2IfpwyKiwDAsihpO9wCyyr7doKf73FyTGGPuX3C6zy99v9+nurqrqz9V9VR1Pd1VT31/eL++53mqn+X7
@@ -824,12 +825,12 @@
 									fpsJwiYfSgO2AZvPZlL+xa+2OblKcacB7BSEMcBBj53UW6FzoGje+3vKkR2nxvB193M8jh2e4bnE8QVh2L/cROz6DUvk
 									W4zXv1jyONfHxL8SAjsFIWPk+ftsgpB1xL/GAOwUBEEQBCE9YKcgCIIgCOkBOwVBEARBSA/YKQiCIAhCesBOQRAEQRDS
 									A3YKgiAIgpAesFMQBEEQhPSAnYIgCIIgpAfsFARBEAQhJU7u/H9M5ADmOUhxIgAAAABJRU5ErkJggg=="/>
-						<rect v:rectContext="foreign" x="0" y="587.306" width="63.874" height="18.4226" class="st17"/>
+						<rect v:rectContext="foreign" x="0" y="551.306" width="63.874" height="18.4226" class="st19"/>
 					</g>
-					<g id="shape17-208" v:mID="17" v:groupContext="shape" transform="translate(97.3429,-7.30302)">
+					<g id="shape17-212" v:mID="17" v:groupContext="shape" transform="translate(97.3429,-7.30302)">
 						<title>工作表.17</title>
-						<rect v:rectContext="foreign" x="0" y="588.941" width="30.4051" height="16.7881" class="st17"/>
-						<image x="0" y="588.941" width="30.4051" height="16.7881" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+						<rect v:rectContext="foreign" x="0" y="552.941" width="30.4051" height="16.7881" class="st19"/>
+						<image x="0" y="552.941" width="30.4051" height="16.7881" preserveAspectRatio="none" xlink:href="data:image/png;base64,
 									iVBORw0KGgoAAAANSUhEUgAAAKMAAABaCAYAAADU8eZRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZ
 									cwAAFiUAABYlAUlSJPAAAD3xSURBVHhe7Z13XBRZ2rbHyTs78+7uxJ2k4wQnGiaYc84RAyIoCJJRkSQqQQmSVCSIAoqC
 									YEBERTGhqCAgkkRyFgMImCbvzu53f89zmmobKBpUnNl9X/+4fl1dXSdU1V1POHWq+qnKO8AT/hgyLxUiIT4W+7Z5I2j9
@@ -1062,12 +1063,12 @@
 									NI4knCPScOz0RZxKvoizVJ7rkm/jwfZRbnuuW6xri8Y+iO1b6c9Dk5QgI8ZzJ/GEx0PKuRO4cO6o+JTWpZ47jjSi+fL/
 									OU7HthRjyvEIPOEJfwQtxCgtPOEJfzRPxPiE/xieiPEJ/zE8EeMT/mPoWDEmhuKpD2fBKlHmtyc8MOk7VtLxXAnfIvnf
 									/3cB/H/Qx6XIPTg8oQAAAABJRU5ErkJggg=="/>
-						<rect v:rectContext="foreign" x="0" y="588.941" width="30.4051" height="16.7881" class="st17"/>
+						<rect v:rectContext="foreign" x="0" y="552.941" width="30.4051" height="16.7881" class="st19"/>
 					</g>
-					<g id="shape18-212" v:mID="18" v:groupContext="shape" transform="translate(92.126,-32.1206)">
+					<g id="shape18-216" v:mID="18" v:groupContext="shape" transform="translate(92.126,-32.1206)">
 						<title>工作表.18</title>
-						<rect v:rectContext="foreign" x="0" y="587.338" width="50.3622" height="18.3907" class="st17"/>
-						<image x="0" y="587.338" width="50.3622" height="18.3907" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+						<rect v:rectContext="foreign" x="0" y="551.338" width="50.3622" height="18.3907" class="st19"/>
+						<image x="0" y="551.338" width="50.3622" height="18.3907" preserveAspectRatio="none" xlink:href="data:image/png;base64,
 									iVBORw0KGgoAAAANSUhEUgAAALIAAABBCAYAAAB1jP7fAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZ
 									cwAAFiUAABYlAUlSJPAAACODSURBVHhe7d13nx3FsQbg+5WuTQYDvgTbGGNjY4wNNsEkkZPJOWdEVF7lnHPOQgElJMHn
 									6VtPz7bO7GiO9uxKK2P5/FG/TTPdPd1vv/VWVc/Z//nxxx9T3/r2n259IPftvLA+kPt2XlgfyH07L6wP5L6dF9YHct/O
@@ -1202,12 +1203,12 @@
 									OBmFD1qzj/8mG0uQtbVdrO36f7edUyDTW4IHaSnl4oc/XpazE9JiQEvzropIOr8NEkGMokqly4a2A8D1AKH+t779d9o5
 									BTLgYWVVsGWbqw8Il8KRBpIIL1VB6RwyJIO4pR3WZ+S+1e2cArlvfRsr6wO5b+eF9YHct/PC+kDu23lhfSD37TywH9P/
 									AwiX/YK71pu0AAAAAElFTkSuQmCC"/>
-						<rect v:rectContext="foreign" x="0" y="587.338" width="50.3622" height="18.3907" class="st17"/>
+						<rect v:rectContext="foreign" x="0" y="551.338" width="50.3622" height="18.3907" class="st19"/>
 					</g>
-					<g id="shape19-216" v:mID="19" v:groupContext="shape" transform="translate(8.59843,-55.2756)">
+					<g id="shape19-220" v:mID="19" v:groupContext="shape" transform="translate(8.59843,-55.2756)">
 						<title>工作表.19</title>
-						<rect v:rectContext="foreign" x="0" y="587.287" width="109.323" height="18.4423" class="st17"/>
-						<image x="0" y="587.287" width="109.323" height="18.4423" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+						<rect v:rectContext="foreign" x="0" y="551.287" width="109.323" height="18.4423" class="st19"/>
+						<image x="0" y="551.287" width="109.323" height="18.4423" preserveAspectRatio="none" xlink:href="data:image/png;base64,
 									iVBORw0KGgoAAAANSUhEUgAAAj8AAABhCAYAAAA5t8CZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZ
 									cwAAFiUAABYlAUlSJPAAAEZvSURBVHhe7Z2Fe1xH0u7v/3C/3btfNslmIbvZMHPiMDnoJHbigCFmtswsM8jMLDMpBpnZ
 									iZljxpiZGeNs3/rVaGxZPqOZOeoZjXb6fZ56Ekuac8706a56u7rg/xgHBwcHBwcHhySCIz8ODg4ODg4OSQVHfhwcHBwc
@@ -1471,95 +1472,85 @@
 									PsZ7bNiM8668njeRBf0djc6Livw4ODg4ODg4OBR0OPLj4ODg4ODgkFRw5MfBwcHBwcEhqeDIj4ODg4ODg0NSwZEfBwcH
 									BwcHh6SCIz8ODg4ODg4OSQVHfhwcHBwcHBySCo78ODg4ODg4OCQVHPlxcHBwcHBwSCo48uPg4ODg4OCQVHDkx8HBwcHB
 									wSGp4MiPg4ODg4ODQ1LBkR8HBwcHBweHpIIjPw4ODg4ODg5JBGP+P0L+bb6uD3kJAAAAAElFTkSuQmCC"/>
-						<rect v:rectContext="foreign" x="0" y="587.287" width="109.323" height="18.4423" class="st17"/>
+						<rect v:rectContext="foreign" x="0" y="551.287" width="109.323" height="18.4423" class="st19"/>
 					</g>
 				</g>
 			</g>
-			<g id="group34-220" transform="translate(35.3034,-108.153)" v:mID="34" v:groupContext="group">
+			<g id="group34-224" transform="translate(35.3034,-108.153)" v:mID="34" v:groupContext="group">
 				<title>工作表.34</title>
-				<g id="shape28-221" v:mID="28" v:groupContext="shape">
+				<g id="shape28-225" v:mID="28" v:groupContext="shape">
 					<title>工作表.28</title>
 					<desc>Step4: Three categories of essential lncRNA are deposited in ...</desc>
 					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="188.504" cy="565.066" width="377.01" height="81.325"/>
-					<path d="M0 605.73 L377.01 605.73 L377.01 524.4 L0 524.4 L0 605.73 Z" class="st20"/>
-					<text x="4" y="539.2" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>Step4: Three categories of essential lncRNA are deposited in the dbEssLnc</text>				</g>
-				<g id="shape29-224" v:mID="29" v:groupContext="shape" transform="translate(6.39488E-14,-2.87618)">
+					<v:textRect cx="188.504" cy="529.066" width="377.01" height="81.325"/>
+					<path d="M0 569.73 L377.01 569.73 L377.01 488.4 L0 488.4 L0 569.73 Z" class="st1"/>
+					<text x="4" y="503.2" class="st5" v:langID="2052"><v:paragraph/><v:tabList/>Step4: Three categories of essential lncRNA are deposited in the dbEssLnc</text>				</g>
+				<g id="shape29-228" v:mID="29" v:groupContext="shape" transform="translate(6.39488E-14,-2.87618)">
 					<title>工作表.29</title>
-					<desc>38 General essential lncRNAs 70 LncRNA tumor suppressor genes...</desc>
+					<desc>40 General essential lncRNAs 69 LncRNA tumor suppressor 98 Ln...</desc>
 					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-					<v:textRect cx="164.409" cy="576.762" width="328.82" height="57.934"/>
-					<rect x="0" y="547.795" width="328.819" height="57.934" class="st17"/>
-					<text x="4" y="565.96" class="st18" v:langID="1033"><v:paragraph v:indentFirst="-18" v:indentLeft="18"
-								v:bullet="1"/><v:tabList/><tspan class="st4" v:isBullet="true">·</tspan> <tspan class="st19">3</tspan><tspan
-								class="st19" v:langID="2052">8</tspan><tspan class="st19"> </tspan><tspan class="st19"
-								v:langID="2052">General essential lncRNA</tspan><tspan class="st19">s<v:newlineChar/></tspan><tspan
-								x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">70 </tspan><tspan
-								class="st19" v:langID="2052">LncRNA tumor suppressor gene</tspan><tspan class="st19">s<v:newlineChar/></tspan><tspan
-								x="4" dy="1.2em" class="st4" v:isBullet="true">·</tspan> <tspan class="st19">98 </tspan><tspan
-								class="st19" v:langID="2052">LncRNA oncogene</tspan><tspan class="st19">s</tspan></text>				</g>
+					<v:textRect cx="164.409" cy="540.762" width="328.82" height="57.934"/>
+					<rect x="0" y="511.795" width="328.819" height="57.934" class="st19"/>
+					<text x="4" y="529.96" class="st20" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18"
+								v:bullet="1"/><v:tabList/><tspan class="st3" v:isBullet="true">·</tspan> <tspan class="st21">40</tspan><tspan
+								class="st21" v:langID="1033"> </tspan><tspan class="st21">General essential lncRNA</tspan><tspan
+								class="st21" v:langID="1033">s<v:newlineChar/></tspan><tspan x="4" dy="1.2em" class="st3"
+								v:isBullet="true">·</tspan> <tspan class="st21">69</tspan><tspan class="st21" v:langID="1033"> </tspan><tspan
+								class="st21">LncRNA tumor suppressor<v:newlineChar/></tspan><tspan x="4" dy="1.2em" class="st3"
+								v:langID="1033" v:isBullet="true">·</tspan><tspan class="st3" v:langID="1033"> </tspan><tspan
+								class="st21" v:langID="1033">98 </tspan><tspan class="st21">LncRNA oncogene</tspan><tspan
+								class="st21" v:langID="1033">s</tspan></text>				</g>
 			</g>
-			<g id="shape25-241" v:mID="25" v:groupContext="shape" transform="translate(35.3034,0)">
+			<g id="shape25-245" v:mID="25" v:groupContext="shape" transform="translate(35.3034,0)">
 				<title>工作表.25</title>
 				<desc>Step5: Mark &#34;N.A.&#34; for information not collected</desc>
 				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-				<v:textRect cx="188.504" cy="562.282" width="377.01" height="86.8931"/>
-				<path d="M0 605.73 L377.01 605.73 L377.01 518.84 L0 518.84 L0 605.73 Z" class="st20"/>
-				<text x="4" y="533.64" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>Step<tspan class="st4" v:langID="1033">5</tspan>: Mark <tspan
-							class="st4" v:langID="1033">&#34;N.A.&#34; </tspan>for information not collected</text>			</g>
-			<g id="shape26-246" v:mID="26" v:groupContext="shape" transform="translate(48.0593,-8.44423)">
+				<v:textRect cx="188.504" cy="526.282" width="377.01" height="86.8931"/>
+				<path d="M0 569.73 L377.01 569.73 L377.01 482.84 L0 482.84 L0 569.73 Z" class="st1"/>
+				<text x="4" y="497.64" class="st5" v:langID="2052"><v:paragraph/><v:tabList/>Step<tspan class="st3" v:langID="1033">5</tspan>: Mark <tspan
+							class="st3" v:langID="1033">&#34;N.A.&#34; </tspan>for information not collected</text>			</g>
+			<g id="shape26-250" v:mID="26" v:groupContext="shape" transform="translate(48.0593,-8.44423)">
 				<title>工作表.26</title>
 				<desc>Some essential lncRNAs are found in papers but not in the aut...</desc>
 				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="178.583" cy="576.762" width="357.17" height="57.934"/>
-				<rect x="0" y="547.795" width="357.165" height="57.934" class="st17"/>
-				<text x="4" y="558.07" class="st18" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18" v:bullet="1"/><v:tabList/><tspan
-							class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Some essential lncRNAs are found in papers but not in the </tspan><tspan
-							x="22" dy="1.2em" class="st19">authoritative databases<v:newlineChar/></tspan><tspan x="4" dy="1.287em"
-							class="st4" v:isBullet="true">·</tspan> <tspan class="st19">Some essential lncRNAs name </tspan><tspan
-							class="st21">、</tspan><tspan class="st19">FASTA sequence and some other </tspan><tspan x="22"
-							dy="1.229em" class="st19">detailed information  not found</tspan></text>			</g>
-			<g id="shape36-257" v:mID="36" v:groupContext="shape" v:layerMember="1" transform="translate(212.469,-456.683)">
+				<v:textRect cx="178.583" cy="540.762" width="357.17" height="57.934"/>
+				<rect x="0" y="511.795" width="357.165" height="57.934" class="st19"/>
+				<text x="4" y="522.07" class="st20" v:langID="2052"><v:paragraph v:indentFirst="-18" v:indentLeft="18" v:bullet="1"/><v:tabList/><tspan
+							class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Some essential lncRNAs are found in papers but not in the </tspan><tspan
+							x="22" dy="1.2em" class="st21">authoritative databases<v:newlineChar/></tspan><tspan x="4" dy="1.287em"
+							class="st3" v:isBullet="true">·</tspan> <tspan class="st21">Some essential lncRNAs name </tspan><tspan
+							class="st22">、</tspan><tspan class="st21">FASTA sequence and some other </tspan><tspan x="22"
+							dy="1.229em" class="st21">detailed information  not found</tspan></text>			</g>
+			<g id="shape36-261" v:mID="36" v:groupContext="shape" v:layerMember="1" transform="translate(212.469,-456.683)">
 				<title>动态连接线</title>
-				<path d="M7.09 605.73 L7.09 622.18" class="st13"/>
+				<path d="M7.09 569.73 L7.09 586.18" class="st15"/>
 			</g>
-			<g id="shape38-262" v:mID="38" v:groupContext="shape" v:layerMember="1" transform="translate(216.721,-356.722)">
+			<g id="shape38-266" v:mID="38" v:groupContext="shape" v:layerMember="1" transform="translate(216.721,-356.722)">
 				<title>动态连接线.38</title>
-				<path d="M7.09 605.73 L7.09 617.18" class="st13"/>
+				<path d="M7.09 569.73 L7.09 581.18" class="st15"/>
 			</g>
-			<g id="shape39-267" v:mID="39" v:groupContext="shape" v:layerMember="1" transform="translate(216.721,-210.738)">
+			<g id="shape39-271" v:mID="39" v:groupContext="shape" v:layerMember="1" transform="translate(216.721,-210.738)">
 				<title>动态连接线.39</title>
-				<path d="M7.09 605.73 L7.09 617.18" class="st13"/>
+				<path d="M7.09 569.73 L7.09 581.18" class="st15"/>
 			</g>
-			<g id="shape133-272" v:mID="133" v:groupContext="shape" v:layerMember="1" transform="translate(216.721,-108.153)">
+			<g id="shape133-276" v:mID="133" v:groupContext="shape" v:layerMember="1" transform="translate(216.721,-108.153)">
 				<title>动态连接线.133</title>
-				<path d="M7.09 605.73 L7.09 617.18" class="st13"/>
+				<path d="M7.09 569.73 L7.09 581.18" class="st15"/>
 			</g>
-			<g id="shape135-277" v:mID="135" v:groupContext="shape" transform="translate(373.718,-548.554)">
+			<g id="shape135-281" v:mID="135" v:groupContext="shape" transform="translate(373.718,-548.554)">
 				<title>工作表.135</title>
 				<desc>(B)</desc>
 				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="76" cy="595.729" width="152" height="20"/>
-				<rect x="0" y="585.729" width="152" height="20" class="st17"/>
-				<text x="64" y="601.13" class="st23" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>(B)</text>			</g>
-			<g id="shape136-280" v:mID="136" v:groupContext="shape" transform="translate(2.39808E-14,-548.554)">
+				<v:textRect cx="76" cy="559.729" width="152" height="20"/>
+				<rect x="0" y="549.729" width="152" height="20" class="st19"/>
+				<text x="64" y="565.13" class="st24" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>(B)</text>			</g>
+			<g id="shape136-284" v:mID="136" v:groupContext="shape" transform="translate(2.39808E-14,-548.554)">
 				<title>工作表.136</title>
 				<desc>(A)</desc>
 				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="21.2598" cy="595.729" width="42.52" height="20"/>
-				<rect x="0" y="585.729" width="42.5197" height="20" class="st17"/>
-				<text x="8.77" y="601.13" class="st23" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>(A)</text>			</g>
-			<g id="group137-283" transform="translate(35.3034,-458.242)" v:mID="137" v:groupContext="group">
-				<title>工作表.137</title>
-				<g id="shape6-284" v:mID="6" v:groupContext="shape">
-					<title>工作表.6</title>
-					<desc>Step1: Collect the essential lncRNA data records manually fro...</desc>
-					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-					<v:textRect cx="188.504" cy="558.32" width="377.01" height="94.8189"/>
-					<path d="M0 605.73 L377.01 605.73 L377.01 510.91 L0 510.91 L0 605.73 Z" class="st20"/>
-					<text x="4" y="525.71" class="st24" v:langID="2052"><v:paragraph/><v:tabList/>Step1: Collect the essential lncRNA data records manually from 196 <tspan
-								x="4" dy="1.2em" class="st4">literatures using keywords.</tspan></text>				</g>
-			</g>
+				<v:textRect cx="21.2598" cy="559.729" width="42.52" height="20"/>
+				<rect x="0" y="549.729" width="42.5197" height="20" class="st19"/>
+				<text x="8.77" y="565.13" class="st24" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>(A)</text>			</g>
 		</g>
 	</g>
 </svg>

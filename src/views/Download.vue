@@ -29,9 +29,9 @@
         <p>
           <img src="../../public/assets/img/downicon.png" class="icon" />
           <a :href="'/data/tumor suppressor gene.json'" download="">
-            tumor suppressor gene.json
+            tumor suppressor.json
           </a>
-          : This file contains all tumor suppressor gene data.
+          : This file contains all tumor suppressor  data.
         </p>
 
         <p>

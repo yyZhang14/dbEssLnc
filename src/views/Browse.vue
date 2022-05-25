@@ -25,7 +25,7 @@
 
             <el-menu-item index="1-2" >
               <!-- <a href="#tumor">tumor suppressor genes</a> -->
-              <a href="javascript:void(0)" @click="goAnchor('#tumor')">Tumor suppressor gene</a>
+              <a href="javascript:void(0)" @click="goAnchor('#tumor')">Tumor suppressor</a>
             </el-menu-item>
 
             <el-menu-item index="1-3">
@@ -130,7 +130,7 @@
         <!-- show tumor -->
           <div>
             <!-- <a name="tumor"></a> -->
-            <h3 id="tumor">Tumor suppressor gene</h3>
+            <h3 id="tumor">Tumor suppressor</h3>
             <el-table
             :data = "tumor"
             :header-cell-style ="{background:'#eef1f6',color:'#606266'}"

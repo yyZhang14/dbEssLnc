@@ -67,11 +67,11 @@
             the Contact part provides information on how to contact authors of the database.
           </p>
           <p>
-            Currently, <b>206</b> essential lncRNAs are deposited in the
+            Currently, <b>207</b> essential lncRNAs are deposited in the
             dbEssLnc database,and new data are constently added by manual screening.
           </p>
           <p>
-            Last update on: Mar.13th.2022.
+            Last update on: May.17th.2022.
           </p>
         </el-col>
         <el-col :span="10">
@@ -88,7 +88,7 @@
                   Work flow is divided to 5 steps. Step1: Using key words to collect essential 
                   lncRNA data in PubMed. Step2: Screening details of essential lncRNA from literatures.
                    Step3:Mapping gene name to order databases to get other details. Step4: Essential lncRNAs 
-                   are categorized as general essential lncRNA, lncRNA tumor suppressor gene and lncRNA oncogene. 
+                   are categorized as general essential lncRNA, lncRNA tumor suppressor  and lncRNA oncogene. 
                    Step5:Marking “N.A.” for information not collected.
                     (B) Architecture of dbEssLnc. dbEsslnc has seven functional pages, including "Browse", 
                     "Search","Blast","Download","Help", "Gene" and "Visual" page. Users click the gene name in the "Browse" and "Search" 

@@ -139,7 +139,7 @@ export default {
           label:"Query by Reason",
           options: [
             {value:"option3",label:"General"},
-            {value:"option4",label:"Tumor suppressor gene"},
+            {value:"option4",label:"Tumor suppressor"},
             {value:"option5",label:"Oncogene"}
           ]
         }
@@ -156,7 +156,7 @@ export default {
                       {value: "Trp53cor1"},{value: "Dreh"},{value: "Gas5"},{value: "Miat"},{value: "Tunar"},
                       {value: "Dlx6os1"},{value: "9030622O22Rik"},{value: "Tslrn1"},{value: "Hm629797"},{value: "4933409F18Rik"},
                       {value: "Gm2044"},{value: "Mhrt"},{value: "Jpx"},{value: "Airn"},{value: "Kcnq1ot1"},
-                      {value: "Hand2os1"},{value: "Ttc39aos1"},{value: "Neat1"}],
+                      {value: "Hand2os1"},{value: "Ttc39aos1"},{value: "Neat1"},{value: "Hdnr"}],
 
 
       // property:[],//查询的结果

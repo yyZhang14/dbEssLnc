@@ -13,13 +13,13 @@ var fs = require("fs");
 //blast的一些路径
 const BLASTDB = ""
 //服务器的路径
-const tempPath_query = "/home/yyzhang/dbesslnc/blast/temp/"
-const tempPath_result= "/home/yyzhang/dbesslnc/blast/temp/" 
-const db_path = "/home/yyzhang/dbesslnc/blast/lncrna/lncrna.fasta"
+// const tempPath_query = "/home/yyzhang/dbesslnc/blast/temp/"
+// const tempPath_result= "/home/yyzhang/dbesslnc/blast/temp/" 
+// const db_path = "/home/yyzhang/dbesslnc/blast/lncrna/lncrna.fasta"
 //本地的路径
-// const tempPath_query = "/Users/zyy/Desktop/code/dbEssLnc-main/blast/temp/"
-// const tempPath_result= "/Users/zyy/Desktop/code/dbEssLnc-main/blast/temp/" 
-// const db_path = "/Users/zyy/Desktop/code/dbEssLnc-main/blast/lncrna/lncrna.fasta"
+const tempPath_query = "/Users/zyy/Desktop/code/dbEssLnc-main/blast/temp/"
+const tempPath_result= "/Users/zyy/Desktop/code/dbEssLnc-main/blast/temp/" 
+const db_path = "/Users/zyy/Desktop/code/dbEssLnc-main/blast/lncrna/lncrna.fasta"
 
 const {MYSQL_CONFIG} = require('../db.js');
 // var blast = require("../blast.js")
@@ -40,7 +40,17 @@ var jsonWrite = function(res, ret) {
   }
 };
 
-
+let options ={
+  flags: "a",
+  encoding:'utf8'
+}
+let stderr = fs.createWriteStream('./a.log',options);
+let logger = new console.Console(stderr);
+fs.writeFile('./a.log','',function(err){
+  if(err){
+    console.log(err)
+  }
+});
 //browser 页面的sql语句
 //show final table
 router.post("/final", (req, res) => {
@@ -331,11 +341,13 @@ router.post("/blast",(req,res)=>{
                   ' -outfmt "6 qseqid sseqid pident length evalue bitscore "'+
                   ' -evalue '+user_eValue+
                   ' -word_size '+user_wordSize;
-        //console.log(cmd)
+        // console.log(cmd)
+        logger.log(cmd);
         exec(cmd, function(error, stdout, stderr) {
           // 读取测试结果
           let data = fs.readFileSync(path_result, "utf8").split('\n'); 
           //console.log(data)
+          logger.log(data)
 
           // 发送给前端
             res.send({
@@ -346,7 +358,7 @@ router.post("/blast",(req,res)=>{
                   data:data
               },
           });
-          // console.log(user_wordSize)
+          //console.log(user_wordSize)
           fs.close;
           fs.unlinkSync(path_query);
           fs.unlinkSync(path_result);
