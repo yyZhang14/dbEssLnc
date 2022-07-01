@@ -101,3 +101,5 @@ service nginx restart
 ![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/pm2.PNG)
 ![Alt text](https://github.com/yyZhang14/dbEssLnc/blob/main/public/md/bro.PNG)
 ### 
+## Citation
+Zhang YY, Zhang WY, Xin XH, Du PF. dbEssLnc: A manually curated database of human and mouse essential lncRNA genes. Comput Struct Biotechnol J. 2022 May 23;20:2657-2663. doi: 10.1016/j.csbj.2022.05.043. PMID: 35685362; PMCID: PMC9162909.
